@@ -38,10 +38,10 @@ export function ValuePropsSection() {
             <div key={cell.id} className="vprop-card vprop-card--dual-text">
               {cell.reasons?.map((reason) => (
                 <div key={reason.number} className="vprop-reason">
-                  <div className="vprop-reason__header">
+                  <h3 className="vprop-reason__title">
                     <span className="vprop-reason__num">{reason.number}</span>
-                    <h3 className="vprop-reason__title">{reason.title}</h3>
-                  </div>
+                    {reason.title}
+                  </h3>
                   <p className="vprop-reason__desc">{reason.description}</p>
                 </div>
               ))}
