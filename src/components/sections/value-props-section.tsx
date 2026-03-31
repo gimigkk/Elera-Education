@@ -30,21 +30,15 @@ export function ValuePropsSection() {
                   sizes="(max-width: 960px) 100vw, 33vw"
                   className="vprop-card__full-img"
                 />
-                <div className="vprop-card__img-gradient" />
-                <div className="vprop-card__img-content">
-                  <span className="vprop-card__img-badge">{cell.imageBadge}</span>
-                  <span className="vprop-card__img-category">{cell.imageCategory}</span>
-                </div>
               </div>
             );
           }
 
           return (
             <div key={cell.id} className="vprop-card vprop-card--dual-text">
-              {cell.reasons?.map((reason, rIdx) => (
-                <div key={reason.number} className={`vprop-reason ${rIdx === 1 ? "vprop-reason--bordered" : ""}`}>
+              {cell.reasons?.map((reason) => (
+                <div key={reason.number} className="vprop-reason">
                   <div className="vprop-reason__top">
-                    <span className="vprop-reason__badge">{reason.badge}</span>
                     <span className="vprop-reason__num">{reason.number}</span>
                   </div>
                   <h3 className="vprop-reason__title">{reason.title}</h3>
