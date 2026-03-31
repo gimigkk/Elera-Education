@@ -69,3 +69,23 @@ export interface University {
   shortName: string;
   logoUrl: string;
 }
+
+export interface ValuePropReason {
+  number: string;
+  badge: string;
+  title: string;
+  description: string;
+}
+
+export type GridCellType = "image" | "text-dual";
+
+export interface ValuePropGridCell {
+  id: string;
+  cellIndex: number; // 1 to 6
+  type: GridCellType;
+  imageUrl?: string;
+  imageAlt?: string;
+  imageBadge?: string;
+  imageCategory?: string;
+  reasons?: [ValuePropReason, ValuePropReason];
+}
