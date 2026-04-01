@@ -8,7 +8,7 @@ export function ValuePropsSection() {
     <section className="site-section vprop-section" id="keunggulan">
       {/* Section Header */}
       <div className="vprop-header">
-        <span className="vprop-header__tag">KEUNGGULAN UTAMA</span>
+        <span className="vprop-header__tag">Keunggulan Utama</span>
         <h2 className="vprop-header__title">
           Solusi Bimbel Privat Terbaik Untuk Putra-Putri Anda
         </h2>

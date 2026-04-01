@@ -508,40 +508,43 @@ body {
 }
 
 .vprop-header {
-  padding: 3rem 2rem 2rem;
-  text-align: center;
+  padding: 4rem 2rem 3rem;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .vprop-header__tag {
-  font-size: 0.75rem;
-  font-weight: 800;
+  font-size: 0.98rem;
+  font-weight: 600;
   color: var(--docker-blue);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: rgba(42, 96, 255, 0.08);
-  border: 1px solid rgba(42, 96, 255, 0.18);
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
+  letter-spacing: -0.01em;
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 0.5rem;
 }
 
 .vprop-header__title {
-  font-size: 2rem;
+  font-size: 3.2rem;
   font-weight: 800;
   color: #001C3E;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  max-width: 680px;
-  margin: 0.85rem 0 0.6rem;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  max-width: 840px;
+  margin: 0.25rem 0 1.25rem;
   text-wrap: balance;
 }
 
 .vprop-header__subtitle {
-  font-size: 0.95rem;
-  color: var(--gray-600);
-  max-width: 620px;
+  font-size: 1.12rem;
+  font-weight: 500;
+  color: #334155;
+  max-width: 760px;
   line-height: 1.55;
   margin: 0;
   text-wrap: balance;
