@@ -588,6 +588,24 @@ body {
   gap: 0.4rem;
 }
 
+.vprop-reason--left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.vprop-reason--left .vprop-reason__title {
+  justify-content: flex-start;
+}
+
+.vprop-reason--right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.vprop-reason--right .vprop-reason__title {
+  justify-content: flex-end;
+}
+
 .vprop-reason__title {
   font-size: 1.15rem;
   font-weight: 700;
