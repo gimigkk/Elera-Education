@@ -504,7 +504,9 @@ body {
 /* ===== VALUE PROPOSITION SECTION (Docker 1.5px 2x3 Grid) ===== */
 .vprop-section {
   width: 100%;
-  background: var(--white);
+  background: linear-gradient(180deg, #FFFFFF 0%, #EEF5FF 35%, #1D63ED 100%);
+  padding-bottom: 2.5rem;
+  position: relative;
 }
 
 .vprop-header {
