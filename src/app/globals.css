@@ -504,20 +504,20 @@ body {
 /* ===== VALUE PROPOSITION SECTION (Docker 1.5px 2x3 Grid) ===== */
 .vprop-section {
   width: 100%;
-  background: linear-gradient(to top, #1D63ED 0%, rgba(29, 99, 237, 0.45) 40%, rgba(255, 255, 255, 0) 80%), #FFFFFF;
-  padding-bottom: 3rem;
+  background: var(--white);
   position: relative;
 }
 
 .vprop-header {
   position: relative;
-  padding: 3.5rem 2rem 2.5rem;
+  padding: 4rem 2rem 3.5rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
+  background: linear-gradient(to top, rgba(29, 99, 237, 0.16) 0%, rgba(29, 99, 237, 0.03) 65%, #FFFFFF 100%);
 }
 
 .vprop-header__tag {
