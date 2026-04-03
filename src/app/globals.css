@@ -517,7 +517,7 @@ body {
   align-items: center;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(to top, rgba(29, 99, 237, 0.16) 0%, rgba(29, 99, 237, 0.03) 65%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #DBEAFE 45%, #2563EB 100%);
 }
 
 .vprop-header__tag {
