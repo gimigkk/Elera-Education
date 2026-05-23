@@ -21,7 +21,7 @@
 
   /* Docker's exact crisp border line color & contrast body bg */
   --body-bg: #F1F5F9;
-  --border-color: #001C3E;
+  --border-color: rgba(0, 28, 62, 0.22);
   --green-500: #22C55E;
   --green-400: #4ADE80;
 
