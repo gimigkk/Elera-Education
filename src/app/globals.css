@@ -21,7 +21,7 @@
 
   /* Docker's exact crisp border line color & contrast body bg */
   --body-bg: #F1F5F9;
-  --border-color: rgba(0, 28, 62, 0.22);
+  --border-color: rgba(0, 28, 62, 0.14);
   --green-500: #22C55E;
   --green-400: #4ADE80;
 
@@ -411,6 +411,7 @@ body {
 .uni-marquee-section {
   width: 100%;
   background: var(--white);
+  border-top: 1.5px solid var(--border-color);
   border-bottom: 1.5px solid var(--border-color);
   overflow: hidden;
   position: relative;
@@ -455,7 +456,7 @@ body {
   justify-content: center;
   padding: 0 1.25rem;
   border-right: 1.5px solid var(--border-color);
-  background: #FAFAFA;
+  background: var(--white);
 }
 
 .uni-marquee-cell__inner {
