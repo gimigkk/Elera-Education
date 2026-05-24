@@ -2,7 +2,7 @@ import type { StarTutor, HeroCTA } from "@/types";
 
 export const starTutor: StarTutor = {
   name: "Sarah Putri",
-  university: "IPB University, Ilmu Komputer",
+  university: "IPB University - S1 Ilmu Komputer",
   gpa: 3.92,
   subjects: ["MTK", "IPA", "B.Ing"],
   studentsCount: 150,

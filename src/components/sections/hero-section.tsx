@@ -87,11 +87,11 @@ export function HeroSection() {
                     <span className="tutor-clean__stat-lbl">IPK</span>
                   </div>
                   <div className="tutor-clean__stat">
-                    <span className="tutor-clean__stat-val">{starTutor.studentsCount}+</span>
+                    <span className="tutor-clean__stat-val">+{starTutor.studentsCount}</span>
                     <span className="tutor-clean__stat-lbl">Siswa</span>
                   </div>
                   <div className="tutor-clean__stat">
-                    <span className="tutor-clean__stat-val">{starTutor.yearsExperience}+</span>
+                    <span className="tutor-clean__stat-val">+{starTutor.yearsExperience}</span>
                     <span className="tutor-clean__stat-lbl">Tahun</span>
                   </div>
                 </div>
