@@ -20,7 +20,7 @@
   --white: #FFFFFF;
 
   /* Docker's exact crisp border line color & contrast body bg */
-  --body-bg: #F1F5F9;
+  --body-bg: #FFFFFF;
   --border-color: #CBD5E1;
   --green-500: #22C55E;
   --green-400: #4ADE80;
@@ -578,7 +578,7 @@ body {
   position: relative;
   min-height: 260px;
   overflow: hidden;
-  background: #F8FAFC;
+  background: var(--white);
 }
 
 .vprop-card__full-img {
