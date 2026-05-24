@@ -407,6 +407,75 @@ body {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
+/* ===== PROMO BANNER MARQUEE (Moving Right — Solid Blue) ===== */
+.promo-marquee-section {
+  width: 100%;
+  background: var(--docker-blue);
+  border-bottom: 1px solid var(--border-color);
+  height: 42px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+.promo-marquee-track-wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
+.promo-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: promoMarqueeRight 35s linear infinite;
+  will-change: transform;
+}
+
+@keyframes promoMarqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.promo-marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1.75rem;
+  white-space: nowrap;
+}
+
+.promo-marquee__badge {
+  background: rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.promo-marquee__text {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.promo-marquee__dot {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
 /* ===== UNIVERSITY LOGO MARQUEE (Docker Logo Strip Style) ===== */
 .uni-marquee-section {
   width: 100%;
