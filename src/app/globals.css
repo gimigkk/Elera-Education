@@ -51,22 +51,22 @@ body {
   margin-left: auto;
   margin-right: auto;
   background-color: var(--white);
-  border-left: 1.5px solid var(--border-color);
-  border-right: 1.5px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
   min-height: 100vh;
 }
 
 /* Common Section Wrapper with bottom border line */
 .site-section {
   width: 100%;
-  border-bottom: 1.5px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* ===== Navbar (Compact Docker Style — 56px height) ===== */
 .navbar {
   width: 100%;
   background: var(--white);
-  border-bottom: 1.5px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -411,7 +411,7 @@ body {
 .uni-marquee-section {
   width: 100%;
   background: var(--white);
-  border-bottom: 1.5px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   overflow: hidden;
   position: relative;
   pointer-events: none;
@@ -454,7 +454,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0 1.25rem;
-  border-right: 1.5px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
   background: var(--white);
 }
 
@@ -555,14 +555,23 @@ body {
 .vprop-grid-2x3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: var(--border-color);
-  border-top: 1.5px solid var(--border-color);
-  gap: 1.5px;
+  border-top: 1px solid var(--border-color);
+  background: var(--white);
 }
 
 .vprop-card {
   position: relative;
   transition: background 0.2s ease;
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.vprop-card:nth-child(3n) {
+  border-right: none;
+}
+
+.vprop-card:nth-last-child(-n+3) {
+  border-bottom: none;
 }
 
 .vprop-card--img-full {
