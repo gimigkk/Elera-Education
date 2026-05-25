@@ -431,7 +431,7 @@ body {
   display: flex;
   width: max-content;
   align-items: center;
-  animation: promoMarqueeRight 65s linear infinite;
+  animation: promoMarqueeRight 90s linear infinite;
   will-change: transform;
 }
 
@@ -511,7 +511,7 @@ body {
 .uni-marquee-track {
   display: flex;
   width: max-content;
-  animation: uniMarquee 35s linear infinite;
+  animation: uniMarquee 60s linear infinite;
   will-change: transform;
 }
 
