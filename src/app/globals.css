@@ -431,7 +431,7 @@ body {
   display: flex;
   width: max-content;
   align-items: center;
-  animation: promoMarqueeRight 90s linear infinite;
+  animation: promoMarqueeRight 150s linear infinite;
   will-change: transform;
 }
 
