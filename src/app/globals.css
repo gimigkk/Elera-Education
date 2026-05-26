@@ -470,10 +470,11 @@ body {
   letter-spacing: -0.01em;
 }
 
-.promo-marquee__dot {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.8rem;
-  margin-left: 0.5rem;
+.promo-marquee__sep {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-left: 0.75rem;
 }
 
 /* ===== UNIVERSITY LOGO MARQUEE (Docker Logo Strip Style) ===== */

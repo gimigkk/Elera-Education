@@ -13,6 +13,7 @@ export function PromoMarquee() {
           {items.map((item, idx) => (
             <div key={`${item.id}-${idx}`} className="promo-marquee-item">
               <span className="promo-marquee__text">{item.text}</span>
+              <span className="promo-marquee__sep">;</span>
             </div>
           ))}
         </div>
