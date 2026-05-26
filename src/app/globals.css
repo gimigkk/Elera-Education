@@ -447,20 +447,8 @@ body {
 .promo-marquee-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0 0.85rem;
+  padding: 0 0.5rem;
   white-space: nowrap;
-}
-
-.promo-marquee__badge {
-  background: rgba(255, 255, 255, 0.22);
-  color: #FFFFFF;
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 0.15rem 0.55rem;
-  border-radius: 4px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
 .promo-marquee__text {
@@ -474,7 +462,7 @@ body {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
   font-weight: 700;
-  margin-left: 0.75rem;
+  margin-left: 1rem;
 }
 
 /* ===== UNIVERSITY LOGO MARQUEE (Docker Logo Strip Style) ===== */
