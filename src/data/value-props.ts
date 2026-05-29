@@ -19,15 +19,15 @@ export const valuePropGridCells: ValuePropGridCell[] = [
     reasons: [
       {
         number: "01",
-        badge: "Kenyamanan Rumah",
+        badge: "Tentor & Kenyamanan",
         title: "Tentor Datang ke Rumah",
-        description: "Anak belajar nyaman dan aman di lingkungan rumah tanpa perlu repot diantar ke tempat les.",
+        description: "Tentor kompeten dari PTN terbaik datang ke rumah, anak belajar nyaman dan aman tanpa repot diantar.",
       },
       {
         number: "02",
-        badge: "Fleksibilitas Waktu",
-        title: "Jadwal Fleksibel",
-        description: "Bebas menentukan hari dan jam les sesuai rutinitas anak serta ketersediaan waktu keluarga.",
+        badge: "Fleksibilitas & Evaluasi",
+        title: "Jadwal Fleksibel & Evaluasi",
+        description: "Jadwal les menyesuaikan waktu anak, dilengkapi soal-soal evaluasi rutin untuk memantau perkembangan.",
       },
     ],
   },
@@ -49,15 +49,15 @@ export const valuePropGridCells: ValuePropGridCell[] = [
     reasons: [
       {
         number: "03",
-        badge: "Pilihan Mapel",
+        badge: "Bebas Pilih Mapel",
         title: "Bebas Pilih Mata Pelajaran",
-        description: "Fokus pelajaran bisa disesuaikan tiap sesi (Matematika, IPA, B. Inggris, B. Indo, PPKn).",
+        description: "Anak bebas memilih mata pelajaran yang ingin dibahas dalam setiap pertemuan (MTK, IPA, B.Inggris, dll).",
       },
       {
         number: "04",
-        badge: "Kurikulum Sekolah",
-        title: "Kurikulum Menyesuaikan Sekolah",
-        description: "Pendampingan materi dan PR dipersonalisasi mengikuti kurikulum dan modul dari sekolah siswa.",
+        badge: "Kurikulum & Modul",
+        title: "Kurikulum Sekolah & Modul",
+        description: "Materi menyesuaikan kurikulum sekolah anak, serta tersedia modul belajar tambahan khusus kelas 4–6 SD.",
       },
     ],
   },
@@ -79,15 +79,15 @@ export const valuePropGridCells: ValuePropGridCell[] = [
     reasons: [
       {
         number: "05",
-        badge: "Fokus Maksimal",
+        badge: "Kelas Minimalis",
         title: "Kelompok Belajar Minimalis",
-        description: "Pilihan Privat (1 anak 1 tentor) hingga Semi-Privat (2-3 anak) agar tentor fokus maksimal.",
+        description: "Pilihan Privat (1-on-1), Semi-Privat (2 anak), hingga Kelompok (3-5 anak) agar perhatian tentor 100% fokus.",
       },
       {
         number: "06",
         badge: "Free Support",
         title: "Free Konsultasi PR & Tugas",
-        description: "Bantuan pengerjaan PR harian, tugas projek sekolah, dan persiapan ujian tanpa biaya tambahan.",
+        description: "Fasilitas bebas biaya konsultasi untuk pengerjaan PR harian, tugas projek sekolah, dan persiapan ujian.",
       },
     ],
   },
