@@ -1,5 +1,6 @@
 "use client";
 
+import "./university-marquee.css";
 import { topUniversities } from "@/data/universities";
 
 export function UniversityMarquee() {

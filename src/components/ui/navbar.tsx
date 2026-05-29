@@ -1,5 +1,6 @@
 "use client";
 
+import "./navbar.css";
 import Link from "next/link";
 import { heroCTA } from "@/data/hero";
 

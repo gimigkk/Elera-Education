@@ -1,0 +1,401 @@
+/* ===== PRICING SECTION (Docker 1px Grid Aesthetic) ===== */
+.pricing-section {
+  width: 100%;
+  background: var(--white);
+}
+
+/* ── Top Header Area ── */
+.pricing-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 3.5rem 2rem 2.5rem;
+}
+
+.pricing-header__tag {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--docker-blue);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-header-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.pricing-header-left {
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-header__title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #001C3E;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin: 0 0 0.6rem;
+  text-wrap: balance;
+}
+
+.pricing-header__subtitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  line-height: 1.55;
+  margin: 0;
+  text-wrap: balance;
+}
+
+/* ── Right Side Controls (Locked 2-row layout with zero layout shift) ── */
+.pricing-controls-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 0.5rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ── Primary & Secondary Chips (Tier & Grade) ── */
+.pricing-tier-pills,
+.pricing-grade-pills {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  height: 36px;
+}
+
+.pricing-tier-pill,
+.pricing-grade-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 1rem;
+  line-height: 1;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  cursor: pointer;
+  background: var(--white);
+  color: var(--gray-600);
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.pricing-tier-pill:hover,
+.pricing-grade-pill:hover {
+  border-color: var(--gray-500);
+  color: var(--navy-900);
+}
+
+.pricing-tier-pill--active,
+.pricing-grade-pill--active {
+  background: var(--docker-blue-50);
+  border-color: var(--docker-blue);
+  color: var(--docker-blue);
+}
+
+.pricing-grade-pill--placeholder {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* ── Pricing Grid (Strict Docker 1px Border Grid matching vprop-grid-2x3) ── */
+.pricing-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--border-color);
+  background: var(--white);
+}
+
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--white);
+  padding: 2.25rem 2rem;
+  transition: background 0.2s ease;
+}
+
+.pricing-card:nth-child(3n) {
+  border-right: none;
+}
+
+/* Highlight Popular Card */
+.pricing-card--popular {
+  background: var(--white);
+}
+
+.pricing-card__badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--docker-blue);
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  padding: 0.2rem 0.65rem;
+  line-height: 1;
+  z-index: 2;
+}
+
+/* Unavailable Card */
+.pricing-card--unavailable {
+  background: var(--gray-50);
+  opacity: 0.6;
+}
+
+/* Card Head */
+.pricing-card__head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1.25rem;
+}
+
+.pricing-card__type {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #001C3E;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.pricing-card__desc {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray-500);
+  margin: 0;
+}
+
+/* Card Body */
+.pricing-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+}
+
+/* Price Block */
+.pricing-card__price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.pricing-card__original-price {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--gray-400);
+  text-decoration: line-through;
+  line-height: 1;
+}
+
+.pricing-card__original-price--placeholder {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.pricing-card__price-amount {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+}
+
+.pricing-card__price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #001C3E;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.pricing-card__price-range {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #001C3E;
+  letter-spacing: -0.01em;
+}
+
+.pricing-card__per {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gray-500);
+  margin-left: 0;
+}
+
+/* Meta Check List */
+.pricing-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.pricing-card__meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.pricing-card__meta-check {
+  color: var(--docker-blue);
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.pricing-card__cocok {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  font-style: italic;
+  line-height: 1.45;
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.pricing-card__na {
+  font-size: 0.88rem;
+  color: var(--gray-500);
+  font-weight: 500;
+  margin: 1.5rem 0;
+}
+
+
+/* ── Registration Fee Bar ── */
+.pricing-registration {
+  border-top: 1px solid var(--border-color);
+  background: var(--gray-50);
+}
+
+.pricing-registration__inner {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.pricing-registration__label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-500);
+}
+
+.pricing-registration__fees {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pricing-registration__fee {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--navy-800);
+}
+
+.pricing-registration__fee strong {
+  font-weight: 800;
+  color: #001C3E;
+}
+
+.pricing-registration__divider {
+  color: var(--border-color);
+  font-weight: 700;
+}
+
+.pricing-registration__note {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gray-500);
+  margin: 0.2rem 0 0;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/* ── Mobile & Responsive ── */
+@media (max-width: 960px) {
+  .pricing-top {
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+
+  .pricing-header-row {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .pricing-header-left {
+    max-width: 100%;
+  }
+
+  .pricing-header__title {
+    font-size: 1.65rem;
+  }
+
+  .pricing-controls-right {
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.6rem;
+  }
+
+  .pricing-tier-pill {
+    padding: 0.4rem 1rem;
+    font-size: 0.82rem;
+  }
+
+  .pricing-grade-pills {
+    flex-wrap: wrap;
+  }
+
+  .pricing-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card {
+    border-right: none;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .pricing-registration__inner {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .pricing-registration__fees {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .pricing-registration__divider {
+    display: none;
+  }
+}

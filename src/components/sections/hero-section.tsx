@@ -1,5 +1,6 @@
 "use client";
 
+import "./hero-section.css";
 import Image from "next/image";
 import { starTutor, heroCTA } from "@/data/hero";
 import { Navbar } from "@/components/ui/navbar";

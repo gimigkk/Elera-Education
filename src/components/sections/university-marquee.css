@@ -1,0 +1,102 @@
+/* ===== UNIVERSITY LOGO MARQUEE (Docker Logo Strip Style) ===== */
+.uni-marquee-section {
+  width: 100%;
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+  position: relative;
+  pointer-events: none;
+  user-select: none;
+}
+
+.uni-marquee-track-wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+}
+
+.uni-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: uniMarquee 60s linear infinite;
+  will-change: transform;
+}
+
+.uni-marquee-cell {
+  width: 260px;
+  height: 76px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.25rem;
+  border-right: 1px solid var(--border-color);
+  background: var(--white);
+}
+
+.uni-marquee-cell__inner {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.uni-marquee-cell__logo-box {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.uni-marquee-cell__logo-mask {
+  width: 36px;
+  height: 36px;
+  background-color: #001C3E;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  flex-shrink: 0;
+}
+
+.uni-marquee-cell__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.uni-marquee-cell__line {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #001C3E;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+@keyframes uniMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-260px * 5));
+  }
+}

@@ -1,5 +1,6 @@
 "use client";
 
+import "./value-props-section.css";
 import Image from "next/image";
 import { valuePropGridCells } from "@/data/value-props";
 

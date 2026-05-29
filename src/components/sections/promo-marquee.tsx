@@ -1,5 +1,6 @@
 "use client";
 
+import "./promo-marquee.css";
 import { promoItems } from "@/data/promo";
 
 export function PromoMarquee() {

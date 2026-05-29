@@ -1,0 +1,94 @@
+/* ===== Navbar (Compact Docker Style — 56px height) ===== */
+.navbar {
+  width: 100%;
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navbar__inner {
+  height: 56px;
+  padding: 0 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.navbar__logo-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--docker-blue);
+  color: var(--white);
+  font-weight: 800;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__logo-text {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--navy-900);
+  letter-spacing: -0.03em;
+}
+
+.navbar__logo-sub {
+  color: var(--docker-blue);
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar__link {
+  color: var(--navy-900);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.navbar__link:hover {
+  color: var(--docker-blue);
+}
+
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1.1rem;
+  background: var(--white);
+  color: var(--navy-900);
+  border: 1px solid var(--border-color);
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.navbar__cta:hover {
+  border-color: var(--docker-blue);
+  color: var(--docker-blue);
+}
+
+@media (max-width: 960px) {
+  .navbar__nav {
+    display: none;
+  }
+}

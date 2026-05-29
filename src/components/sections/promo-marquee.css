@@ -1,0 +1,71 @@
+/* ===== PROMO BANNER MARQUEE (Moving Right — Solid Blue) ===== */
+.promo-marquee-section {
+  width: 100%;
+  background: var(--docker-blue);
+  border-bottom: 1px solid var(--border-color);
+  height: 42px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+.promo-marquee-track-wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+}
+
+.promo-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: promoMarqueeRight 150s linear infinite;
+  will-change: transform;
+}
+
+@keyframes promoMarqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.promo-marquee-item {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  white-space: nowrap;
+}
+
+.promo-marquee__text {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.promo-marquee__sep {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-left: 1rem;
+}

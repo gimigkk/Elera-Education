@@ -1,0 +1,293 @@
+/* ===== HERO SECTION ===== */
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  overflow: hidden;
+  background: var(--navy-900);
+  border-bottom: none;
+}
+
+/* Layer 0: Background image (Right side / Full cover) */
+.hero-container__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Layer 1: Left 50% Panel with Gradient (White to #F1F5F9) & Dot Grid Paper Pattern */
+.hero-container__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image:
+    radial-gradient(#CBD5E1 1.2px, transparent 1.2px),
+    linear-gradient(to right, #FFFFFF 0%, #F1F5F9 100%);
+  background-size: 20px 20px, 100% 100%;
+  z-index: 1;
+}
+
+/* Layer 2: Girl Cutout Overlay (Centered across split, height-locked) */
+.hero-container__girl {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  aspect-ratio: 585 / 675;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Layer 2.5: Corner Text Markers (Edukeo Reference Poster Style) */
+.hero-corner {
+  position: absolute;
+  z-index: 4;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
+.hero-corner--top-left {
+  top: 1.5rem;
+  left: 2rem;
+  color: #001C3E;
+}
+
+.hero-corner--bottom-left {
+  bottom: 1.5rem;
+  left: 2rem;
+  color: #001C3E;
+}
+
+.hero-corner--top-right {
+  top: 1.5rem;
+  right: 2rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero-corner--bottom-right {
+  bottom: 1.5rem;
+  right: 2rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Layer 3: Grid Content */
+.hero-container__content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+/* ===== LEFT COLUMN — Edukeo Reference Typographic Layout (White Panel) ===== */
+.hero-container__left {
+  padding: 3.5rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.edukeo-brand {
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  color: var(--navy-900);
+}
+
+.edukeo-brand__headline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  line-height: 1.1;
+}
+
+.edukeo-brand__headline-sub {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--docker-blue);
+}
+
+.edukeo-brand__headline-main {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--navy-900);
+  line-height: 1.08;
+}
+
+/* Feature Block */
+.edukeo-brand__block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.edukeo-brand__features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.edukeo-brand__feature {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy-800);
+}
+
+.edukeo-brand__check {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #0F172A;
+}
+
+/* ===== RIGHT COLUMN — Pure Transparent Right-Aligned Tutor Info ===== */
+.hero-container__right {
+  padding: 3.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hero-container__right-inner {
+  max-width: 380px;
+  width: 100%;
+}
+
+.tutor-clean {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 1.25rem;
+}
+
+.tutor-clean__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.tutor-clean__name {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.tutor-clean__uni {
+  font-size: 1rem;
+  color: #FFFFFF;
+  font-weight: 500;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  margin-top: 0.2rem;
+}
+
+.tutor-clean__stats {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.tutor-clean__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.tutor-clean__stat-val {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.tutor-clean__stat-lbl {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  margin-top: 0.25rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.tutor-clean__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.tutor-clean__chip {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 960px) {
+  .hero-container {
+    min-height: auto;
+  }
+
+  .hero-container__content {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-container__overlay {
+    width: 100%;
+    height: 52%;
+  }
+
+  .hero-container__left {
+    padding: 2.5rem 1.75rem;
+  }
+
+  .hero-container__right {
+    padding: 2rem 1.75rem;
+    justify-content: center;
+  }
+
+  .hero-container__right-inner {
+    max-width: 100%;
+  }
+
+  .hero-container__girl {
+    display: none;
+  }
+
+  .hero-container__headline {
+    font-size: 2.25rem;
+  }
+}
