@@ -2,10 +2,6 @@
 
 /* ===== Design Tokens — Docker Style ===== */
 :root {
-  --font-heading: var(--font-heading), 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
-  --font-body: var(--font-body), 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-sans: var(--font-body);
-
   --docker-blue: #2A60FF;
   --docker-blue-dark: #1D4ED8;
   --docker-blue-light: #60A5FA;
@@ -43,7 +39,7 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-body), 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   background-color: var(--body-bg);
   color: var(--navy-900);
   -webkit-font-smoothing: antialiased;
@@ -51,7 +47,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
 }
 
 /* ===== Docker Outer Site Frame & Gutter Borders ===== */
