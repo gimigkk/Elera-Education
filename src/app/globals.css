@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 /* ===== Design Tokens — Docker Style ===== */
 :root {
+  --font-heading: var(--font-heading), 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+  --font-body: var(--font-body), 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-body);
+
   --docker-blue: #2A60FF;
   --docker-blue-dark: #1D4ED8;
   --docker-blue-light: #60A5FA;
@@ -25,7 +28,6 @@
   --green-500: #22C55E;
   --green-400: #4ADE80;
 
-  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
   --max-width: 1200px;
 }
 
@@ -41,11 +43,15 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   background-color: var(--body-bg);
   color: var(--navy-900);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
 
 /* ===== Docker Outer Site Frame & Gutter Borders ===== */

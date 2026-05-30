@@ -57,6 +57,7 @@
 }
 
 .promo-marquee__text {
+  font-family: var(--font-heading);
   font-size: 0.88rem;
   font-weight: 700;
   color: #FFFFFF;

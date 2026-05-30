@@ -85,6 +85,7 @@
 }
 
 .uni-marquee-cell__line {
+  font-family: var(--font-heading);
   font-size: 0.84rem;
   font-weight: 700;
   color: #001C3E;

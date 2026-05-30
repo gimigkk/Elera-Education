@@ -46,6 +46,7 @@
 .hero-corner {
   position: absolute;
   z-index: 4;
+  font-family: var(--font-heading);
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--white);
@@ -111,6 +112,7 @@
 }
 
 .edukeo-brand__headline-sub {
+  font-family: var(--font-heading);
   font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -118,6 +120,7 @@
 }
 
 .edukeo-brand__headline-main {
+  font-family: var(--font-heading);
   font-size: 2.6rem;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -187,6 +190,7 @@
 }
 
 .tutor-clean__name {
+  font-family: var(--font-heading);
   font-size: 2.25rem;
   font-weight: 700;
   color: #FFFFFF;
@@ -217,6 +221,7 @@
 }
 
 .tutor-clean__stat-val {
+  font-family: var(--font-heading);
   font-size: 1.75rem;
   font-weight: 700;
   color: #FFFFFF;

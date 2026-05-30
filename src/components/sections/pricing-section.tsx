@@ -211,7 +211,7 @@ export function PricingSection() {
               1 Tahun: <strong>{formatRupiah(tier.registrationFee.annual)}</strong>
             </span>
           </div>
-          <p className="pricing-registration__note">
+          <p className="pricing-registration__note text-balance">
             Bisa dicicil 2–3 bulan. Pembayaran les di awal per 1 minggu, 2 minggu, atau 1 bulan.
           </p>
         </div>

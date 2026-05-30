@@ -18,6 +18,7 @@
 }
 
 .vprop-header__tag {
+  font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--docker-blue);
@@ -29,6 +30,7 @@
 }
 
 .vprop-header__title {
+  font-family: var(--font-heading);
   font-size: 2.25rem;
   font-weight: 800;
   color: #001C3E;
@@ -118,6 +120,7 @@
 }
 
 .vprop-reason__title {
+  font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 700;
   color: #001C3E;
@@ -131,10 +134,10 @@
 }
 
 .vprop-reason__num {
+  font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 800;
   color: var(--docker-blue);
-  font-family: monospace;
   letter-spacing: 0.02em;
   flex-shrink: 0;
 }

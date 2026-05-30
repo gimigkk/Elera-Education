@@ -29,6 +29,7 @@
   height: 28px;
   background: var(--docker-blue);
   color: var(--white);
+  font-family: var(--font-heading);
   font-weight: 800;
   font-size: 1.1rem;
   border-radius: 6px;
@@ -38,6 +39,7 @@
 }
 
 .navbar__logo-text {
+  font-family: var(--font-heading);
   font-weight: 800;
   font-size: 1.15rem;
   color: var(--navy-900);
