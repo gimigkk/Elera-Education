@@ -53,7 +53,7 @@ export function HeroSection() {
             <div className="edukeo-brand">
               {/* Main Headline — Contrasting Weights Title Case */}
               <h1 className="edukeo-brand__headline">
-                <span className="edukeo-brand__headline-sub">Bimbel Privat?</span>
+                <span className="edukeo-brand__headline-sub">Bimbel Privat Yogya?</span>
                 <span className="edukeo-brand__headline-main">Datang ke Rumah, Hasil Nyata</span>
               </h1>
 
