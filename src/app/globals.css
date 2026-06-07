@@ -16,10 +16,10 @@
   --gray-200: #E2E8F0;
   --gray-100: #F1F5F9;
   --gray-50: #F8FAFC;
-  --white: #FFFFFF;
+  --white: #F9FAFB;
 
   /* Docker's exact crisp border line color & contrast body bg */
-  --body-bg: #FFFFFF;
+  --body-bg: #F9FAFB;
   --border-color: #CBD5E1;
   --green-500: #22C55E;
   --green-400: #4ADE80;

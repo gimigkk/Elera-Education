@@ -36,7 +36,7 @@
   height: 100%;
   background-image:
     radial-gradient(#CBD5E1 1.2px, transparent 1.2px),
-    linear-gradient(to right, #FFFFFF 0%, #F1F5F9 100%);
+    linear-gradient(to right, #F9FAFB 0%, #F1F5F9 100%);
   background-size: 20px 20px, 100% 100%;
   z-index: 1;
 }
@@ -292,7 +292,7 @@
   inset: 0;
   background-image:
     radial-gradient(#CBD5E1 1.2px, transparent 1.2px),
-    linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);
+    linear-gradient(135deg, #F9FAFB 0%, #F1F5F9 100%);
   background-size: 20px 20px, 100% 100%;
   z-index: 0;
 }

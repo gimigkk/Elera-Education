@@ -1,4 +1,4 @@
-/* ===== FOOTER SECTION (Docker 1px Grid Aesthetic) ===== */
+/* ===== FOOTER SECTION (Docker Style) ===== */
 .footer-section {
   width: 100%;
   background: var(--white);
@@ -140,10 +140,10 @@
   color: var(--gray-600);
 }
 
-/* ── Bottom Bar (Matching .pricing-registration) ── */
+/* ── Bottom Bar — Solid #2E60FF Blue ── */
 .footer-bottom {
   border-top: 1px solid var(--border-color);
-  background: var(--gray-50);
+  background: #2E60FF;
 }
 
 .footer-bottom__inner {
@@ -158,27 +158,26 @@
 .footer-bottom__copy {
   font-size: 0.82rem;
   font-weight: 500;
-  color: var(--gray-500);
+  color: rgba(255, 255, 255, 0.9);
   margin: 0;
 }
 
 .footer-bottom__tagline {
   font-size: 0.82rem;
   font-weight: 500;
-  color: var(--gray-500);
+  color: rgba(255, 255, 255, 0.9);
   margin: 0;
 }
 
 .footer-bottom__dev-link {
-  color: var(--navy-900);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.15s ease;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-decoration: underline;
+  transition: opacity 0.15s ease;
 }
 
 .footer-bottom__dev-link:hover {
-  color: var(--docker-blue);
-  text-decoration: underline;
+  opacity: 0.85;
 }
 
 /* ── Responsive (< 960px) ── */
