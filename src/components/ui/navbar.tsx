@@ -14,8 +14,8 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Keunggulan", href: "#keunggulan" },
-    { label: "Biaya Les", href: "#harga" },
-    { label: "Tentor", href: "#hero" },
+    { label: "Biaya Les", href: "#biaya" },
+    { label: "Layanan & Jangkauan", href: "#cta" },
   ];
 
   return (

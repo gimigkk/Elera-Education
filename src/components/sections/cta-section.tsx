@@ -19,7 +19,7 @@ export function CtaSection() {
               Siap Tingkatkan Prestasi Belajar Anak Anda?
             </h2>
             <p className="cta-header__subtitle">
-              Tentor Elera Education siap datang langsung ke rumah di seluruh area Kota Yogyakarta. Konsultasikan kebutuhan belajar putra-putri Anda secara gratis.
+              Tentor Elera Education siap datang langsung ke rumah di seluruh area Daerah Istimewa Yogyakarta (D.I. Yogyakarta). Konsultasikan kebutuhan belajar putra-putri Anda secara gratis.
             </p>
 
             <div className="cta-actions">
@@ -38,8 +38,8 @@ export function CtaSection() {
 
         <div className="cta-map-cell">
           <iframe
-            title="Peta Wilayah Layanan Elera Education Kota Yogyakarta"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63245.97077307044!2d110.33982534863281!3d-7.797068000000002!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787bd68ce71%3A0xd00a16344c38d777!2sYogyakarta%2C%20Yogyakarta%20City%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+            title="Peta Wilayah Layanan Elera Education D.I. Yogyakarta"
+            src="https://maps.google.com/maps?q=Daerah%20Istimewa%20Yogyakarta&t=&z=10&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -57,7 +57,7 @@ export function CtaSection() {
           <span className="cta-bottom-bar__label">Jangkauan & Layanan</span>
           <div className="cta-bottom-bar__info">
             <span className="cta-bottom-bar__item">
-              Area: <strong>Seluruh Kota Yogyakarta</strong>
+              Area: <strong>D.I. Yogyakarta</strong>
             </span>
             <span className="cta-bottom-bar__divider">·</span>
             <span className="cta-bottom-bar__item">
