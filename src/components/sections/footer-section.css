@@ -1,0 +1,209 @@
+/* ===== FOOTER SECTION (Docker 1px Grid Aesthetic) ===== */
+.footer-section {
+  width: 100%;
+  background: var(--white);
+  border-bottom: none;
+}
+
+/* ── Top 4-Column Docker Grid ── */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  padding: 3.5rem 2rem 3rem;
+  background: var(--white);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-col--brand {
+  gap: 1.1rem;
+}
+
+/* Brand Logo in Footer */
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.footer__logo-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--docker-blue);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__logo-text {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--navy-900);
+  letter-spacing: -0.03em;
+}
+
+.footer__logo-sub {
+  color: var(--docker-blue);
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.footer__desc {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 340px;
+}
+
+.footer__contact {
+  display: flex;
+  align-items: center;
+  margin-top: 0.2rem;
+}
+
+.footer-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  height: 36px;
+  padding: 0 1rem;
+  background: var(--white);
+  color: var(--navy-900);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.82rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.footer-wa-btn:hover {
+  border-color: var(--docker-blue);
+  color: var(--docker-blue);
+  background: var(--docker-blue-50);
+}
+
+.footer-wa-btn__icon {
+  font-size: 1rem;
+  color: #25D366;
+}
+
+/* Column Headings & Lists */
+.footer__col-title {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #001C3E;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footer__link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer__link:hover {
+  color: var(--docker-blue);
+}
+
+.footer__item-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray-600);
+}
+
+/* ── Bottom Bar (Matching .pricing-registration) ── */
+.footer-bottom {
+  border-top: 1px solid var(--border-color);
+  background: var(--gray-50);
+}
+
+.footer-bottom__inner {
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-bottom__copy {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gray-500);
+  margin: 0;
+}
+
+.footer-bottom__tagline {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gray-500);
+  margin: 0;
+}
+
+.footer-bottom__dev-link {
+  color: var(--navy-900);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-bottom__dev-link:hover {
+  color: var(--docker-blue);
+  text-decoration: underline;
+}
+
+/* ── Responsive (< 960px) ── */
+@media (max-width: 960px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem 2rem;
+  }
+
+  .footer-col--brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom__inner {
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.35rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}

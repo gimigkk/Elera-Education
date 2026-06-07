@@ -1,7 +1,7 @@
 "use client";
 
 import "./pricing-section.css";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
   schoolTiers,
   pricingWhatsApp,
@@ -16,6 +16,21 @@ function formatRupiah(n: number): string {
 export function PricingSection() {
   const [activeTier, setActiveTier] = useState<SchoolTierKey>("SD");
   const [activeGradeIdx, setActiveGradeIdx] = useState(0);
+
+  useEffect(() => {
+    const handleSelectPricing = (e: Event) => {
+      const customEvent = e as CustomEvent<{ tier: SchoolTierKey; gradeIdx?: number }>;
+      if (customEvent.detail?.tier) {
+        setActiveTier(customEvent.detail.tier);
+        setActiveGradeIdx(customEvent.detail.gradeIdx ?? 0);
+      }
+    };
+
+    window.addEventListener("select-pricing-tier", handleSelectPricing);
+    return () => {
+      window.removeEventListener("select-pricing-tier", handleSelectPricing);
+    };
+  }, []);
 
   const tier = useMemo(
     () => schoolTiers.find((t) => t.key === activeTier)!,
