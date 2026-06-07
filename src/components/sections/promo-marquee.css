@@ -70,3 +70,18 @@
   font-weight: 700;
   margin-left: 1rem;
 }
+
+@media (max-width: 768px) {
+  .promo-marquee-section {
+    height: 34px;
+  }
+
+  .promo-marquee__text {
+    font-size: 0.75rem;
+  }
+
+  .promo-marquee__sep {
+    font-size: 0.8rem;
+    margin-left: 0.6rem;
+  }
+}

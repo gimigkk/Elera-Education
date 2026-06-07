@@ -101,3 +101,34 @@
     transform: translateX(calc(-260px * 5));
   }
 }
+
+@media (max-width: 768px) {
+  .uni-marquee-cell {
+    width: 190px;
+    height: 56px;
+    padding: 0 0.85rem;
+  }
+
+  .uni-marquee-cell__inner {
+    gap: 0.6rem;
+  }
+
+  .uni-marquee-cell__logo-box,
+  .uni-marquee-cell__logo-mask {
+    width: 28px;
+    height: 28px;
+  }
+
+  .uni-marquee-cell__line {
+    font-size: 0.72rem;
+  }
+
+  @keyframes uniMarquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-190px * 5));
+    }
+  }
+}
