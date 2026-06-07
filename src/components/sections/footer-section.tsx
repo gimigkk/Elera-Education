@@ -5,6 +5,8 @@ import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa6";
 import { heroCTA } from "@/data/hero";
 
+import { EleraLogoIcon } from "@/components/ui/elera-logo";
+
 export function FooterSection() {
   const whatsappUrl = `https://wa.me/${heroCTA.ctaWhatsAppNumber}?text=${encodeURIComponent(heroCTA.ctaWhatsAppMessage)}`;
 
@@ -32,10 +34,11 @@ export function FooterSection() {
         {/* Col 1: Brand & Contact Info */}
         <div className="footer-col footer-col--brand">
           <Link href="/" className="footer__logo">
-            <span className="footer__logo-icon">e</span>
-            <span className="footer__logo-text">
-              elera<span className="footer__logo-sub">education</span>
-            </span>
+            <EleraLogoIcon className="footer__logo-svg" />
+            <div className="footer__logo-brand">
+              <span className="footer__logo-title">Elera Education</span>
+              <span className="footer__logo-sub">Yogyakarta</span>
+            </div>
           </Link>
 
           <p className="footer__desc">

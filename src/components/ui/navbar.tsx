@@ -6,6 +6,8 @@ import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa6";
 import { heroCTA } from "@/data/hero";
 
+import { EleraLogoIcon } from "./elera-logo";
+
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const whatsappUrl = `https://wa.me/${heroCTA.ctaWhatsAppNumber}?text=${encodeURIComponent(heroCTA.ctaWhatsAppMessage)}`;
@@ -21,10 +23,11 @@ export function Navbar() {
       <div className="navbar__inner">
         {/* Left: Brand Logo */}
         <Link href="/" className="navbar__logo" onClick={() => setMobileMenuOpen(false)}>
-          <span className="navbar__logo-icon">e</span>
-          <span className="navbar__logo-text">
-            elera<span className="navbar__logo-sub">education</span>
-          </span>
+          <EleraLogoIcon className="navbar__logo-svg" />
+          <div className="navbar__logo-brand">
+            <span className="navbar__logo-title">Elera Education</span>
+            <span className="navbar__logo-sub">Yogyakarta</span>
+          </div>
         </Link>
 
         {/* Center: Perfectly Centered Navlinks */}
