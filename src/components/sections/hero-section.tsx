@@ -3,7 +3,7 @@
 import "./hero-section.css";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { starTutor, heroCTA } from "@/data/hero";
+import { starTutors, heroCTA } from "@/data/hero";
 import { Navbar } from "@/components/ui/navbar";
 
 const heroSlides = [
@@ -39,12 +39,20 @@ const heroSlides = [
 
 export function HeroSection() {
   const [featureIndex, setFeatureIndex] = useState(0);
+  const [tutorIndex, setTutorIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setFeatureIndex((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const tutorTimer = setInterval(() => {
+      setTutorIndex((prev) => (prev + 1) % starTutors.length);
+    }, 5000);
+    return () => clearInterval(tutorTimer);
   }, []);
 
   return (
@@ -57,31 +65,45 @@ export function HeroSection() {
 
         {/* ===================== DESKTOP LAYOUT ===================== */}
         <div className="hero-desktop">
-          {/* Layer 0: Background image */}
+          {/* Layer 0: Background image Carousel */}
           <div className="hero-container__bg">
-            <Image
-              src="/images/hero/test bg.png"
-              alt="Campus background"
-              fill
-              priority
-              sizes="(max-width: 1240px) 100vw, 1240px"
-              style={{ objectFit: "cover", objectPosition: "center" }}
-            />
+            {starTutors.map((tutor, index) => (
+              <div
+                key={index}
+                className={`hero-container__bg-slide ${index === tutorIndex ? "active" : ""}`}
+              >
+                <Image
+                  src={tutor.bgUrl || "/images/hero/test bg.png"}
+                  alt={`${tutor.name} background`}
+                  fill
+                  priority
+                  sizes="(max-width: 1240px) 100vw, 1240px"
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                />
+              </div>
+            ))}
           </div>
 
           {/* Layer 1: Left white dot-grid panel */}
           <div className="hero-container__overlay" />
 
-          {/* Layer 2: Girl cutout centered at split */}
+          {/* Layer 2: Tutor Cutout Carousel centered at split */}
           <div className="hero-container__girl">
-            <Image
-              src="/images/hero/Girl test.png"
-              alt={starTutor.name}
-              fill
-              priority
-              sizes="500px"
-              style={{ objectFit: "contain", objectPosition: "top center" }}
-            />
+            {starTutors.map((tutor, index) => (
+              <div
+                key={index}
+                className={`hero-container__girl-slide ${index === tutorIndex ? "active" : ""}`}
+              >
+                <Image
+                  src={tutor.photoUrl}
+                  alt={tutor.name}
+                  fill
+                  priority
+                  sizes="500px"
+                  style={{ objectFit: "contain", objectPosition: "top center" }}
+                />
+              </div>
+            ))}
           </div>
 
           {/* Layer 2.5: Corner Text Markers */}
@@ -112,33 +134,88 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* RIGHT — Star Tutor */}
+            {/* RIGHT — Star Tutor Carousel (Staggered Slot Machine Reel) */}
             <div className="hero-container__right">
               <div className="hero-container__right-inner">
-                <div className="tutor-clean">
-                  <div className="tutor-clean__header">
-                    <h2 className="tutor-clean__name">{starTutor.name}</h2>
-                    <p className="tutor-clean__uni">{starTutor.university}</p>
-                  </div>
-                  <div className="tutor-clean__stats">
-                    <div className="tutor-clean__stat">
-                      <span className="tutor-clean__stat-val">{starTutor.gpa.toFixed(2)}</span>
-                      <span className="tutor-clean__stat-lbl">IPK</span>
-                    </div>
-                    <div className="tutor-clean__stat">
-                      <span className="tutor-clean__stat-val">+{starTutor.studentsCount}</span>
-                      <span className="tutor-clean__stat-lbl">Siswa</span>
-                    </div>
-                    <div className="tutor-clean__stat">
-                      <span className="tutor-clean__stat-val">+{starTutor.yearsExperience}</span>
-                      <span className="tutor-clean__stat-lbl">Tahun</span>
+                <div className="tutor-slot">
+                  {/* Header Line Viewport (Name + University) */}
+                  <div className="tutor-slot__viewport tutor-slot__viewport--header">
+                    <div
+                      className="tutor-slot__wrapper tutor-slot__wrapper--header"
+                      style={{ transform: `translateY(-${tutorIndex * 72}px)` }}
+                    >
+                      {starTutors.map((tutor, i) => (
+                        <div key={i} className="tutor-slot__item tutor-slot__item--header">
+                          <div className="tutor-clean__header">
+                            <h2 className="tutor-clean__name">{tutor.name}</h2>
+                            <p className="tutor-clean__uni">{tutor.university}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <div className="tutor-clean__tags">
-                    {starTutor.subjects.map((sub, i) => (
-                      <span key={i} className="tutor-clean__chip">{sub}</span>
-                    ))}
+
+                  {/* Stats Line Viewport */}
+                  <div className="tutor-slot__viewport tutor-slot__viewport--stats">
+                    <div
+                      className="tutor-slot__wrapper tutor-slot__wrapper--stats"
+                      style={{ transform: `translateY(-${tutorIndex * 60}px)` }}
+                    >
+                      {starTutors.map((tutor, i) => (
+                        <div key={i} className="tutor-slot__item tutor-slot__item--stats">
+                          <div className="tutor-clean__stats">
+                            <div className="tutor-clean__stat">
+                              <span className="tutor-clean__stat-val">{tutor.gpa.toFixed(2)}</span>
+                              <span className="tutor-clean__stat-lbl">IPK</span>
+                            </div>
+                            <div className="tutor-clean__stat">
+                              <span className="tutor-clean__stat-val">+{tutor.studentsCount}</span>
+                              <span className="tutor-clean__stat-lbl">Siswa</span>
+                            </div>
+                            <div className="tutor-clean__stat">
+                              <span className="tutor-clean__stat-val">+{tutor.yearsExperience}</span>
+                              <span className="tutor-clean__stat-lbl">Tahun</span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
+
+                  {/* Chips Line Viewport */}
+                  <div className="tutor-slot__viewport tutor-slot__viewport--chips">
+                    <div
+                      className="tutor-slot__wrapper tutor-slot__wrapper--chips"
+                      style={{ transform: `translateY(-${tutorIndex * 38}px)` }}
+                    >
+                      {starTutors.map((tutor, i) => (
+                        <div key={i} className="tutor-slot__item tutor-slot__item--chips">
+                          <div className="tutor-clean__tags">
+                            {tutor.subjects.map((sub, j) => (
+                              <span key={j} className="tutor-clean__chip">{sub}</span>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tutor Carousel Indicators (Countdown Progress Bar) */}
+                <div className="tutor-carousel__controls">
+                  {starTutors.map((_, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      onClick={() => setTutorIndex(index)}
+                      className={`tutor-carousel__dot ${index === tutorIndex ? "active" : ""}`}
+                      aria-label={`Lihat tentor ${index + 1}`}
+                    >
+                      {index === tutorIndex && (
+                        <span key={tutorIndex} className="tutor-carousel__dot-fill" />
+                      )}
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>
@@ -213,51 +290,123 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* ROW 2: Tutor — girl left, meta right */}
+          {/* ROW 2: Tutor — cutout left, meta right */}
           <div className="hero-mobile__tutor">
-            {/* Background photo */}
+            {/* Background photo Carousel */}
             <div className="hero-mobile__tutor-bg">
-              <Image
-                src="/images/hero/test bg.png"
-                alt="Campus background"
-                fill
-                priority
-                sizes="100vw"
-                style={{ objectFit: "cover", objectPosition: "center" }}
-              />
+              {starTutors.map((tutor, index) => (
+                <div
+                  key={index}
+                  className={`hero-mobile__bg-slide ${index === tutorIndex ? "active" : ""}`}
+                >
+                  <Image
+                    src={tutor.bgUrl || "/images/hero/test bg.png"}
+                    alt={`${tutor.name} background`}
+                    fill
+                    priority
+                    sizes="100vw"
+                    style={{ objectFit: "cover", objectPosition: "center" }}
+                  />
+                </div>
+              ))}
             </div>
-            {/* Girl image — left side */}
+            {/* Tutor Cutout Carousel — left side */}
             <div className="hero-mobile__girl">
-              <Image
-                src="/images/hero/Girl test.png"
-                alt={starTutor.name}
-                fill
-                priority
-                sizes="50vw"
-                style={{ objectFit: "contain", objectPosition: "bottom center" }}
-              />
+              {starTutors.map((tutor, index) => (
+                <div
+                  key={index}
+                  className={`hero-mobile__girl-slide ${index === tutorIndex ? "active" : ""}`}
+                >
+                  <Image
+                    src={tutor.photoUrl}
+                    alt={tutor.name}
+                    fill
+                    priority
+                    sizes="50vw"
+                    style={{ objectFit: "contain", objectPosition: "bottom center" }}
+                  />
+                </div>
+              ))}
             </div>
-            {/* Tutor meta — right side */}
+            {/* Tutor Meta Carousel — right side (Staggered Slot Machine Reel) */}
             <div className="hero-mobile__meta">
-              <div className="hero-mobile__meta-name">{starTutor.name}</div>
-              <div className="hero-mobile__meta-uni">{starTutor.university}</div>
-              <div className="hero-mobile__meta-stats">
-                <div className="hero-mobile__stat">
-                  <span className="hero-mobile__stat-val">{starTutor.gpa.toFixed(2)}</span>
-                  <span className="hero-mobile__stat-lbl">IPK</span>
+              <div className="hero-mobile__tutor-slot">
+                {/* Header Slot (Name + Uni) */}
+                <div className="hero-mobile__tutor-viewport hero-mobile__tutor-viewport--header">
+                  <div
+                    className="hero-mobile__tutor-wrapper hero-mobile__tutor-wrapper--header"
+                    style={{ transform: `translateY(-${tutorIndex * 52}px)` }}
+                  >
+                    {starTutors.map((tutor, i) => (
+                      <div key={i} className="hero-mobile__tutor-item hero-mobile__tutor-item--header">
+                        <div className="hero-mobile__meta-header">
+                          <div className="hero-mobile__meta-name">{tutor.name}</div>
+                          <div className="hero-mobile__meta-uni">{tutor.university}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="hero-mobile__stat">
-                  <span className="hero-mobile__stat-val">+{starTutor.studentsCount}</span>
-                  <span className="hero-mobile__stat-lbl">Siswa</span>
+
+                {/* Stats Slot */}
+                <div className="hero-mobile__tutor-viewport hero-mobile__tutor-viewport--stats">
+                  <div
+                    className="hero-mobile__tutor-wrapper hero-mobile__tutor-wrapper--stats"
+                    style={{ transform: `translateY(-${tutorIndex * 48}px)` }}
+                  >
+                    {starTutors.map((tutor, i) => (
+                      <div key={i} className="hero-mobile__tutor-item hero-mobile__tutor-item--stats">
+                        <div className="hero-mobile__meta-stats">
+                          <div className="hero-mobile__stat">
+                            <span className="hero-mobile__stat-val">{tutor.gpa.toFixed(2)}</span>
+                            <span className="hero-mobile__stat-lbl">IPK</span>
+                          </div>
+                          <div className="hero-mobile__stat">
+                            <span className="hero-mobile__stat-val">+{tutor.studentsCount}</span>
+                            <span className="hero-mobile__stat-lbl">Siswa</span>
+                          </div>
+                          <div className="hero-mobile__stat">
+                            <span className="hero-mobile__stat-val">+{tutor.yearsExperience}</span>
+                            <span className="hero-mobile__stat-lbl">Tahun</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="hero-mobile__stat">
-                  <span className="hero-mobile__stat-val">+{starTutor.yearsExperience}</span>
-                  <span className="hero-mobile__stat-lbl">Tahun</span>
+
+                {/* Chips Slot */}
+                <div className="hero-mobile__tutor-viewport hero-mobile__tutor-viewport--chips">
+                  <div
+                    className="hero-mobile__tutor-wrapper hero-mobile__tutor-wrapper--chips"
+                    style={{ transform: `translateY(-${tutorIndex * 34}px)` }}
+                  >
+                    {starTutors.map((tutor, i) => (
+                      <div key={i} className="hero-mobile__tutor-item hero-mobile__tutor-item--chips">
+                        <div className="hero-mobile__chips">
+                          {tutor.subjects.map((sub, j) => (
+                            <span key={j} className="hero-mobile__chip">{sub}</span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <div className="hero-mobile__chips">
-                {starTutor.subjects.map((sub, i) => (
-                  <span key={i} className="hero-mobile__chip">{sub}</span>
+
+              <div className="hero-mobile__tutor-dots">
+                {starTutors.map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => setTutorIndex(index)}
+                    className={`hero-mobile__tutor-dot ${index === tutorIndex ? "active" : ""}`}
+                    aria-label={`Lihat tentor ${index + 1}`}
+                  >
+                    {index === tutorIndex && (
+                      <span key={tutorIndex} className="hero-mobile__tutor-dot-fill" />
+                    )}
+                  </button>
                 ))}
               </div>
             </div>
@@ -268,3 +417,4 @@ export function HeroSection() {
     </>
   );
 }
+

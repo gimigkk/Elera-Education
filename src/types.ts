@@ -48,6 +48,7 @@ export interface StarTutor {
   studentsCount: number;
   yearsExperience: number;
   photoUrl: string;
+  bgUrl?: string;
   quote?: string;
 }
 
