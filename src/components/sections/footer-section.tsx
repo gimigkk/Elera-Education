@@ -105,7 +105,7 @@ export function FooterSection() {
                 className="footer__link"
                 onClick={(e) => handleProgramClick(e, "SD", 2)}
               >
-                SD Kelas 6 (Pendampingan Ujian)
+                SD Kelas 6 (Ujian)
               </a>
             </li>
             <li>
