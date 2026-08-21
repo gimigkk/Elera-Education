@@ -71,38 +71,38 @@
   max-width: 340px;
 }
 
-.footer__contact {
+.footer__socials {
   display: flex;
   align-items: center;
-  margin-top: 0.2rem;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
 }
 
-.footer-wa-btn {
+.footer-social-icon {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  justify-content: center;
+  width: 36px;
   height: 36px;
-  padding: 0 1rem;
+  border-radius: 5px;
   background: var(--white);
   color: var(--navy-900);
   border: 1px solid var(--border-color);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.82rem;
-  border-radius: 5px;
+  font-size: 1.1rem;
   text-decoration: none;
   transition: all 0.15s ease;
 }
 
-.footer-wa-btn:hover {
-  border-color: var(--docker-blue);
-  color: var(--docker-blue);
-  background: var(--docker-blue-50);
+.footer-social-icon--wa:hover {
+  border-color: #25D366;
+  color: #25D366;
+  background: #F0FDF4;
 }
 
-.footer-wa-btn__icon {
-  font-size: 1rem;
-  color: #25D366;
+.footer-social-icon--ig:hover {
+  border-color: #E4405F;
+  color: #E4405F;
+  background: #FFF5F7;
 }
 
 /* Column Headings & Lists */

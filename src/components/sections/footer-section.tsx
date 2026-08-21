@@ -2,13 +2,14 @@
 
 import "./footer-section.css";
 import Link from "next/link";
-import { FaWhatsapp } from "react-icons/fa6";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa6";
 import { heroCTA } from "@/data/hero";
 
 import { EleraLogoIcon } from "@/components/ui/elera-logo";
 
 export function FooterSection() {
   const whatsappUrl = `https://wa.me/${heroCTA.ctaWhatsAppNumber}?text=${encodeURIComponent(heroCTA.ctaWhatsAppMessage)}`;
+  const instagramUrl = "https://www.instagram.com/elera.education.jogja/";
 
   const handleProgramClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -45,15 +46,24 @@ export function FooterSection() {
             Bimbel Panggilan Privat Terbaik di Yogyakarta. Tentor datang ke rumah, jadwal fleksibel, dan pendampingan kurikulum terpersonalisasi untuk TK hingga SMP.
           </p>
 
-          <div className="footer__contact">
+          <div className="footer__socials">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-wa-btn"
+              className="footer-social-icon footer-social-icon--wa"
+              aria-label="WhatsApp Elera Education"
             >
-              <FaWhatsapp className="footer-wa-btn__icon" />
-              <span>+62 812-9387-076</span>
+              <FaWhatsapp />
+            </a>
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-icon footer-social-icon--ig"
+              aria-label="Instagram Elera Education Jogja"
+            >
+              <FaInstagram />
             </a>
           </div>
         </div>
@@ -129,7 +139,7 @@ export function FooterSection() {
             <li><a href="#keunggulan" className="footer__link">Tentor Datang Ke Rumah</a></li>
             <li><a href="#keunggulan" className="footer__link">Jadwal Fleksibel</a></li>
             <li><a href="#keunggulan" className="footer__link">Free Konsultasi PR</a></li>
-            <li><a href="#cta" className="footer__link">Area Kota Yogyakarta</a></li>
+            <li><a href="#cta" className="footer__link">Area D.I. Yogyakarta</a></li>
             <li><a href="#cta" className="footer__link">Konsultasi via WhatsApp</a></li>
           </ul>
         </div>

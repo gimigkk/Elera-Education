@@ -3,7 +3,7 @@
 import { useState } from "react";
 import "./navbar.css";
 import Link from "next/link";
-import { FaWhatsapp } from "react-icons/fa6";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa6";
 import { heroCTA } from "@/data/hero";
 
 import { EleraLogoIcon } from "./elera-logo";
@@ -11,6 +11,7 @@ import { EleraLogoIcon } from "./elera-logo";
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const whatsappUrl = `https://wa.me/${heroCTA.ctaWhatsAppNumber}?text=${encodeURIComponent(heroCTA.ctaWhatsAppMessage)}`;
+  const instagramUrl = "https://www.instagram.com/elera.education.jogja/";
 
   const navLinks = [
     { label: "Keunggulan", href: "#keunggulan" },
@@ -41,6 +42,16 @@ export function Navbar() {
 
         {/* Right: CTA & Mobile Toggle */}
         <div className="navbar__actions">
+          <a
+            href={instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="navbar__ig-btn"
+            aria-label="Instagram Elera Education Jogja"
+          >
+            <FaInstagram />
+          </a>
+
           <a
             href={whatsappUrl}
             target="_blank"
@@ -79,6 +90,16 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar__mobile-ig"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <FaInstagram className="navbar__cta-icon" />
+              <span>Instagram @elera.education.jogja</span>
+            </a>
             <a
               href={whatsappUrl}
               target="_blank"
