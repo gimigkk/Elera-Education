@@ -8,8 +8,9 @@
 /* ── Top 4-Column Docker Grid ── */
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 1.75fr 1fr 1fr 1fr;
+  column-gap: 4rem;
+  row-gap: 2.5rem;
   padding: 3.5rem 2rem 3rem;
   background: var(--white);
 }
@@ -22,6 +23,7 @@
 
 .footer-col--brand {
   gap: 1.1rem;
+  padding-right: 1rem;
 }
 
 /* Brand Logo in Footer */
