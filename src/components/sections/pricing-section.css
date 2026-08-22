@@ -497,7 +497,6 @@
   display: inline-flex;
   align-items: baseline;
   white-space: nowrap;
-  will-change: transform, opacity;
 }
 
 .slot-viewport--p .slot-item,

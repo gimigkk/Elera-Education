@@ -32,12 +32,38 @@
   );
 }
 
+/* Firefox High-Performance Gradient Overlay (Replaces CPU-bound mask-image in Gecko) */
+@supports (-moz-appearance: none) {
+  .promo-marquee-track-wrapper {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+  }
+  .promo-marquee-track-wrapper::before,
+  .promo-marquee-track-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 48px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .promo-marquee-track-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--docker-blue), transparent);
+  }
+  .promo-marquee-track-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--docker-blue), transparent);
+  }
+}
+
 .promo-marquee-track {
   display: flex;
   width: max-content;
   align-items: center;
   animation: promoMarqueeRight 150s linear infinite;
-  will-change: transform;
+  transform: translateZ(0);
 }
 
 @keyframes promoMarqueeRight {
