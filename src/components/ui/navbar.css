@@ -126,13 +126,14 @@
   width: 16px;
   height: 16px;
   fill: currentColor;
-  color: #000000;
+  color: inherit;
   flex-shrink: 0;
 }
 
 .navbar__cta:hover {
-  border-color: #000000;
-  color: #000000;
+  border-color: #25D366;
+  color: #25D366;
+  background: #F0FDF4;
 }
 
 /* Responsive Breakdown */
