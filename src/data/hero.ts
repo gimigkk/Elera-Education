@@ -34,6 +34,17 @@ export const starTutors: StarTutor[] = [
     bgUrl: "/images/hero/bg-3.png",
     quote: "Membuat belajar terasa menyenangkan dan mudah dipahami sesuai ritme anak.",
   },
+  {
+    name: "Aulia Azzahra",
+    university: "UGM - S1 Sastra Inggris",
+    gpa: 3.91,
+    subjects: ["B.Ing", "IPA", "MTK"],
+    studentsCount: 145,
+    yearsExperience: 3,
+    photoUrl: "/images/hero/tutor-4.png",
+    bgUrl: "/images/hero/bg-4.png",
+    quote: "Pendampingan belajar yang komunikatif dan terstruktur agar anak lebih percaya diri di sekolah.",
+  },
 ];
 
 export const starTutor = starTutors[0];

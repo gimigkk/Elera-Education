@@ -100,7 +100,7 @@ export function HeroSection() {
                   fill
                   priority
                   sizes="500px"
-                  style={{ objectFit: "contain", objectPosition: "top center" }}
+                  style={{ objectFit: "contain", objectPosition: "bottom center" }}
                 />
               </div>
             ))}
