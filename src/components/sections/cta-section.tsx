@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa6";
 import { heroCTA } from "@/data/hero";
 import { FloatUp } from "@/components/ui/float-up";
+import { Tooltip } from "@/components/ui/tooltip";
 
 export function CtaSection() {
   const [isMapLoaded, setIsMapLoaded] = useState(false);
@@ -33,15 +34,17 @@ export function CtaSection() {
             </FloatUp>
 
             <FloatUp delay={210} distance={14} className="cta-actions">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-btn-primary"
-              >
-                <FaWhatsapp className="cta-btn-primary__icon" />
-                <span>Konsultasi via WhatsApp</span>
-              </a>
+              <Tooltip content="Konsultasi Gratis via WhatsApp 💬" position="bottom">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-btn-primary"
+                >
+                  <FaWhatsapp className="cta-btn-primary__icon" />
+                  <span>Konsultasi via WhatsApp</span>
+                </a>
+              </Tooltip>
             </FloatUp>
           </div>
         </div>

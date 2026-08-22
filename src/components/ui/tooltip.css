@@ -1,0 +1,168 @@
+/* ===== Cute White Tooltip Component ===== */
+.cute-tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cute-tooltip {
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  background-color: #FFFFFF;
+  color: var(--navy-900, #0F172A);
+  border: 1px solid var(--border-color, #E2E8F0);
+  border-radius: 6px;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.2s;
+}
+
+/* ── Align Center (Default) ── */
+.cute-tooltip--align-center {
+  left: 50%;
+  right: auto;
+}
+
+.cute-tooltip--top.cute-tooltip--align-center {
+  bottom: 100%;
+  transform: translate(-50%, -4px) scale(0.95);
+  margin-bottom: 8px;
+}
+
+.cute-tooltip-wrapper:hover .cute-tooltip--top.cute-tooltip--align-center {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.cute-tooltip--bottom.cute-tooltip--align-center {
+  top: 100%;
+  transform: translate(-50%, 4px) scale(0.95);
+  margin-top: 8px;
+}
+
+.cute-tooltip-wrapper:hover .cute-tooltip--bottom.cute-tooltip--align-center {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0) scale(1);
+}
+
+/* ── Align Left (Left edge aligned to container left, arrow over trigger) ── */
+.cute-tooltip--align-left {
+  left: 0;
+  right: auto;
+}
+
+.cute-tooltip--top.cute-tooltip--align-left {
+  bottom: 100%;
+  transform: translateY(-4px) scale(0.95);
+  margin-bottom: 8px;
+}
+
+.cute-tooltip-wrapper:hover .cute-tooltip--top.cute-tooltip--align-left {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.cute-tooltip--bottom.cute-tooltip--align-left {
+  top: 100%;
+  transform: translateY(4px) scale(0.95);
+  margin-top: 8px;
+}
+
+.cute-tooltip-wrapper:hover .cute-tooltip--bottom.cute-tooltip--align-left {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* ── Align Right (Right edge aligned to container right, arrow over trigger) ── */
+.cute-tooltip--align-right {
+  left: auto;
+  right: 0;
+}
+
+.cute-tooltip--top.cute-tooltip--align-right {
+  bottom: 100%;
+  transform: translateY(-4px) scale(0.95);
+  margin-bottom: 8px;
+}
+
+.cute-tooltip-wrapper:hover .cute-tooltip--top.cute-tooltip--align-right {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.cute-tooltip--bottom.cute-tooltip--align-right {
+  top: 100%;
+  transform: translateY(4px) scale(0.95);
+  margin-top: 8px;
+}
+
+.cute-tooltip-wrapper:hover .cute-tooltip--bottom.cute-tooltip--align-right {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* ── Arrow Pointer Base ── */
+.cute-tooltip::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #FFFFFF;
+  transform: rotate(45deg);
+  border: 1px solid var(--border-color, #E2E8F0);
+  z-index: -1;
+}
+
+/* Arrow Top position (points down towards trigger) */
+.cute-tooltip--top::before {
+  bottom: -5px;
+  border-top: none;
+  border-left: none;
+}
+
+/* Arrow Bottom position (points up towards trigger) */
+.cute-tooltip--bottom::before {
+  top: -5px;
+  border-bottom: none;
+  border-right: none;
+}
+
+/* Arrow Horizontal Offsets */
+.cute-tooltip--align-center::before {
+  left: 50%;
+  right: auto;
+  margin-left: -4px;
+}
+
+.cute-tooltip--align-left::before {
+  left: 18px;
+  right: auto;
+  margin-left: -4px;
+}
+
+.cute-tooltip--align-right::before {
+  left: auto;
+  right: 18px;
+  margin-right: -4px;
+}

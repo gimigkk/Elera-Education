@@ -6,6 +6,8 @@ import { FaWhatsapp, FaInstagram } from "react-icons/fa6";
 import { heroCTA } from "@/data/hero";
 import { EleraLogoIcon } from "./elera-logo";
 
+import { Tooltip } from "@/components/ui/tooltip";
+
 export function Navbar() {
   const whatsappUrl = `https://wa.me/${heroCTA.ctaWhatsAppNumber}?text=${encodeURIComponent(heroCTA.ctaWhatsAppMessage)}`;
   const instagramUrl = "https://www.instagram.com/elera.education.jogja/";
@@ -39,28 +41,32 @@ export function Navbar() {
 
         {/* Right: Instagram & WhatsApp CTA Buttons */}
         <div className="navbar__actions">
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="navbar__ig-btn"
-            aria-label="Instagram Elera Education Jogja"
-          >
-            <FaInstagram />
-          </a>
+          <Tooltip content="@elera.education.jogja" position="bottom">
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar__ig-btn"
+              aria-label="Instagram Elera Education Jogja"
+            >
+              <FaInstagram />
+            </a>
+          </Tooltip>
 
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="navbar__cta"
-            aria-label="WhatsApp Elera Education Jogja"
-          >
-            <FaWhatsapp className="navbar__cta-icon" />
-            <span className="navbar__cta-text">
-              Hubungi <span className="navbar__cta-kami">Kami</span>
-            </span>
-          </a>
+          <Tooltip content="Chat WhatsApp Fast Response 💬" position="bottom" align="right">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar__cta"
+              aria-label="WhatsApp Elera Education Jogja"
+            >
+              <FaWhatsapp className="navbar__cta-icon" />
+              <span className="navbar__cta-text">
+                Hubungi <span className="navbar__cta-kami">Kami</span>
+              </span>
+            </a>
+          </Tooltip>
         </div>
       </div>
     </header>

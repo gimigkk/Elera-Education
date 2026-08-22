@@ -7,6 +7,7 @@ import { starTutors, heroCTA } from "@/data/hero";
 import { Navbar } from "@/components/ui/navbar";
 import { FloatUp } from "@/components/ui/float-up";
 import { FaWhatsapp } from "react-icons/fa6";
+import { Tooltip } from "@/components/ui/tooltip";
 
 const heroSlides = [
   {
@@ -149,16 +150,19 @@ export function HeroSection() {
                   <span className="edukeo-brand__headline-sub">Bimbel Privat Yogya?</span>
                   <span className="edukeo-brand__headline-main">Datang ke Rumah, Hasil Nyata</span>
                 </h1>
+
                 <div className="edukeo-brand__cta-wrap">
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hero-cta-btn"
-                  >
-                    <FaWhatsapp className="hero-cta-btn__icon" />
-                    <span>Konsultasi Sekarang</span>
-                  </a>
+                  <Tooltip content="Konsultasi Gratis via WhatsApp 💬" position="bottom">
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hero-cta-btn"
+                    >
+                      <FaWhatsapp className="hero-cta-btn__icon" />
+                      <span>Konsultasi Sekarang</span>
+                    </a>
+                  </Tooltip>
                 </div>
               </FloatUp>
             </div>

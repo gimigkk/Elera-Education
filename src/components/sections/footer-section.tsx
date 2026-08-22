@@ -6,6 +6,7 @@ import { FaWhatsapp, FaInstagram } from "react-icons/fa6";
 import { heroCTA } from "@/data/hero";
 
 import { EleraLogoIcon } from "@/components/ui/elera-logo";
+import { Tooltip } from "@/components/ui/tooltip";
 
 export function FooterSection() {
   const whatsappUrl = `https://wa.me/${heroCTA.ctaWhatsAppNumber}?text=${encodeURIComponent(heroCTA.ctaWhatsAppMessage)}`;
@@ -44,24 +45,29 @@ export function FooterSection() {
             </Link>
 
             <div className="footer__socials">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-social-icon footer-social-icon--wa"
-                aria-label="WhatsApp Elera Education"
-              >
-                <FaWhatsapp />
-              </a>
-              <a
-                href={instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-social-icon footer-social-icon--ig"
-                aria-label="Instagram Elera Education Jogja"
-              >
-                <FaInstagram />
-              </a>
+              <Tooltip content="+62 812-9387-076" position="top" align="left">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-social-icon footer-social-icon--wa"
+                  aria-label="WhatsApp Elera Education"
+                >
+                  <FaWhatsapp />
+                </a>
+              </Tooltip>
+
+              <Tooltip content="@elera.education.jogja" position="top" align="left">
+                <a
+                  href={instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-social-icon footer-social-icon--ig"
+                  aria-label="Instagram Elera Education Jogja"
+                >
+                  <FaInstagram />
+                </a>
+              </Tooltip>
             </div>
           </div>
 
@@ -155,14 +161,16 @@ export function FooterSection() {
           </p>
           <p className="footer-bottom__tagline">
             Developed with ♡ by{" "}
-            <a
-              href="https://gimiaw.web.id"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-bottom__dev-link"
-            >
-              @gimigkk
-            </a>
+            <Tooltip content="Visit Portfolio 🚀" position="top">
+              <a
+                href="https://gimiaw.web.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-bottom__dev-link"
+              >
+                @gimigkk
+              </a>
+            </Tooltip>
           </p>
         </div>
       </div>
