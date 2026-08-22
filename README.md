@@ -4,7 +4,7 @@ A modern, high-performance landing page and brand experience designed as a **con
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project explores a complete digital brand transformation for Elera Education. It combines real-world business requirements (verbatim pricing tier specs, tutor profiles, service area mapping, and lead capture) with a high-fidelity, structural design system engineered for visual clarity and conversion.
 
@@ -13,7 +13,7 @@ This project explores a complete digital brand transformation for Elera Educatio
 
 ---
 
-## 🎨 Design System & Aesthetic Philosophy
+## Design System & Aesthetic Philosophy
 
 The visual language of this application is heavily inferred from **Docker’s web design system** ([docker.com](https://www.docker.com)), built upon three core principles:
 
@@ -32,18 +32,18 @@ The visual language of this application is heavily inferred from **Docker’s we
 
 ---
 
-## ✨ Key Technical & UI Features
+## Key Technical & UI Features
 
-- 🎭 **3D Tutor Cutout Rotations**: Orthographic 3D Y-axis card-flip transitions (`cubic-bezier(0.34, 1.56, 0.64, 1)`) for hero tutor spotlight cutouts with zero perspective distortion.
-- 🎰 **Zero-Layout-Shift `SlotReel` Component**: CSS Grid-stacked layout (`grid-template-areas: "slot"`) ensuring seamless vertical roll-in/roll-out text and price transitions without shifting neighboring element geometry.
-- 🎠 **Synchronized Slot-Machine Tutor Reel**: Auto-playing star tutor carousel with staggered metadata transitions (header, experience chips, and rating stats).
-- 🏷️ **Verbatim Pricing Source of Truth**: Full markdown-backed pricing model extracted directly from official program specifications for SD, SMP, and SMA grade tiers.
-- 🗺️ **Geographical Service Mapping**: Interactive map integration and CTA section tailored specifically to D.I. Yogyakarta coverage areas.
-- ⚡ **Next.js 16 + Turbopack**: Blazing-fast static compilation, optimized asset loading, and client-side page rendering.
+- **3D Tutor Cutout Rotations**: Orthographic 3D Y-axis card-flip transitions (`cubic-bezier(0.34, 1.56, 0.64, 1)`) for hero tutor spotlight cutouts with zero perspective distortion.
+- **Zero-Layout-Shift `SlotReel` Component**: CSS Grid-stacked layout (`grid-template-areas: "slot"`) ensuring seamless vertical roll-in/roll-out text and price transitions without shifting neighboring element geometry.
+- **Synchronized Slot-Machine Tutor Reel**: Auto-playing star tutor carousel with staggered metadata transitions (header, experience chips, and rating stats).
+- **Verbatim Pricing Source of Truth**: Full markdown-backed pricing model extracted directly from official program specifications for SD, SMP, and SMA grade tiers.
+- **Geographical Service Mapping**: Interactive map integration and CTA section tailored specifically to D.I. Yogyakarta coverage areas.
+- **Next.js 16 + Turbopack**: Blazing-fast static compilation, optimized asset loading, and client-side page rendering.
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Layer | Technology |
 | :--- | :--- |
@@ -56,7 +56,7 @@ The visual language of this application is heavily inferred from **Docker’s we
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 ├── src/
@@ -80,7 +80,7 @@ The visual language of this application is heavily inferred from **Docker’s we
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -122,6 +122,6 @@ npm run start
 
 ---
 
-## 📄 License & Disclaimer
+## License & Disclaimer
 
 This project is created as an independent UI/UX concept study case for **Elera Education**. All brand names, program details, and media assets belong to their respective owners.
