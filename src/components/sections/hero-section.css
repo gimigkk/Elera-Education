@@ -40,7 +40,7 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
 }
 
 .hero-container__bg-slide.active {
@@ -646,7 +646,7 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
 }
 
 .hero-mobile__bg-slide.active {

@@ -159,7 +159,7 @@ export function FooterSection() {
           <p className="footer-bottom__copy">
             © {new Date().getFullYear()} Elera Education. All rights reserved.
           </p>
-          <p className="footer-bottom__tagline">
+          <div className="footer-bottom__tagline">
             Developed with ♡ by{" "}
             <Tooltip content="Visit Portfolio 🚀" position="top">
               <a
@@ -171,7 +171,7 @@ export function FooterSection() {
                 @gimigkk
               </a>
             </Tooltip>
-          </p>
+          </div>
         </div>
       </div>
     </footer>

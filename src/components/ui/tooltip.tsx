@@ -19,14 +19,14 @@ export function Tooltip({
   className = "",
 }: TooltipProps) {
   return (
-    <div className={`cute-tooltip-wrapper ${className}`}>
+    <span className={`cute-tooltip-wrapper ${className}`}>
       {children}
-      <div
+      <span
         className={`cute-tooltip cute-tooltip--${position} cute-tooltip--align-${align}`}
         role="tooltip"
       >
         <span className="cute-tooltip__content">{content}</span>
-      </div>
-    </div>
+      </span>
+    </span>
   );
 }
