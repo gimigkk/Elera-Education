@@ -73,10 +73,11 @@ h1, h2, h3, h4, h5, h6 {
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
   min-height: 100vh;
-  overflow-x: hidden;
+  /* Use clip instead of hidden so position: sticky on navbar is not broken */
+  overflow-x: clip;
 }
 
-/* Common Section Wrapper with bottom border line & overflow containment */
+/* Common Section Wrapper with bottom border line */
 .site-section {
   width: 100%;
   border-bottom: 1px solid var(--border-color);
