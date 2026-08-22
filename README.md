@@ -1,15 +1,14 @@
 # Elera Education — Concept Case Study & Design System
 
-A modern, high-performance landing page and brand experience designed as a **concept case study** for **Elera Education**—a private home tutoring and education service based in D.I. Yogyakarta, Indonesia.
+A web application proposal built as a **concept case study** for **Elera Education**—a growing private home tutoring service based in D.I. Yogyakarta, Indonesia.
 
 ---
 
 ## Project Overview
 
-This project explores a complete digital brand transformation for Elera Education. It combines real-world business requirements (verbatim pricing tier specs, tutor profiles, service area mapping, and lead capture) with a high-fidelity, structural design system engineered for visual clarity and conversion.
+Elera Education currently does not have a dedicated official website. This project was developed as a voluntary contribution and concept case study to establish a modern web presence for the company (where the author's partner works as a private tutor).
 
-> [!NOTE]  
-> This website is a conceptual case study exploring modern web architecture and aesthetic patterns for Elera Education.
+It translates Elera's real-world service model—verbatim pricing catalogs, tutor profiles, Yogyakarta coverage mapping, and direct lead capture—into a high-performance web experience engineered for visual clarity and conversion.
 
 ---
 
@@ -124,4 +123,4 @@ npm run start
 
 ## License & Disclaimer
 
-This project is created as an independent UI/UX concept study case for **Elera Education**. All brand names, program details, and media assets belong to their respective owners.
+This project is an independent web application proposal and concept study case built for **Elera Education**. All brand names, program details, and media assets belong to their respective owners.
