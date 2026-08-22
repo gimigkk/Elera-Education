@@ -43,7 +43,7 @@ const heroSlides = [
 export function HeroSection() {
   const [featureIndex, setFeatureIndex] = useState(0);
   const [tutorIndex, setTutorIndex] = useState(0);
-  const [hasEntered, setHasEntered] = useState(false);
+  const [hasEntered, setHasEntered] = useState(true);
 
   const whatsappUrl = `https://wa.me/${heroCTA.ctaWhatsAppNumber}?text=${encodeURIComponent(heroCTA.ctaWhatsAppMessage)}`;
 
@@ -311,7 +311,7 @@ export function HeroSection() {
                     src={tutor.bgUrl || "/images/hero/test bg.webp"}
                     alt={`${tutor.name} background`}
                     fill
-                    priority={false}
+                    priority={index === 0}
                     sizes="100vw"
                     style={{ objectFit: "cover", objectPosition: "center" }}
                   />
@@ -329,7 +329,7 @@ export function HeroSection() {
                     src={tutor.photoUrl}
                     alt={tutor.name}
                     fill
-                    priority={false}
+                    priority={index === 0}
                     sizes="50vw"
                     style={{ objectFit: "contain", objectPosition: "bottom center" }}
                   />
