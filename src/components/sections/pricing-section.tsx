@@ -130,9 +130,14 @@ export function PricingSection() {
       {/* ── Docker 1px Grid Pricing Cards ── */}
       <div className="pricing-grid-3">
         {displayOptions.map((opt) => {
+          const isKelompok = opt.type === "Kelompok";
+
           if (!opt.available) {
             return (
-              <div key={opt.type} className="pricing-card pricing-card--unavailable">
+              <div
+                key={opt.type}
+                className={`pricing-card pricing-card--unavailable ${isKelompok ? "pricing-card--kelompok" : ""}`}
+              >
                 <div className="pricing-card__head">
                   <h3 className="pricing-card__type">{opt.type}</h3>
                   <p className="pricing-card__desc">Tidak tersedia untuk {tier.label}</p>
@@ -149,7 +154,7 @@ export function PricingSection() {
           return (
             <div
               key={opt.type}
-              className={`pricing-card ${isPopular ? "pricing-card--popular" : ""}`}
+              className={`pricing-card ${isPopular ? "pricing-card--popular" : ""} ${isKelompok ? "pricing-card--kelompok" : ""}`}
             >
               {isPopular && (
                 <span className="pricing-card__badge">Favorit</span>
@@ -216,17 +221,19 @@ export function PricingSection() {
       {/* ── Registration Fee Bar ── */}
       <div className="pricing-registration">
         <div className="pricing-registration__inner">
-          <span className="pricing-registration__label">Biaya Pendaftaran</span>
-          <div className="pricing-registration__fees">
-            <span className="pricing-registration__fee">
-              1 Semester: <strong>{formatRupiah(tier.registrationFee.semester)}</strong>
-            </span>
-            <span className="pricing-registration__divider">·</span>
-            <span className="pricing-registration__fee">
-              1 Tahun: <strong>{formatRupiah(tier.registrationFee.annual)}</strong>
-            </span>
+          <div className="pricing-registration__left">
+            <span className="pricing-registration__label">Biaya Pendaftaran</span>
+            <div className="pricing-registration__fees">
+              <span className="pricing-registration__fee">
+                1 Semester: <strong>{formatRupiah(tier.registrationFee.semester)}</strong>
+              </span>
+              <span className="pricing-registration__divider">·</span>
+              <span className="pricing-registration__fee">
+                1 Tahun: <strong>{formatRupiah(tier.registrationFee.annual)}</strong>
+              </span>
+            </div>
           </div>
-          <p className="pricing-registration__note text-balance">
+          <p className="pricing-registration__note">
             Bisa dicicil 2–3 bulan. Pembayaran les di awal per 1 minggu, 2 minggu, atau 1 bulan.
           </p>
         </div>

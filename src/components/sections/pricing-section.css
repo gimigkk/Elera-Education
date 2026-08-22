@@ -313,6 +313,13 @@
   text-align: center;
 }
 
+.pricing-registration__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
 .pricing-registration__label {
   font-size: 0.82rem;
   font-weight: 700;
@@ -331,6 +338,7 @@
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--navy-800);
+  white-space: nowrap;
 }
 
 .pricing-registration__fee strong {
@@ -391,6 +399,10 @@
     grid-template-columns: 1fr;
   }
 
+  .pricing-card--kelompok {
+    display: none !important;
+  }
+
   .pricing-card {
     border-right: none;
     border-bottom: 1px solid var(--border-color);
@@ -402,15 +414,47 @@
   }
 
   .pricing-registration__inner {
-    padding: 1.25rem 1.5rem;
+    padding: 1.25rem 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    text-align: center;
   }
 
-  .pricing-registration__fees {
-    flex-direction: column;
+  .pricing-registration__left {
+    align-items: center;
+    text-align: center;
     gap: 0.2rem;
   }
 
+  .pricing-registration__label {
+    font-size: 0.75rem;
+    letter-spacing: 0.07em;
+  }
+
+  .pricing-registration__fees {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem 0.5rem;
+  }
+
+  .pricing-registration__fee {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
   .pricing-registration__divider {
-    display: none;
+    display: inline;
+  }
+
+  .pricing-registration__note {
+    text-align: center;
+    max-width: 320px;
+    margin: 0.15rem 0 0;
+    font-size: 0.78rem;
+    line-height: 1.45;
   }
 }
