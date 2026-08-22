@@ -166,23 +166,30 @@
   background: var(--white);
 }
 
+.pricing-card__head-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+}
+
 .pricing-card__badge {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-heading);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--docker-blue);
   background: var(--white);
   border: 1px solid var(--border-color);
-  border-radius: 0;
-  padding: 0.2rem 0.65rem;
+  border-radius: 3px;
+  padding: 0.2rem 0.55rem;
   line-height: 1;
-  z-index: 2;
+  white-space: nowrap;
 }
 
 /* Unavailable Card */
@@ -609,11 +616,13 @@
 }
 
 .slot-item--old {
-  animation: slotRollOut 0.4s cubic-bezier(0.34, 1.45, 0.64, 1) forwards;
+  animation: slotRollOut 0.35s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+  will-change: transform, opacity;
 }
 
 .slot-item--new {
-  animation: slotRollIn 0.4s cubic-bezier(0.34, 1.45, 0.64, 1) forwards;
+  animation: slotRollIn 0.35s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+  will-change: transform, opacity;
 }
 
 .pricing-card__desc.slot-viewport {
