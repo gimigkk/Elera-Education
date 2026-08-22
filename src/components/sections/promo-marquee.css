@@ -62,7 +62,7 @@
   display: flex;
   width: max-content;
   align-items: center;
-  animation: promoMarqueeRight 150s linear infinite;
+  animation: promoMarqueeRight 300s linear infinite;
   transform: translateZ(0);
 }
 

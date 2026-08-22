@@ -59,7 +59,7 @@
 .uni-marquee-track {
   display: flex;
   width: max-content;
-  animation: uniMarquee 60s linear infinite;
+  animation: uniMarquee 120s linear infinite;
   transform: translateZ(0);
 }
 

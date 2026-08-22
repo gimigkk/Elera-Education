@@ -54,9 +54,10 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="navbar__cta"
+            aria-label="WhatsApp Elera Education Jogja"
           >
             <FaWhatsapp className="navbar__cta-icon" />
-            <span>
+            <span className="navbar__cta-text">
               Hubungi <span className="navbar__cta-kami">Kami</span>
             </span>
           </a>

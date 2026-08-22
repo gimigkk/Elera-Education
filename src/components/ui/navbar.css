@@ -151,11 +151,13 @@
   }
 
   .navbar__cta {
-    padding: 0 0.75rem;
-    font-size: 0.8rem;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
   }
 
-  .navbar__cta-kami {
+  .navbar__cta-text {
     display: none;
   }
 
