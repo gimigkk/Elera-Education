@@ -46,14 +46,14 @@ export function HeroSection() {
       setFeatureIndex((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [featureIndex]);
 
   useEffect(() => {
     const tutorTimer = setInterval(() => {
       setTutorIndex((prev) => (prev + 1) % starTutors.length);
     }, 5000);
     return () => clearInterval(tutorTimer);
-  }, []);
+  }, [tutorIndex]);
 
   return (
     <>
