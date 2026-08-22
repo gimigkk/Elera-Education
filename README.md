@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Elera Education — Concept Case Study & Design System
 
-## Getting Started
+A modern, high-performance landing page and brand experience designed as a **concept case study** for **Elera Education**—a private home tutoring and education service based in D.I. Yogyakarta, Indonesia.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📌 Project Overview
+
+This project explores a complete digital brand transformation for Elera Education. It combines real-world business requirements (verbatim pricing tier specs, tutor profiles, service area mapping, and lead capture) with a high-fidelity, structural design system engineered for visual clarity and conversion.
+
+> [!NOTE]  
+> This website is a conceptual case study exploring modern web architecture and aesthetic patterns for Elera Education.
+
+---
+
+## 🎨 Design System & Aesthetic Philosophy
+
+The visual language of this application is heavily inferred from **Docker’s web design system** ([docker.com](https://www.docker.com)), built upon three core principles:
+
+### 1. Geometric Structuralism
+- **Sharp Grid Boundaries**: Sections, cards, and interactive frames use explicit, crisp 1px solid borders (`#CBD5E1` and `--border-color: #001C3E`) to construct clean visual containers without relying on heavy box-shadows or generic gradient blobs.
+- **Bento Grid Architecture**: Information is chunked into rigid 2D grid cells (e.g., the 2-row × 3-column Value Proposition grid), providing mathematical order and effortless scannability.
+
+### 2. Universal Page Gutters
+- **Structured Layout Containers**: Universal page gutters (`--gutter-x`, `--gutter-y`) are a foundational element of the layout. They establish consistent horizontal baseline padding and vertical rhythm across all viewports.
+- **Edge-to-Edge Visual Parity**: Every component—from the dynamic top navigation bar down to the global footer—aligns strictly to the same universal layout grid boundaries.
+
+### 3. High-Contrast Professional Palette
+- **Primary Tone**: Clean, bright white (`#FFFFFF`) and slate neutral (`#F9FAFB`) base surfaces.
+- **Brand Accents**: Docker-inspired Electric Blue (`#0066FF`) paired with Deep Dark Navy (`#001C3E`) for high-legibility typography and focused interactive accents.
+- **Typography**: Geometric headline font (**Space Grotesk**) paired with high-legibility body type (**Plus Jakarta Sans**).
+
+---
+
+## ✨ Key Technical & UI Features
+
+- 🎭 **3D Tutor Cutout Rotations**: Orthographic 3D Y-axis card-flip transitions (`cubic-bezier(0.34, 1.56, 0.64, 1)`) for hero tutor spotlight cutouts with zero perspective distortion.
+- 🎰 **Zero-Layout-Shift `SlotReel` Component**: CSS Grid-stacked layout (`grid-template-areas: "slot"`) ensuring seamless vertical roll-in/roll-out text and price transitions without shifting neighboring element geometry.
+- 🎠 **Synchronized Slot-Machine Tutor Reel**: Auto-playing star tutor carousel with staggered metadata transitions (header, experience chips, and rating stats).
+- 🏷️ **Verbatim Pricing Source of Truth**: Full markdown-backed pricing model extracted directly from official program specifications for SD, SMP, and SMA grade tiers.
+- 🗺️ **Geographical Service Mapping**: Interactive map integration and CTA section tailored specifically to D.I. Yogyakarta coverage areas.
+- ⚡ **Next.js 16 + Turbopack**: Blazing-fast static compilation, optimized asset loading, and client-side page rendering.
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technology |
+| :--- | :--- |
+| **Framework** | [Next.js 16](https://nextjs.org/) (App Router & Turbopack) |
+| **Library** | [React 19](https://react.dev/) |
+| **Styling** | Vanilla CSS (CSS Modules & Custom Properties design system) |
+| **Language** | [TypeScript 5](https://www.typescriptlang.org/) |
+| **Typography** | `next/font` (Space Grotesk & Plus Jakarta Sans) |
+| **Icons** | React Icons (`react-icons/fi`) + Custom Inline SVGs |
+
+---
+
+## 📁 Repository Structure
+
+```text
+├── src/
+│   ├── app/                    # Next.js App Router (layout, page, metadata)
+│   ├── components/
+│   │   ├── sections/           # Modular section components & custom CSS
+│   │   │   ├── hero-section.tsx / .css        # Hero slot reel & 3D carousel
+│   │   │   ├── value-props-section.tsx / .css # Bento grid feature cells
+│   │   │   ├── pricing-section.tsx / .css    # Tier selection & SlotReels
+│   │   │   ├── cta-section.tsx / .css        # Service area map & contact info
+│   │   │   ├── footer-section.tsx / .css     # Standardized global footer
+│   │   │   ├── promo-marquee.tsx / .css      # Accent marquee track
+│   │   │   └── university-marquee.tsx / .css # Partner trust marquee
+│   │   └── ui/                 # Reusable atomic UI elements (Navbar, Logo, etc.)
+│   ├── data/                   # Static data models and content configs
+│   └── types.ts                # Shared TypeScript type interfaces
+├── pricing-source-of-truth.md  # Verbatim program catalog source of truth
+├── public/                     # Static media assets, icons, and tutor cutouts
+└── next.config.ts              # Next.js build configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
 
-## Learn More
+Ensure you have **Node.js 18+** installed on your system.
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/elera-education.git
+   cd elera-education
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+### Local Development
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Start the Next.js development server with Turbopack enabled:
+```bash
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) in your browser to explore the live application.
+
+### Production Build
+
+To build and validate the optimized production bundle:
+```bash
+npm run build
+```
+
+To run the production server locally:
+```bash
+npm run start
+```
+
+---
+
+## 📄 License & Disclaimer
+
+This project is created as an independent UI/UX concept study case for **Elera Education**. All brand names, program details, and media assets belong to their respective owners.
