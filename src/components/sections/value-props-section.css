@@ -152,17 +152,18 @@
 
 @media (max-width: 960px) {
   .vprop-header {
-    padding: 1.5rem 1.25rem;
+    padding: 1.75rem 1.25rem;
   }
 
   .vprop-header__tag {
     font-size: 11px;
+    margin-bottom: 0.35rem;
   }
 
   .vprop-header__title {
     font-size: 1.3rem;
-    line-height: 1.2;
-    margin: 0.2rem 0 0.8rem;
+    line-height: 1.25;
+    margin: 0 0 0.5rem;
   }
 
   .vprop-grid-2x3 {

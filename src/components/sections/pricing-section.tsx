@@ -266,7 +266,12 @@ export function PricingSection() {
 
               <div className="pricing-card__body">
                 <div className="pricing-card__price-block">
-                  <SlotReel valueKey={origPriceKey} as="span" delay={baseDelay + 20}>
+                  <SlotReel
+                    valueKey={origPriceKey}
+                    as="span"
+                    delay={baseDelay + 20}
+                    className={!opt.originalPricePerChild ? "pricing-card__orig-slot--empty" : ""}
+                  >
                     {opt.originalPricePerChild ? (
                       <span className="pricing-card__original-price">
                         {formatRupiah(opt.originalPricePerChild)}

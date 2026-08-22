@@ -191,16 +191,29 @@
     padding: 1.5rem 1.25rem;
     align-items: center;
     text-align: center;
+    gap: 0.25rem;
+  }
+
+  .cta-left-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    flex: initial;
+    width: 100%;
+    margin-top: 0.2rem;
   }
 
   .cta-header__tag {
     font-size: 11px;
+    margin-bottom: 0.25rem;
   }
 
   .cta-header__title {
     font-size: 1.3rem;
-    line-height: 1.2;
-    margin: 0 0 1.25rem;
+    line-height: 1.25;
+    margin: 0;
   }
 
   .cta-header__subtitle {
@@ -210,6 +223,7 @@
   .cta-actions {
     justify-content: center;
     width: 100%;
+    margin-top: 0;
   }
 
   .cta-map-cell {
