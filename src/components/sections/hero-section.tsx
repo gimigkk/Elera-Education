@@ -86,10 +86,10 @@ export function HeroSection() {
                 className={`hero-container__bg-slide ${index === tutorIndex ? "active" : ""}`}
               >
                 <Image
-                  src={tutor.bgUrl || "/images/hero/test bg.png"}
+                  src={tutor.bgUrl || "/images/hero/test bg.webp"}
                   alt={`${tutor.name} background`}
                   fill
-                  priority
+                  priority={index === 0}
                   sizes="(max-width: 1240px) 100vw, 1240px"
                   style={{ objectFit: "cover", objectPosition: "center" }}
                 />
@@ -111,7 +111,7 @@ export function HeroSection() {
                   src={tutor.photoUrl}
                   alt={tutor.name}
                   fill
-                  priority
+                  priority={index === 0}
                   sizes="500px"
                   style={{ objectFit: "contain", objectPosition: "bottom center" }}
                 />
@@ -308,10 +308,10 @@ export function HeroSection() {
                   className={`hero-mobile__bg-slide ${index === tutorIndex ? "active" : ""}`}
                 >
                   <Image
-                    src={tutor.bgUrl || "/images/hero/test bg.png"}
+                    src={tutor.bgUrl || "/images/hero/test bg.webp"}
                     alt={`${tutor.name} background`}
                     fill
-                    priority
+                    priority={false}
                     sizes="100vw"
                     style={{ objectFit: "cover", objectPosition: "center" }}
                   />
@@ -329,7 +329,7 @@ export function HeroSection() {
                     src={tutor.photoUrl}
                     alt={tutor.name}
                     fill
-                    priority
+                    priority={false}
                     sizes="50vw"
                     style={{ objectFit: "contain", objectPosition: "bottom center" }}
                   />

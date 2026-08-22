@@ -7,7 +7,7 @@ export const topUniversities: University[] = [
     line1: "IPB",
     line2: "University",
     shortName: "IPB",
-    logoUrl: "/images/universities/ipb.png",
+    logoUrl: "/images/universities/ipb.webp",
   },
   {
     id: "ui",
@@ -15,7 +15,7 @@ export const topUniversities: University[] = [
     line1: "Universitas",
     line2: "Indonesia",
     shortName: "UI",
-    logoUrl: "/images/universities/ui.png",
+    logoUrl: "/images/universities/ui.webp",
   },
   {
     id: "ugm",
@@ -23,7 +23,7 @@ export const topUniversities: University[] = [
     line1: "Universitas",
     line2: "Gadjah Mada",
     shortName: "UGM",
-    logoUrl: "/images/universities/ugm.png",
+    logoUrl: "/images/universities/ugm.webp",
   },
   {
     id: "unpad",
@@ -31,7 +31,7 @@ export const topUniversities: University[] = [
     line1: "Universitas",
     line2: "Padjadjaran",
     shortName: "UNPAD",
-    logoUrl: "/images/universities/unpad.png",
+    logoUrl: "/images/universities/unpad.webp",
   },
   {
     id: "its",
@@ -39,6 +39,6 @@ export const topUniversities: University[] = [
     line1: "Institut Teknologi",
     line2: "Sepuluh Nopember",
     shortName: "ITS",
-    logoUrl: "/images/universities/its.png",
+    logoUrl: "/images/universities/its.webp",
   },
 ];

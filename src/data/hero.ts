@@ -8,8 +8,8 @@ export const starTutors: StarTutor[] = [
     subjects: ["MTK", "IPA", "B.Ing"],
     semester: 6,
     rating: 5.0,
-    photoUrl: "/images/hero/Girl test.png",
-    bgUrl: "/images/hero/test bg.png",
+    photoUrl: "/images/hero/Girl test.webp",
+    bgUrl: "/images/hero/test bg.webp",
     quote: "Setiap anak punya cara belajar yang unik — tugas saya menemukan cara terbaik untuk mereka.",
   },
   {
@@ -19,8 +19,8 @@ export const starTutors: StarTutor[] = [
     subjects: ["MTK", "Fisika", "Kimia"],
     semester: 8,
     rating: 5.0,
-    photoUrl: "/images/hero/tutor-2.png",
-    bgUrl: "/images/hero/bg-2.png",
+    photoUrl: "/images/hero/tutor-2.webp",
+    bgUrl: "/images/hero/bg-2.webp",
     quote: "Belajar sains & matematika jadi lebih mudah dengan metode penalaran konsep dasar.",
   },
   {
@@ -30,8 +30,8 @@ export const starTutors: StarTutor[] = [
     subjects: ["IPA", "Biologi", "B.Ing"],
     semester: 6,
     rating: 4.9,
-    photoUrl: "/images/hero/tutor-3.png",
-    bgUrl: "/images/hero/bg-3.png",
+    photoUrl: "/images/hero/tutor-3.webp",
+    bgUrl: "/images/hero/bg-3.webp",
     quote: "Membuat belajar terasa menyenangkan dan mudah dipahami sesuai ritme anak.",
   },
   {
@@ -41,8 +41,8 @@ export const starTutors: StarTutor[] = [
     subjects: ["B.Ing", "IPA", "MTK"],
     semester: 6,
     rating: 5.0,
-    photoUrl: "/images/hero/tutor-4.png",
-    bgUrl: "/images/hero/bg-4.png",
+    photoUrl: "/images/hero/tutor-4.webp",
+    bgUrl: "/images/hero/bg-4.webp",
     quote: "Pendampingan belajar yang komunikatif dan terstruktur agar anak lebih percaya diri di sekolah.",
   },
 ];

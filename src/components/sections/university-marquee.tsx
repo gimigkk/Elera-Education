@@ -10,37 +10,33 @@ export function UniversityMarquee() {
 
   return (
     <section className="site-section uni-marquee-section" aria-label="Universitas Tentor">
-      <div className="uni-marquee-track-wrapper">
-        <div className="uni-marquee-track">
-          {marqueeItems.map((uni, index) => (
-            <div key={`${uni.id}-${index}`} className="uni-marquee-cell">
-              <FloatUp
-                staggerIndex={index % topUniversities.length}
-                staggerStep={70}
-                distance={16}
-                blur={6}
-                className="uni-marquee-cell__inner"
-              >
-                <div className="uni-marquee-cell__logo-box">
-                  <div
-                    className="uni-marquee-cell__logo-mask"
-                    style={{
-                      WebkitMaskImage: `url(${uni.logoUrl})`,
-                      maskImage: `url(${uni.logoUrl})`,
-                    }}
-                    role="img"
-                    aria-label={`${uni.name} Logo`}
-                  />
+      <FloatUp distance={16} blur={6}>
+        <div className="uni-marquee-track-wrapper">
+          <div className="uni-marquee-track">
+            {marqueeItems.map((uni, index) => (
+              <div key={`${uni.id}-${index}`} className="uni-marquee-cell">
+                <div className="uni-marquee-cell__inner">
+                  <div className="uni-marquee-cell__logo-box">
+                    <div
+                      className="uni-marquee-cell__logo-mask"
+                      style={{
+                        WebkitMaskImage: `url(${uni.logoUrl})`,
+                        maskImage: `url(${uni.logoUrl})`,
+                      }}
+                      role="img"
+                      aria-label={`${uni.name} Logo`}
+                    />
+                  </div>
+                  <div className="uni-marquee-cell__text">
+                    <span className="uni-marquee-cell__line">{uni.line1}</span>
+                    <span className="uni-marquee-cell__line">{uni.line2}</span>
+                  </div>
                 </div>
-                <div className="uni-marquee-cell__text">
-                  <span className="uni-marquee-cell__line">{uni.line1}</span>
-                  <span className="uni-marquee-cell__line">{uni.line2}</span>
-                </div>
-              </FloatUp>
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </FloatUp>
     </section>
   );
 }
