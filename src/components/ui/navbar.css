@@ -119,6 +119,7 @@
   text-decoration: none;
   transition: all 0.15s ease;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  white-space: nowrap;
 }
 
 .navbar__cta-icon {
@@ -134,105 +135,35 @@
   color: #000000;
 }
 
-/* Mobile Toggle Hamburger Button */
-.navbar__toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 36px;
-  height: 36px;
-  background: transparent;
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 0;
-  gap: 4px;
-}
-
-.navbar__toggle-bar {
-  width: 18px;
-  height: 2px;
-  background: var(--navy-900);
-  border-radius: 1px;
-  transition: all 0.25s ease;
-}
-
-.navbar__toggle--open .navbar__toggle-bar:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-
-.navbar__toggle--open .navbar__toggle-bar:nth-child(2) {
-  opacity: 0;
-}
-
-.navbar__toggle--open .navbar__toggle-bar:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-/* Mobile Dropdown Navigation Menu */
-.navbar__mobile-menu {
-  border-top: 1px solid var(--border-color);
-  background: var(--white);
-  padding: 1rem 1.5rem;
-  display: none;
-}
-
-.navbar__mobile-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.navbar__mobile-link {
-  color: var(--navy-900);
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-decoration: none;
-  padding: 0.5rem 0;
-  transition: color 0.15s ease;
-}
-
-.navbar__mobile-link:hover {
-  color: var(--docker-blue);
-}
-
-.navbar__mobile-cta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1rem;
-  background: #000000;
-  color: var(--white);
-  font-weight: 700;
-  font-size: 0.9rem;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-top: 0.5rem;
-  text-align: center;
-}
-
 /* Responsive Breakdown */
 @media (max-width: 860px) {
   .navbar__inner {
     grid-template-columns: 1fr auto;
-    padding: 0 1.25rem;
+    padding: 0 1rem;
   }
 
   .navbar__nav {
     display: none;
   }
 
+  .navbar__actions {
+    gap: 0.35rem;
+  }
+
   .navbar__cta {
+    padding: 0 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .navbar__cta-kami {
     display: none;
   }
 
-  .navbar__toggle {
-    display: flex;
+  .navbar__logo-title {
+    font-size: 1.05rem;
   }
 
-  .navbar__mobile-menu {
-    display: block;
+  .navbar__logo-sub {
+    font-size: 0.72rem;
   }
 }
