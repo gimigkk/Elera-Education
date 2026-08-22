@@ -51,7 +51,7 @@
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 1.15rem;
-  color: #000000;
+  color: var(--text-primary);
   letter-spacing: -0.025em;
 }
 
@@ -59,7 +59,7 @@
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 0.76rem;
-  color: var(--gray-600);
+  color: var(--text-tertiary);
   letter-spacing: -0.01em;
   margin-top: 0px;
 }
@@ -67,7 +67,7 @@
 .footer__desc {
   font-size: 0.88rem;
   font-weight: 500;
-  color: var(--gray-600);
+  color: var(--text-tertiary);
   line-height: 1.55;
   margin: 0;
   max-width: 340px;
@@ -112,7 +112,7 @@
   font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 700;
-  color: #001C3E;
+  color: var(--text-primary);
   letter-spacing: -0.01em;
   margin: 0;
 }
@@ -129,7 +129,7 @@
 .footer__link {
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--gray-600);
+  color: var(--text-tertiary);
   text-decoration: none;
   transition: color 0.15s ease;
 }
@@ -141,7 +141,7 @@
 .footer__item-text {
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--gray-600);
+  color: var(--text-tertiary);
 }
 
 /* ── Bottom Bar — Solid #2E60FF Blue ── */
@@ -162,19 +162,19 @@
 .footer-bottom__copy {
   font-size: 0.82rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark-secondary);
   margin: 0;
 }
 
 .footer-bottom__tagline {
   font-size: 0.82rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark-secondary);
   margin: 0;
 }
 
 .footer-bottom__dev-link {
-  color: #FFFFFF;
+  color: var(--text-dark-primary);
   font-weight: 700;
   text-decoration: underline;
   transition: opacity 0.15s ease;

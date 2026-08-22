@@ -42,7 +42,7 @@
   font-family: var(--font-heading);
   font-size: 2.15rem;
   font-weight: 800;
-  color: #001C3E;
+  color: var(--text-primary);
   letter-spacing: -0.025em;
   line-height: 1.15;
   margin: 0 0 0.5rem;
@@ -52,7 +52,7 @@
 .cta-header__subtitle {
   font-size: 0.92rem;
   font-weight: 500;
-  color: var(--gray-600);
+  color: var(--text-secondary);
   line-height: 1.52;
   margin: 0 0 1.25rem;
   text-wrap: balance;
@@ -138,7 +138,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--gray-500);
+  color: var(--text-tertiary);
 }
 
 .cta-bottom-bar__info {
@@ -152,13 +152,13 @@
 .cta-bottom-bar__item {
   font-size: 0.92rem;
   font-weight: 500;
-  color: var(--navy-800);
+  color: var(--text-secondary);
   white-space: nowrap;
 }
 
 .cta-bottom-bar__item strong {
   font-weight: 800;
-  color: #001C3E;
+  color: var(--text-primary);
 }
 
 .cta-bottom-bar__divider {
@@ -169,7 +169,7 @@
 .cta-bottom-bar__note {
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--gray-500);
+  color: var(--text-tertiary);
   margin: 0.15rem 0 0;
   max-width: 540px;
   line-height: 1.48;

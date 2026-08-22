@@ -116,7 +116,7 @@
   font-family: var(--font-heading);
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--white);
+  color: var(--text-dark-muted);
   letter-spacing: 0.04em;
   pointer-events: none;
 }
@@ -124,13 +124,13 @@
 .hero-corner--top-left {
   top: 1.5rem;
   left: 2rem;
-  color: #001C3E;
+  color: var(--text-muted);
 }
 
 .hero-corner--bottom-left {
   bottom: 1.5rem;
   left: 2rem;
-  color: #001C3E;
+  color: var(--text-muted);
 }
 
 .hero-corner--top-right {
@@ -189,7 +189,7 @@
   font-size: 2.6rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--navy-900);
+  color: var(--text-primary);
   line-height: 1.08;
 }
 
@@ -217,14 +217,14 @@
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.35;
-  color: var(--navy-800);
+  color: var(--text-secondary);
 }
 
 .edukeo-brand__check {
   font-weight: 800;
   font-size: 0.9rem;
   line-height: 1;
-  color: #0F172A;
+  color: var(--docker-blue);
 }
 
 /* ===== RIGHT COLUMN — Pure Transparent Right-Aligned Tutor Info ===== */
@@ -383,14 +383,14 @@
   font-family: var(--font-heading);
   font-size: 2.25rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--text-dark-primary);
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
 .tutor-clean__uni {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark-secondary);
   font-weight: 500;
   margin-top: 0.2rem;
 }
@@ -412,7 +412,7 @@
   font-family: var(--font-heading);
   font-size: 1.75rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--text-dark-primary);
   line-height: 1;
   letter-spacing: -0.01em;
 }
@@ -422,7 +422,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-dark-tertiary);
   margin-top: 0.25rem;
 }
 
@@ -439,7 +439,7 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #FFFFFF;
+  color: var(--text-dark-primary);
   font-size: 0.85rem;
   font-weight: 700;
   padding: 0.35rem 0.9rem;
@@ -566,7 +566,7 @@
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #64748B;
+  color: var(--text-tertiary);
   text-transform: uppercase;
   line-height: 1;
 }
@@ -580,7 +580,7 @@
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--text-primary);
   line-height: 1.1;
   white-space: nowrap;
 }
@@ -801,14 +801,14 @@
   font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--text-dark-primary);
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
 .hero-mobile__meta-uni {
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark-secondary);
   font-weight: 500;
   margin-top: -0.1rem;
 }
@@ -829,7 +829,7 @@
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--text-dark-primary);
   line-height: 1;
 }
 
@@ -838,7 +838,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-dark-tertiary);
   margin-top: 0.25rem;
 }
 
@@ -854,7 +854,7 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #FFFFFF;
+  color: var(--text-dark-primary);
   font-size: 0.7rem;
   font-weight: 700;
   padding: 0.2rem 0.6rem;

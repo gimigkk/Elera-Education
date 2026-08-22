@@ -25,6 +25,18 @@
   --green-400: #4ADE80;
 
   --max-width: 1200px;
+
+  /* Text Opacity Hierarchy Tokens — Light Containers */
+  --text-primary: #0B1727;
+  --text-secondary: rgba(11, 23, 39, 0.80);
+  --text-tertiary: rgba(11, 23, 39, 0.65);
+  --text-muted: rgba(11, 23, 39, 0.50);
+
+  /* Text Opacity Hierarchy Tokens — Dark & Blue Accent Containers */
+  --text-dark-primary: #FFFFFF;
+  --text-dark-secondary: rgba(255, 255, 255, 0.82);
+  --text-dark-tertiary: rgba(255, 255, 255, 0.65);
+  --text-dark-muted: rgba(255, 255, 255, 0.50);
 }
 
 /* ===== Global Reset ===== */
