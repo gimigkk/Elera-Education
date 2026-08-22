@@ -23,6 +23,17 @@ export const starTutors: StarTutor[] = [
     bgUrl: "/images/hero/bg-2.png",
     quote: "Belajar sains & matematika jadi lebih mudah dengan metode penalaran konsep dasar.",
   },
+  {
+    name: "Nadia Rahma",
+    university: "IPB University - S1 Biologi",
+    gpa: 3.89,
+    subjects: ["IPA", "Biologi", "B.Ing"],
+    studentsCount: 135,
+    yearsExperience: 3,
+    photoUrl: "/images/hero/tutor-3.png",
+    bgUrl: "/images/hero/bg-3.png",
+    quote: "Membuat belajar terasa menyenangkan dan mudah dipahami sesuai ritme anak.",
+  },
 ];
 
 export const starTutor = starTutors[0];

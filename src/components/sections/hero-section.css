@@ -73,8 +73,6 @@
   aspect-ratio: 585 / 675;
   z-index: 2;
   pointer-events: none;
-  perspective: 8000px;
-  perspective-origin: center center;
 }
 
 .hero-container__girl-slide {
@@ -634,8 +632,6 @@
   position: relative;
   z-index: 2;
   min-height: 220px;
-  perspective: 8000px;
-  perspective-origin: center center;
 }
 
 .hero-mobile__girl-slide {
