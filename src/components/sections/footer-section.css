@@ -26,6 +26,10 @@
   padding-right: 1rem;
 }
 
+.footer-brand-header {
+  display: contents;
+}
+
 /* Brand Logo in Footer */
 .footer__logo {
   display: flex;
@@ -194,6 +198,35 @@
 
   .footer-col--brand {
     grid-column: 1 / -1;
+    padding-right: 0;
+  }
+
+  .footer-brand-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .footer__socials {
+    margin-top: 0;
+  }
+
+  .footer-col--program {
+    display: none !important;
+  }
+
+  .footer__desc {
+    font-size: 11px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  .footer__link,
+  .footer__item-text {
+    font-size: 11px;
+    font-weight: 600;
   }
 
   .footer-bottom__inner {
@@ -202,11 +235,17 @@
     text-align: center;
     gap: 0.35rem;
   }
+
+  .footer-bottom__copy,
+  .footer-bottom__tagline {
+    font-size: 11px;
+    font-weight: 600;
+  }
 }
 
 @media (max-width: 600px) {
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 1rem;
   }
 }

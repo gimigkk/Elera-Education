@@ -7,7 +7,7 @@
 
 .vprop-header {
   position: relative;
-  padding: 3.5rem 2rem;
+  padding: 2.75rem 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -151,7 +151,43 @@
 }
 
 @media (max-width: 960px) {
+  .vprop-header {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .vprop-header__tag {
+    font-size: 11px;
+  }
+
+  .vprop-header__title {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin: 0.2rem 0 0.8rem;
+  }
+
   .vprop-grid-2x3 {
     grid-template-columns: 1fr;
+  }
+
+  .vprop-card--img-full {
+    min-height: 170px;
+    height: 170px;
+  }
+
+  .vprop-card--dual-text {
+    padding: 1.25rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .vprop-header__subtitle {
+    font-size: 11px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  .vprop-reason__desc {
+    font-size: 11px;
+    line-height: 1.6;
+    font-weight: 600;
   }
 }

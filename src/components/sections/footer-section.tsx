@@ -34,42 +34,44 @@ export function FooterSection() {
       <div className="footer-grid">
         {/* Col 1: Brand & Contact Info */}
         <div className="footer-col footer-col--brand">
-          <Link href="/" className="footer__logo">
-            <EleraLogoIcon className="footer__logo-svg" />
-            <div className="footer__logo-brand">
-              <span className="footer__logo-title">Elera Education</span>
-              <span className="footer__logo-sub">Yogyakarta</span>
+          <div className="footer-brand-header">
+            <Link href="/" className="footer__logo">
+              <EleraLogoIcon className="footer__logo-svg" />
+              <div className="footer__logo-brand">
+                <span className="footer__logo-title">Elera Education</span>
+                <span className="footer__logo-sub">Yogyakarta</span>
+              </div>
+            </Link>
+
+            <div className="footer__socials">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-icon footer-social-icon--wa"
+                aria-label="WhatsApp Elera Education"
+              >
+                <FaWhatsapp />
+              </a>
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-icon footer-social-icon--ig"
+                aria-label="Instagram Elera Education Jogja"
+              >
+                <FaInstagram />
+              </a>
             </div>
-          </Link>
+          </div>
 
           <p className="footer__desc">
             Bimbel Panggilan Privat Terbaik di Yogyakarta. Tentor datang ke rumah, jadwal fleksibel, dan pendampingan kurikulum terpersonalisasi untuk TK hingga SMP.
           </p>
-
-          <div className="footer__socials">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-social-icon footer-social-icon--wa"
-              aria-label="WhatsApp Elera Education"
-            >
-              <FaWhatsapp />
-            </a>
-            <a
-              href={instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-social-icon footer-social-icon--ig"
-              aria-label="Instagram Elera Education Jogja"
-            >
-              <FaInstagram />
-            </a>
-          </div>
         </div>
 
         {/* Col 2: Program & Jenjang */}
-        <div className="footer-col">
+        <div className="footer-col footer-col--program">
           <h3 className="footer__col-title">Program & Jenjang</h3>
           <ul className="footer__list">
             <li>
