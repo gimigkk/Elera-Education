@@ -122,7 +122,23 @@ export function HeroSection() {
           <div className="hero-corner hero-corner--top-left">| Bimbel Privat</div>
           <div className="hero-corner hero-corner--bottom-left">| Harga Ramah</div>
           <div className="hero-corner hero-corner--top-right">Jadwal Menyesuaikan |</div>
-          <div className="hero-corner hero-corner--bottom-right">Hasil Terbuktikan |</div>
+          <div className="hero-corner hero-corner--bottom-right">
+            <div className="tutor-carousel__controls">
+              {starTutors.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => setTutorIndex(index)}
+                  className={`tutor-carousel__dot ${index === tutorIndex ? "active" : ""}`}
+                  aria-label={`Lihat tentor ${index + 1}`}
+                >
+                  {index === tutorIndex && (
+                    <span key={tutorIndex} className="tutor-carousel__dot-fill" />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
 
           {/* Layer 3: Grid Content */}
           <div className="hero-container__content">
@@ -204,23 +220,6 @@ export function HeroSection() {
                       ))}
                     </div>
                   </div>
-                </div>
-
-                {/* Tutor Carousel Indicators (Countdown Progress Bar) */}
-                <div className="tutor-carousel__controls">
-                  {starTutors.map((_, index) => (
-                    <button
-                      key={index}
-                      type="button"
-                      onClick={() => setTutorIndex(index)}
-                      className={`tutor-carousel__dot ${index === tutorIndex ? "active" : ""}`}
-                      aria-label={`Lihat tentor ${index + 1}`}
-                    >
-                      {index === tutorIndex && (
-                        <span key={tutorIndex} className="tutor-carousel__dot-fill" />
-                      )}
-                    </button>
-                  ))}
                 </div>
               </FloatUp>
             </div>

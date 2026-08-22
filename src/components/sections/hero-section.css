@@ -140,6 +140,7 @@
 .hero-corner--bottom-right {
   bottom: 1.5rem;
   right: 2rem;
+  pointer-events: auto;
 }
 
 /* Layer 3: Grid Content */
@@ -332,8 +333,8 @@
 .tutor-carousel__controls {
   display: flex;
   justify-content: flex-end;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
+  align-items: center;
+  gap: 0.25rem;
   z-index: 5;
 }
 
