@@ -45,8 +45,10 @@ export interface StarTutor {
   university: string;
   gpa: number;
   subjects: string[];
-  studentsCount: number;
-  yearsExperience: number;
+  semester: number;
+  rating: number;
+  studentsCount?: number;
+  yearsExperience?: number;
   photoUrl: string;
   bgUrl?: string;
   quote?: string;

@@ -192,38 +192,43 @@
   line-height: 1.08;
 }
 
-/* Feature Block */
-.edukeo-brand__block {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  margin-top: 0.2rem;
-}
-
-.edukeo-brand__features {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.edukeo-brand__feature {
+/* CTA Button Wrapper */
+.edukeo-brand__cta-wrap {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1.35;
-  color: var(--text-secondary);
+  margin-top: 0.4rem;
 }
 
-.edukeo-brand__check {
-  font-weight: 800;
-  font-size: 0.9rem;
-  line-height: 1;
-  color: var(--docker-blue);
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  height: 36px;
+  padding: 0 1.1rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border: 1px solid var(--docker-blue);
+  border-radius: 5px;
+  cursor: pointer;
+  background: var(--docker-blue);
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(42, 96, 255, 0.2);
+}
+
+.hero-cta-btn:hover {
+  background: var(--docker-blue-dark);
+  border-color: var(--docker-blue-dark);
+  box-shadow: 0 3px 10px rgba(29, 78, 216, 0.3);
+}
+
+.hero-cta-btn__icon {
+  font-size: 1.05rem;
 }
 
 /* ===== RIGHT COLUMN — Pure Transparent Right-Aligned Tutor Info ===== */
@@ -250,7 +255,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 1.1rem;
+  gap: 0.75rem;
   width: 100%;
 }
 
@@ -271,7 +276,7 @@
 }
 
 .tutor-slot__viewport--chips {
-  height: 38px;
+  height: 28px;
 }
 
 .tutor-slot__wrapper {
@@ -280,16 +285,16 @@
   width: 100%;
 }
 
+.tutor-slot__wrapper--chips {
+  transition: transform 0.55s cubic-bezier(0.34, 1.25, 0.64, 1) 0ms;
+}
+
 .tutor-slot__wrapper--header {
-  transition: transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1) 0ms;
+  transition: transform 0.55s cubic-bezier(0.34, 1.25, 0.64, 1) 90ms;
 }
 
 .tutor-slot__wrapper--stats {
-  transition: transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1) 120ms;
-}
-
-.tutor-slot__wrapper--chips {
-  transition: transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1) 240ms;
+  transition: transform 0.55s cubic-bezier(0.34, 1.25, 0.64, 1) 180ms;
 }
 
 .tutor-slot__item {
@@ -312,7 +317,7 @@
 }
 
 .tutor-slot__item--chips {
-  height: 38px;
+  height: 28px;
 }
 
 .tutor-clean {
@@ -428,9 +433,11 @@
 .tutor-clean__tags {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: flex-end;
-  gap: 0.5rem;
-  margin-top: 0.2rem;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
 }
 
 .tutor-clean__chip {
@@ -439,10 +446,12 @@
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: var(--text-dark-primary);
-  font-size: 0.85rem;
-  font-weight: 700;
-  padding: 0.35rem 0.9rem;
-  border-radius: 5px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.18rem 0.55rem;
+  border-radius: 4px;
+  line-height: 1;
 }
 
 
@@ -706,7 +715,7 @@
 }
 
 .hero-mobile__tutor-viewport--chips {
-  height: 34px;
+  height: 24px;
 }
 
 .hero-mobile__tutor-wrapper {
@@ -715,16 +724,16 @@
   width: 100%;
 }
 
+.hero-mobile__tutor-wrapper--chips {
+  transition: transform 0.55s cubic-bezier(0.34, 1.25, 0.64, 1) 0ms;
+}
+
 .hero-mobile__tutor-wrapper--header {
-  transition: transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1) 0ms;
+  transition: transform 0.55s cubic-bezier(0.34, 1.25, 0.64, 1) 90ms;
 }
 
 .hero-mobile__tutor-wrapper--stats {
-  transition: transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1) 120ms;
-}
-
-.hero-mobile__tutor-wrapper--chips {
-  transition: transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1) 240ms;
+  transition: transform 0.55s cubic-bezier(0.34, 1.25, 0.64, 1) 180ms;
 }
 
 .hero-mobile__tutor-item {
@@ -747,7 +756,7 @@
 }
 
 .hero-mobile__tutor-item--chips {
-  height: 34px;
+  height: 24px;
 }
 
 .hero-mobile__meta-header {
@@ -843,8 +852,11 @@
 .hero-mobile__chips {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: flex-end;
-  gap: 0.3rem;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
 }
 
 .hero-mobile__chip {
@@ -853,10 +865,12 @@
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: var(--text-dark-primary);
-  font-size: 11px;
-  font-weight: 700;
-  padding: 0.2rem 0.6rem;
-  border-radius: 5px;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.12rem 0.4rem;
+  border-radius: 3.5px;
+  line-height: 1;
 }
 
 

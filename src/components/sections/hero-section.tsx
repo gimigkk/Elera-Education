@@ -6,6 +6,7 @@ import Image from "next/image";
 import { starTutors, heroCTA } from "@/data/hero";
 import { Navbar } from "@/components/ui/navbar";
 import { FloatUp } from "@/components/ui/float-up";
+import { FaWhatsapp } from "react-icons/fa6";
 
 const heroSlides = [
   {
@@ -42,6 +43,8 @@ export function HeroSection() {
   const [featureIndex, setFeatureIndex] = useState(0);
   const [tutorIndex, setTutorIndex] = useState(0);
   const [hasEntered, setHasEntered] = useState(false);
+
+  const whatsappUrl = `https://wa.me/${heroCTA.ctaWhatsAppNumber}?text=${encodeURIComponent(heroCTA.ctaWhatsAppMessage)}`;
 
   useEffect(() => {
     const entryTimer = setTimeout(() => {
@@ -130,15 +133,16 @@ export function HeroSection() {
                   <span className="edukeo-brand__headline-sub">Bimbel Privat Yogya?</span>
                   <span className="edukeo-brand__headline-main">Datang ke Rumah, Hasil Nyata</span>
                 </h1>
-                <div className="edukeo-brand__block">
-                  <ul className="edukeo-brand__features">
-                    {heroCTA.features.map((feature, i) => (
-                      <li key={i} className="edukeo-brand__feature">
-                        <span className="edukeo-brand__check">✓</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="edukeo-brand__cta-wrap">
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hero-cta-btn"
+                  >
+                    <FaWhatsapp className="hero-cta-btn__icon" />
+                    <span>Konsultasi Sekarang</span>
+                  </a>
                 </div>
               </FloatUp>
             </div>
@@ -147,6 +151,24 @@ export function HeroSection() {
             <div className="hero-container__right">
               <FloatUp className="hero-container__right-inner" delay={150} distance={24} blur={10}>
                 <div className="tutor-slot">
+                  {/* Chips Line Viewport */}
+                  <div className="tutor-slot__viewport tutor-slot__viewport--chips">
+                    <div
+                      className="tutor-slot__wrapper tutor-slot__wrapper--chips"
+                      style={{ transform: `translateY(-${tutorIndex * 28}px)` }}
+                    >
+                      {starTutors.map((tutor, i) => (
+                        <div key={i} className="tutor-slot__item tutor-slot__item--chips">
+                          <div className="tutor-clean__tags">
+                            {tutor.subjects.map((sub, j) => (
+                              <span key={j} className="tutor-clean__chip">{sub}</span>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* Header Line Viewport (Name + University) */}
                   <div className="tutor-slot__viewport tutor-slot__viewport--header">
                     <div
@@ -177,32 +199,6 @@ export function HeroSection() {
                               <span className="tutor-clean__stat-val">{tutor.gpa.toFixed(2)}</span>
                               <span className="tutor-clean__stat-lbl">IPK</span>
                             </div>
-                            <div className="tutor-clean__stat">
-                              <span className="tutor-clean__stat-val">+{tutor.studentsCount}</span>
-                              <span className="tutor-clean__stat-lbl">Siswa</span>
-                            </div>
-                            <div className="tutor-clean__stat">
-                              <span className="tutor-clean__stat-val">+{tutor.yearsExperience}</span>
-                              <span className="tutor-clean__stat-lbl">Tahun</span>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Chips Line Viewport */}
-                  <div className="tutor-slot__viewport tutor-slot__viewport--chips">
-                    <div
-                      className="tutor-slot__wrapper tutor-slot__wrapper--chips"
-                      style={{ transform: `translateY(-${tutorIndex * 38}px)` }}
-                    >
-                      {starTutors.map((tutor, i) => (
-                        <div key={i} className="tutor-slot__item tutor-slot__item--chips">
-                          <div className="tutor-clean__tags">
-                            {tutor.subjects.map((sub, j) => (
-                              <span key={j} className="tutor-clean__chip">{sub}</span>
-                            ))}
                           </div>
                         </div>
                       ))}
@@ -340,6 +336,24 @@ export function HeroSection() {
             {/* Tutor Meta Carousel — right side (Staggered Slot Machine Reel) */}
             <FloatUp className="hero-mobile__meta" delay={150} distance={20} blur={8}>
               <div className="hero-mobile__tutor-slot">
+                {/* Chips Slot */}
+                <div className="hero-mobile__tutor-viewport hero-mobile__tutor-viewport--chips">
+                  <div
+                    className="hero-mobile__tutor-wrapper hero-mobile__tutor-wrapper--chips"
+                    style={{ transform: `translateY(-${tutorIndex * 24}px)` }}
+                  >
+                    {starTutors.map((tutor, i) => (
+                      <div key={i} className="hero-mobile__tutor-item hero-mobile__tutor-item--chips">
+                        <div className="hero-mobile__chips">
+                          {tutor.subjects.map((sub, j) => (
+                            <span key={j} className="hero-mobile__chip">{sub}</span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 {/* Header Slot (Name + Uni) */}
                 <div className="hero-mobile__tutor-viewport hero-mobile__tutor-viewport--header">
                   <div
@@ -370,32 +384,6 @@ export function HeroSection() {
                             <span className="hero-mobile__stat-val">{tutor.gpa.toFixed(2)}</span>
                             <span className="hero-mobile__stat-lbl">IPK</span>
                           </div>
-                          <div className="hero-mobile__stat">
-                            <span className="hero-mobile__stat-val">+{tutor.studentsCount}</span>
-                            <span className="hero-mobile__stat-lbl">Siswa</span>
-                          </div>
-                          <div className="hero-mobile__stat">
-                            <span className="hero-mobile__stat-val">+{tutor.yearsExperience}</span>
-                            <span className="hero-mobile__stat-lbl">Tahun</span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Chips Slot */}
-                <div className="hero-mobile__tutor-viewport hero-mobile__tutor-viewport--chips">
-                  <div
-                    className="hero-mobile__tutor-wrapper hero-mobile__tutor-wrapper--chips"
-                    style={{ transform: `translateY(-${tutorIndex * 34}px)` }}
-                  >
-                    {starTutors.map((tutor, i) => (
-                      <div key={i} className="hero-mobile__tutor-item hero-mobile__tutor-item--chips">
-                        <div className="hero-mobile__chips">
-                          {tutor.subjects.map((sub, j) => (
-                            <span key={j} className="hero-mobile__chip">{sub}</span>
-                          ))}
                         </div>
                       </div>
                     ))}
