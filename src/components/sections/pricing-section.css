@@ -130,7 +130,8 @@
   border-right: 1px solid var(--border-color);
   background: var(--white);
   padding: 2.25rem 2rem;
-  transition: background 0.2s ease;
+  transition-property: background;
+  transition-duration: 0.2s;
 }
 
 .pricing-card:nth-child(3n) {

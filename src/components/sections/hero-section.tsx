@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { starTutors, heroCTA } from "@/data/hero";
 import { Navbar } from "@/components/ui/navbar";
+import { FloatUp } from "@/components/ui/float-up";
 
 const heroSlides = [
   {
@@ -116,7 +117,7 @@ export function HeroSection() {
           <div className="hero-container__content">
             {/* LEFT — CTA */}
             <div className="hero-container__left">
-              <div className="edukeo-brand">
+              <FloatUp className="edukeo-brand" delay={50} distance={24} blur={10}>
                 <h1 className="edukeo-brand__headline">
                   <span className="edukeo-brand__headline-sub">Bimbel Privat Yogya?</span>
                   <span className="edukeo-brand__headline-main">Datang ke Rumah, Hasil Nyata</span>
@@ -131,12 +132,12 @@ export function HeroSection() {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </FloatUp>
             </div>
 
             {/* RIGHT — Star Tutor Carousel (Staggered Slot Machine Reel) */}
             <div className="hero-container__right">
-              <div className="hero-container__right-inner">
+              <FloatUp className="hero-container__right-inner" delay={150} distance={24} blur={10}>
                 <div className="tutor-slot">
                   {/* Header Line Viewport (Name + University) */}
                   <div className="tutor-slot__viewport tutor-slot__viewport--header">
@@ -217,7 +218,7 @@ export function HeroSection() {
                     </button>
                   ))}
                 </div>
-              </div>
+              </FloatUp>
             </div>
           </div>
         </div>
@@ -227,7 +228,7 @@ export function HeroSection() {
           {/* ROW 1: CTA — headline left, slot carousel right */}
           <div className="hero-mobile__cta">
             <div className="hero-mobile__cta-bg" />
-            <div className="hero-mobile__cta-inner">
+            <FloatUp className="hero-mobile__cta-inner" delay={50} distance={20} blur={8}>
               <div className="hero-mobile__headline">
                 <span className="hero-mobile__headline-sub">Bimbel Privat Yogya?</span>
                 <span className="hero-mobile__headline-main">Datang ke Rumah, Hasil Nyata</span>
@@ -287,7 +288,7 @@ export function HeroSection() {
                   ))}
                 </div>
               </div>
-            </div>
+            </FloatUp>
           </div>
 
           {/* ROW 2: Tutor — cutout left, meta right */}
@@ -329,7 +330,7 @@ export function HeroSection() {
               ))}
             </div>
             {/* Tutor Meta Carousel — right side (Staggered Slot Machine Reel) */}
-            <div className="hero-mobile__meta">
+            <FloatUp className="hero-mobile__meta" delay={150} distance={20} blur={8}>
               <div className="hero-mobile__tutor-slot">
                 {/* Header Slot (Name + Uni) */}
                 <div className="hero-mobile__tutor-viewport hero-mobile__tutor-viewport--header">
@@ -409,7 +410,7 @@ export function HeroSection() {
                   </button>
                 ))}
               </div>
-            </div>
+            </FloatUp>
           </div>
         </div>
 
@@ -417,4 +418,3 @@ export function HeroSection() {
     </>
   );
 }
-

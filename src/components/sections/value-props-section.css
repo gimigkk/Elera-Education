@@ -60,7 +60,8 @@
 
 .vprop-card {
   position: relative;
-  transition: background 0.2s ease;
+  transition-property: background;
+  transition-duration: 0.2s;
   border-right: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }

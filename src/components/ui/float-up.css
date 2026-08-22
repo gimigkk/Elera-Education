@@ -1,0 +1,67 @@
+/* ===== Generic Float Up Entry Animation (Float Up + Blur) ===== */
+
+.float-up-element {
+  opacity: 0;
+  transform: translate3d(0, var(--float-distance, 20px), 0);
+  filter: blur(var(--float-blur, 8px));
+  overflow-anchor: none;
+
+  transition-property: opacity, transform, filter !important;
+  transition-duration: var(--float-duration, 500ms) !important;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition-delay: var(--float-delay, 0ms) !important;
+}
+
+.float-up-element.is-revealed,
+.float-up-element[data-revealed="true"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0px);
+}
+
+/* Direction Variants */
+.float-up-element[data-direction="down"] {
+  transform: translate3d(0, calc(var(--float-distance, 20px) * -1), 0);
+}
+
+.float-up-element[data-direction="left"] {
+  transform: translate3d(var(--float-distance, 20px), 0, 0);
+}
+
+.float-up-element[data-direction="right"] {
+  transform: translate3d(calc(var(--float-distance, 20px) * -1), 0, 0);
+}
+
+.float-up-element[data-direction="none"] {
+  transform: translate3d(0, 0, 0);
+}
+
+.float-up-element[data-direction="down"].is-revealed,
+.float-up-element[data-direction="left"].is-revealed,
+.float-up-element[data-direction="right"].is-revealed,
+.float-up-element[data-direction="none"].is-revealed {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Firefox & Non-Chromium Browser Performance Override: Disable filter blur */
+@supports (-moz-appearance: none) {
+  .float-up-element {
+    filter: none !important;
+  }
+}
+
+@supports not (-webkit-app-region: drag) {
+  .float-up-element {
+    filter: none !important;
+  }
+}
+
+/* Accessibility: Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .float-up-element {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}

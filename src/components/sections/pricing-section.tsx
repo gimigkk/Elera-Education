@@ -2,6 +2,7 @@
 
 import "./pricing-section.css";
 import { useState, useMemo, useEffect } from "react";
+import { FloatUp } from "@/components/ui/float-up";
 import {
   schoolTiers,
   pricingWhatsApp,
@@ -105,22 +106,28 @@ export function PricingSection() {
 
   return (
     <section className="site-section pricing-section" id="biaya">
-      {/* ── Top Header Area: Tag on top, Row with Title & Desc on Left, Chips on Right ── */}
+      {/* ── Top Header Area: Staggered Tag -> Title -> Subtitle -> Filter Chips ── */}
       <div className="pricing-top">
-        <span className="pricing-header__tag">Biaya Les</span>
+        <FloatUp delay={0} distance={14}>
+          <span className="pricing-header__tag">Biaya Les</span>
+        </FloatUp>
 
         <div className="pricing-header-row">
           <div className="pricing-header-left">
-            <h2 className="pricing-header__title">
-              Program Bimbel Elera
-            </h2>
-            <p className="pricing-header__subtitle">
-              Temukan biaya les yang sesuai dengan jenjang dan kebutuhan belajar
-              anak Anda. Tentor datang ke rumah, jadwal fleksibel.
-            </p>
+            <FloatUp delay={70} distance={14}>
+              <h2 className="pricing-header__title">
+                Program Bimbel Elera
+              </h2>
+            </FloatUp>
+            <FloatUp delay={140} distance={14}>
+              <p className="pricing-header__subtitle">
+                Temukan biaya les yang sesuai dengan jenjang dan kebutuhan belajar
+                anak Anda. Tentor datang ke rumah, jadwal fleksibel.
+              </p>
+            </FloatUp>
           </div>
 
-          <div className="pricing-controls-right">
+          <FloatUp delay={200} distance={14} className="pricing-controls-right">
             {/* Tier selector chips aligned with top of Title */}
             <div className="pricing-tier-pills" role="tablist" aria-label="Pilih jenjang sekolah">
               {schoolTiers.map((t) => (
@@ -160,7 +167,7 @@ export function PricingSection() {
                 </button>
               )}
             </div>
-          </div>
+          </FloatUp>
         </div>
       </div>
 
@@ -168,12 +175,14 @@ export function PricingSection() {
       <div className="pricing-grid-3">
         {displayOptions.map((opt, cardIdx) => {
           const isKelompok = opt.type === "Kelompok";
-          const baseDelay = cardIdx * 40;
 
           if (!opt.available) {
             return (
-              <div
+              <FloatUp
                 key={opt.type}
+                staggerIndex={cardIdx}
+                staggerStep={80}
+                distance={20}
                 className={`pricing-card pricing-card--unavailable ${isKelompok ? "pricing-card--kelompok" : ""} pricing-card--tk-unavailable`}
               >
                 <div className="pricing-card__head">
@@ -187,7 +196,7 @@ export function PricingSection() {
                     Program kelompok belum tersedia untuk jenjang {tier.label}.
                   </SlotReel>
                 </div>
-              </div>
+              </FloatUp>
             );
           }
 
@@ -196,8 +205,11 @@ export function PricingSection() {
           const origPriceKey = opt.originalPricePerChild ? String(opt.originalPricePerChild) : "no-orig";
 
           return (
-            <div
+            <FloatUp
               key={opt.type}
+              staggerIndex={cardIdx}
+              staggerStep={80}
+              distance={20}
               className={`pricing-card ${isPopular ? "pricing-card--popular" : ""} ${isKelompok ? "pricing-card--kelompok" : ""}`}
             >
               {isPopular && (
@@ -275,14 +287,14 @@ export function PricingSection() {
                   </SlotReel>
                 )}
               </div>
-            </div>
+            </FloatUp>
           );
         })}
       </div>
 
-      {/* ── Registration Fee Bar ── */}
+      {/* ── Registration Fee Bar: Static Background, Inner Text Floats Up ── */}
       <div className="pricing-registration">
-        <div className="pricing-registration__inner">
+        <FloatUp className="pricing-registration__inner" delay={100} distance={18}>
           <div className="pricing-registration__left">
             <span className="pricing-registration__label">Biaya Pendaftaran</span>
             <div className="pricing-registration__fees">
@@ -304,7 +316,7 @@ export function PricingSection() {
           <p className="pricing-registration__note">
             Bisa dicicil 2–3 bulan. Pembayaran les di awal per 1 minggu, 2 minggu, atau 1 bulan.
           </p>
-        </div>
+        </FloatUp>
       </div>
     </section>
   );

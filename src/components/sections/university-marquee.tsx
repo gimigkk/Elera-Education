@@ -2,6 +2,7 @@
 
 import "./university-marquee.css";
 import { topUniversities } from "@/data/universities";
+import { FloatUp } from "@/components/ui/float-up";
 
 export function UniversityMarquee() {
   // Duplicate array 3 times for seamless 360-degree infinite marquee loop
@@ -13,7 +14,13 @@ export function UniversityMarquee() {
         <div className="uni-marquee-track">
           {marqueeItems.map((uni, index) => (
             <div key={`${uni.id}-${index}`} className="uni-marquee-cell">
-              <div className="uni-marquee-cell__inner">
+              <FloatUp
+                staggerIndex={index % topUniversities.length}
+                staggerStep={70}
+                distance={16}
+                blur={6}
+                className="uni-marquee-cell__inner"
+              >
                 <div className="uni-marquee-cell__logo-box">
                   <div
                     className="uni-marquee-cell__logo-mask"
@@ -29,7 +36,7 @@ export function UniversityMarquee() {
                   <span className="uni-marquee-cell__line">{uni.line1}</span>
                   <span className="uni-marquee-cell__line">{uni.line2}</span>
                 </div>
-              </div>
+              </FloatUp>
             </div>
           ))}
         </div>

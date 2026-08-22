@@ -1,10 +1,13 @@
 "use client";
 
 import "./cta-section.css";
+import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa6";
 import { heroCTA } from "@/data/hero";
+import { FloatUp } from "@/components/ui/float-up";
 
 export function CtaSection() {
+  const [isMapLoaded, setIsMapLoaded] = useState(false);
   const whatsappUrl = `https://wa.me/${heroCTA.ctaWhatsAppNumber}?text=${encodeURIComponent(heroCTA.ctaWhatsAppMessage)}`;
 
   return (
@@ -12,17 +15,24 @@ export function CtaSection() {
       {/* ── 2-Column Split Docker Grid: Header on Left, Full-bleed Map on Right ── */}
       <div className="cta-grid">
         <div className="cta-left-cell">
-          <span className="cta-header__tag">Area Layanan & Pendaftaran</span>
+          <FloatUp delay={0} distance={14}>
+            <span className="cta-header__tag">Area Layanan & Pendaftaran</span>
+          </FloatUp>
 
           <div className="cta-left-content">
-            <h2 className="cta-header__title">
-              Siap Tingkatkan Prestasi Belajar Anak Anda?
-            </h2>
-            <p className="cta-header__subtitle">
-              Tentor Elera Education siap datang langsung ke rumah di seluruh area Daerah Istimewa Yogyakarta (D.I. Yogyakarta). Konsultasikan kebutuhan belajar putra-putri Anda secara gratis.
-            </p>
+            <FloatUp delay={70} distance={14}>
+              <h2 className="cta-header__title">
+                Siap Tingkatkan Prestasi Belajar Anak Anda?
+              </h2>
+            </FloatUp>
 
-            <div className="cta-actions">
+            <FloatUp delay={140} distance={14}>
+              <p className="cta-header__subtitle">
+                Tentor Elera Education siap datang langsung ke rumah di seluruh area Daerah Istimewa Yogyakarta (D.I. Yogyakarta). Konsultasikan kebutuhan belajar putra-putri Anda secara gratis.
+              </p>
+            </FloatUp>
+
+            <FloatUp delay={210} distance={14} className="cta-actions">
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -32,10 +42,11 @@ export function CtaSection() {
                 <FaWhatsapp className="cta-btn-primary__icon" />
                 <span>Konsultasi via WhatsApp</span>
               </a>
-            </div>
+            </FloatUp>
           </div>
         </div>
 
+        {/* Static Map Cell — Fades in smoothly when iframe finishes loading */}
         <div className="cta-map-cell">
           <iframe
             title="Peta Wilayah Layanan Elera Education D.I. Yogyakarta"
@@ -45,15 +56,16 @@ export function CtaSection() {
             style={{ border: 0 }}
             allowFullScreen={false}
             loading="lazy"
+            onLoad={() => setIsMapLoaded(true)}
             referrerPolicy="no-referrer-when-downgrade"
-            className="cta-map-iframe"
+            className={`cta-map-iframe ${isMapLoaded ? "is-loaded" : ""}`}
           />
         </div>
       </div>
 
-      {/* ── Docker Registration-style Info Bar at bottom ── */}
+      {/* ── Docker Registration-style Info Bar: Static Background, Inner Text Floats Up ── */}
       <div className="cta-bottom-bar">
-        <div className="cta-bottom-bar__inner">
+        <FloatUp className="cta-bottom-bar__inner" delay={100} distance={18}>
           <span className="cta-bottom-bar__label">Jangkauan & Layanan</span>
           <div className="cta-bottom-bar__info">
             <span className="cta-bottom-bar__item">
@@ -71,7 +83,7 @@ export function CtaSection() {
           <p className="cta-bottom-bar__note text-balance">
             Hubungi tim konsultan kami via WhatsApp untuk penyesuaian jadwal dan pemilihan mata pelajaran.
           </p>
-        </div>
+        </FloatUp>
       </div>
     </section>
   );

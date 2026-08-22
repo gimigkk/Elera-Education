@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { ScrollToTopOnRefresh } from "@/components/ui/scroll-to-top";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -31,8 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${spaceGrotesk.variable} ${plusJakartaSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <ScrollToTopOnRefresh />
+        {children}
+      </body>
     </html>
   );
 }
-
