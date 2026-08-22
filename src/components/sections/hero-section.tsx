@@ -41,6 +41,14 @@ const heroSlides = [
 export function HeroSection() {
   const [featureIndex, setFeatureIndex] = useState(0);
   const [tutorIndex, setTutorIndex] = useState(0);
+  const [hasEntered, setHasEntered] = useState(false);
+
+  useEffect(() => {
+    const entryTimer = setTimeout(() => {
+      setHasEntered(true);
+    }, 80);
+    return () => clearTimeout(entryTimer);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -93,7 +101,7 @@ export function HeroSection() {
             {starTutors.map((tutor, index) => (
               <div
                 key={index}
-                className={`hero-container__girl-slide ${index === tutorIndex ? "active" : ""}`}
+                className={`hero-container__girl-slide ${index === tutorIndex && hasEntered ? "active" : ""}`}
               >
                 <Image
                   src={tutor.photoUrl}
@@ -316,7 +324,7 @@ export function HeroSection() {
               {starTutors.map((tutor, index) => (
                 <div
                   key={index}
-                  className={`hero-mobile__girl-slide ${index === tutorIndex ? "active" : ""}`}
+                  className={`hero-mobile__girl-slide ${index === tutorIndex && hasEntered ? "active" : ""}`}
                 >
                   <Image
                     src={tutor.photoUrl}
