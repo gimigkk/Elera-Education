@@ -98,8 +98,31 @@
 
 .pricing-tier-pill:hover,
 .pricing-grade-pill:hover {
-  border-color: var(--gray-500);
-  color: var(--text-primary);
+  border-color: var(--docker-blue);
+  color: var(--docker-blue);
+  background: var(--gray-50);
+}
+
+@keyframes gradePillFloatUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.pricing-grade-pill--animate {
+  animation: gradePillFloatUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--stagger-desktop, 0ms);
+}
+
+@media (max-width: 960px) {
+  .pricing-grade-pill--animate {
+    animation-delay: var(--stagger-mobile, 0ms);
+  }
 }
 
 .pricing-tier-pill--active,

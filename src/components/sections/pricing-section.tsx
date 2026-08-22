@@ -143,23 +143,27 @@ export function PricingSection() {
               ))}
             </div>
 
-            {/* Grade sub-selector chips: locked in Row 2 with identical height dummy button when hidden */}
-            <div className="pricing-grade-pills" role="tablist" aria-label="Pilih kelas">
+            {/* Grade sub-selector chips: float up whenever top tier chip changes */}
+            <div key={activeTier} className="pricing-grade-pills" role="tablist" aria-label="Pilih kelas">
               {grades.length > 1 ? (
                 grades.map((g, idx) => (
                   <button
                     key={g.key}
                     role="tab"
                     aria-selected={activeGradeIdx === idx}
-                    className={`pricing-grade-pill ${activeGradeIdx === idx ? "pricing-grade-pill--active" : ""}`}
+                    className={`pricing-grade-pill pricing-grade-pill--animate ${activeGradeIdx === idx ? "pricing-grade-pill--active" : ""}`}
                     onClick={() => setActiveGradeIdx(idx)}
+                    style={{
+                      "--stagger-desktop": `${(grades.length - 1 - idx) * 45}ms`,
+                      "--stagger-mobile": `${idx * 45}ms`,
+                    } as React.CSSProperties}
                   >
                     {g.label}
                   </button>
                 ))
               ) : (
                 <button
-                  className="pricing-grade-pill pricing-grade-pill--placeholder"
+                  className="pricing-grade-pill pricing-grade-pill--placeholder pricing-grade-pill--animate"
                   aria-hidden="true"
                   tabIndex={-1}
                 >
