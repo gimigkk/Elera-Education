@@ -71,6 +71,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: auto;
   background-color: var(--white);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  padding: 3.5rem 0;
   /* Use clip instead of hidden so position: sticky on navbar is not broken */
   overflow-x: clip;
 }
@@ -83,6 +87,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 960px) {
+  .site-frame {
+    gap: 2rem;
+    padding: 2rem 0;
+  }
 
   p {
     font-size: 11px;
