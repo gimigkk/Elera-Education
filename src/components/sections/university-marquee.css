@@ -2,7 +2,7 @@
 .uni-marquee-section {
   width: 100%;
   background: var(--white);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
   overflow: hidden;
   position: relative;
   pointer-events: none;

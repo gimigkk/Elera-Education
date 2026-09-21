@@ -25,7 +25,7 @@
   --green-500: #22C55E;
   --green-400: #4ADE80;
 
-  --max-width: 1200px;
+  --max-width: 1280px;
 
   /* Text Opacity Hierarchy Tokens — Light Containers */
   --text-primary: #0B1727;
@@ -63,32 +63,26 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
 }
 
-/* ===== Docker Outer Site Frame & Gutter Borders ===== */
+/* ===== Site Frame (Consistent Content Gutter, No Side Borders) ===== */
 .site-frame {
   width: 100%;
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
   background-color: var(--white);
-  border-left: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
   min-height: 100vh;
   /* Use clip instead of hidden so position: sticky on navbar is not broken */
   overflow-x: clip;
 }
 
-/* Common Section Wrapper with bottom border line */
+/* Common Section Wrapper (No section divider borders) */
 .site-section {
   width: 100%;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
   overflow: hidden;
 }
 
 @media (max-width: 960px) {
-  .site-frame {
-    border-left: none;
-    border-right: none;
-  }
 
   p {
     font-size: 11px;
