@@ -138,32 +138,184 @@
   opacity: 0;
 }
 
-/* ── Pricing Grid (Strict Docker 1px Border Grid matching vprop-grid-2x3) ── */
+/* ── Pricing Grid (Standalone Cards Aesthetic) ── */
 .pricing-grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--border-color);
-  background: var(--white);
+  gap: 0.85rem;
+  padding: 0 2rem 2.25rem;
+  background: transparent;
 }
 
 .pricing-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--border-color);
-  background: var(--white);
-  padding: 2.25rem 2rem;
-  transition-property: background;
-  transition-duration: 0.2s;
+  background: transparent;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
-.pricing-card:nth-child(3n) {
-  border-right: none;
+.pricing-card:hover {
+  transform: translateY(-4px);
+}
+
+/* White Top Card Surface with 4 Rounded Corners */
+.pricing-card__surface {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--white);
+  padding: 1.75rem 1.5rem 1.5rem;
+  box-shadow: 0 2px 5px rgba(11, 23, 39, 0.04);
+}
+
+.pricing-card--popular .pricing-card__surface {
+  border-color: var(--docker-blue);
+}
+
+/* Extrusion Bar (Normal Flow Below the Card Surface) */
+.pricing-card__extrusion {
+  position: relative;
+  z-index: 1;
+  margin-top: -8px;
+  padding: 12px 1rem 0.35rem;
+  background: #E2E8F0;
+  border: 1px solid #CBD5E1;
+  border-top: none;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 42px;
+  overflow: hidden;
+}
+
+.pricing-card--popular .pricing-card__extrusion {
+  background: var(--docker-blue);
+  border-color: var(--docker-blue);
+}
+
+/* Smooth Continuous Gloss Shimmer */
+@keyframes glossShimmer {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
 }
 
 /* Highlight Popular Card */
 .pricing-card--popular {
-  background: var(--white);
+  background: transparent;
+}
+
+/* Professional smooth gloss beam sweep */
+.pricing-card--popular .pricing-card__extrusion::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 25%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.08) 75%,
+    transparent 100%
+  );
+  animation: glossShimmer 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pricing-card__extrusion-left {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.pricing-card__extrusion-text {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.3;
+  text-align: left;
+}
+
+.pricing-card--popular .pricing-card__extrusion-text {
+  color: #FFFFFF;
+}
+
+.pricing-card__extrusion-text--bold {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+/* CTA Button inside Extrusion */
+.pricing-card__extrusion-btn {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  height: 28px;
+  padding: 0 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: #FFFFFF;
+  color: var(--text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.pricing-card__extrusion-btn:hover {
+  background: var(--docker-blue-50);
+  border-color: var(--docker-blue);
+  color: var(--docker-blue);
+}
+
+.pricing-card__extrusion-btn--popular {
+  background: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.4);
+  color: var(--docker-blue);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card__extrusion-btn--popular:hover {
+  background: var(--docker-blue-50);
+  border-color: var(--docker-blue-50);
+  color: var(--docker-blue-dark);
+}
+
+.pricing-card__extrusion-btn-icon {
+  font-size: 0.85rem;
+  flex-shrink: 0;
 }
 
 .pricing-card__head-top {
@@ -175,19 +327,19 @@
 }
 
 .pricing-card__badge {
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--docker-blue);
-  background: var(--white);
-  border: 1px solid var(--border-color);
-  border-radius: 3px;
-  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: #FFFFFF;
+  background: var(--docker-blue);
+  border: none;
+  border-radius: 9999px;
+  padding: 0.3rem 0.85rem;
   line-height: 1;
   white-space: nowrap;
 }
@@ -462,6 +614,8 @@
 
   .pricing-grid-3 {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 0 1.25rem 1.5rem;
   }
 
   .pricing-card--tk-unavailable {
@@ -469,13 +623,32 @@
   }
 
   .pricing-card {
-    border-right: none;
-    border-bottom: 1px solid var(--border-color);
-    padding: 1.25rem 1.25rem;
+    padding: 0;
   }
 
-  .pricing-card:last-child {
-    border-bottom: none;
+  .pricing-card__surface {
+    padding: 1.25rem 1.25rem 1rem;
+  }
+
+  .pricing-card__badge {
+    display: inline-flex;
+  }
+
+  .pricing-card__extrusion {
+    margin-top: -6px;
+    padding: 10px 0.85rem 0.35rem;
+    min-height: 38px;
+    gap: 0.5rem;
+  }
+
+  .pricing-card__extrusion-btn {
+    height: 26px;
+    font-size: 11px;
+    padding: 0 0.6rem;
+  }
+
+  .pricing-card__extrusion-text {
+    font-size: 11px;
   }
 
   .pricing-card__head {

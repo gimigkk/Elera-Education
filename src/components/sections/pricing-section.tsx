@@ -3,6 +3,7 @@
 import "./pricing-section.css";
 import { useState, useMemo, useEffect } from "react";
 import { FloatUp } from "@/components/ui/float-up";
+import { FaWhatsapp } from "react-icons/fa6";
 import {
   schoolTiers,
   pricingWhatsApp,
@@ -243,6 +244,12 @@ export function PricingSection() {
           const isPopular = opt.type === "Semi-Privat";
           const priceAmountKey = `${opt.pricePerChild}-${opt.pricePerChildMax ?? ""}`;
           const origPriceKey = opt.originalPricePerChild ? String(opt.originalPricePerChild) : "no-orig";
+          const waMessage = pricingWhatsApp.buildMessage(
+            tier.label,
+            grade.label,
+            opt.type
+          );
+          const waUrl = `https://wa.me/${pricingWhatsApp.number}?text=${encodeURIComponent(waMessage)}`;
 
           return (
             <FloatUp
@@ -252,86 +259,114 @@ export function PricingSection() {
               distance={20}
               className={`pricing-card ${isPopular ? "pricing-card--popular" : ""} ${isKelompok ? "pricing-card--kelompok" : ""}`}
             >
-              <div className="pricing-card__head">
-                <div className="pricing-card__head-top">
-                  <h3 className="pricing-card__type">{opt.type}</h3>
-                  {isPopular && (
-                    <span className="pricing-card__badge">Favorit</span>
-                  )}
-                </div>
-                <SlotReel valueKey={opt.description} as="p" className="pricing-card__desc" delay={baseDelay}>
-                  {opt.description}
-                </SlotReel>
-              </div>
-
-              <div className="pricing-card__body">
-                <div className="pricing-card__price-block">
-                  <SlotReel
-                    valueKey={origPriceKey}
-                    as="span"
-                    delay={baseDelay + 20}
-                    className={!opt.originalPricePerChild ? "pricing-card__orig-slot--empty" : ""}
-                  >
-                    {opt.originalPricePerChild ? (
-                      <span className="pricing-card__original-price">
-                        {formatRupiah(opt.originalPricePerChild)}
-                      </span>
-                    ) : (
-                      <span
-                        className="pricing-card__original-price pricing-card__original-price--placeholder"
-                        aria-hidden="true"
-                      >
-                        &nbsp;
-                      </span>
+              {/* White Surface (Full 4-Corner Rounded Card) */}
+              <div className="pricing-card__surface">
+                <div className="pricing-card__head">
+                  <div className="pricing-card__head-top">
+                    <h3 className="pricing-card__type">{opt.type}</h3>
+                    {isPopular && (
+                      <span className="pricing-card__badge">Favorit</span>
                     )}
+                  </div>
+                  <SlotReel valueKey={opt.description} as="p" className="pricing-card__desc" delay={baseDelay}>
+                    {opt.description}
                   </SlotReel>
+                </div>
 
-                  <SlotReel valueKey={priceAmountKey} as="div" className="pricing-card__price-amount-wrap" delay={baseDelay + 35}>
-                    <div className="pricing-card__price-amount">
-                      <span className="pricing-card__price">
-                        {formatRupiah(opt.pricePerChild)}
-                      </span>
-                      {opt.pricePerChildMax && (
-                        <span className="pricing-card__price-range">
-                          – {formatRupiah(opt.pricePerChildMax)}
+                <div className="pricing-card__body">
+                  <div className="pricing-card__price-block">
+                    <SlotReel
+                      valueKey={origPriceKey}
+                      as="span"
+                      delay={baseDelay + 20}
+                      className={!opt.originalPricePerChild ? "pricing-card__orig-slot--empty" : ""}
+                    >
+                      {opt.originalPricePerChild ? (
+                        <span className="pricing-card__original-price">
+                          {formatRupiah(opt.originalPricePerChild)}
+                        </span>
+                      ) : (
+                        <span
+                          className="pricing-card__original-price pricing-card__original-price--placeholder"
+                          aria-hidden="true"
+                        >
+                          &nbsp;
                         </span>
                       )}
-                      <span className="pricing-card__per">/anak/sesi</span>
-                    </div>
-                  </SlotReel>
-                </div>
+                    </SlotReel>
 
-                <div className="pricing-card__meta">
-                  <div className="pricing-card__meta-row">
-                    <span className="pricing-card__meta-check">✓</span>
-                    <SlotReel valueKey={opt.durationMinutes} as="span" delay={baseDelay + 50}>
-                      <span>Durasi {opt.durationMinutes} menit / sesi</span>
+                    <SlotReel valueKey={priceAmountKey} as="div" className="pricing-card__price-amount-wrap" delay={baseDelay + 35}>
+                      <div className="pricing-card__price-amount">
+                        <span className="pricing-card__price">
+                          {formatRupiah(opt.pricePerChild)}
+                        </span>
+                        {opt.pricePerChildMax && (
+                          <span className="pricing-card__price-range">
+                            – {formatRupiah(opt.pricePerChildMax)}
+                          </span>
+                        )}
+                        <span className="pricing-card__per">/anak/sesi</span>
+                      </div>
                     </SlotReel>
                   </div>
-                  <div className="pricing-card__meta-row">
-                    <span className="pricing-card__meta-check">✓</span>
-                    <span>
-                      Total sesi:{" "}
-                      <SlotReel valueKey={opt.sessionPrice} as="span" delay={baseDelay + 65}>
-                        {formatRupiah(opt.sessionPrice)}
-                      </SlotReel>
-                    </span>
-                  </div>
-                  {opt.maxStudents && (
+
+                  <div className="pricing-card__meta">
                     <div className="pricing-card__meta-row">
                       <span className="pricing-card__meta-check">✓</span>
-                      <SlotReel valueKey={opt.maxStudents} as="span" delay={baseDelay + 80}>
-                        <span>Maksimal {opt.maxStudents} anak</span>
+                      <SlotReel valueKey={opt.durationMinutes} as="span" delay={baseDelay + 50}>
+                        <span>Durasi {opt.durationMinutes} menit / sesi</span>
                       </SlotReel>
                     </div>
+                    <div className="pricing-card__meta-row">
+                      <span className="pricing-card__meta-check">✓</span>
+                      <span>
+                        Total sesi:{" "}
+                        <SlotReel valueKey={opt.sessionPrice} as="span" delay={baseDelay + 65}>
+                          {formatRupiah(opt.sessionPrice)}
+                        </SlotReel>
+                      </span>
+                    </div>
+                    {opt.maxStudents && (
+                      <div className="pricing-card__meta-row">
+                        <span className="pricing-card__meta-check">✓</span>
+                        <SlotReel valueKey={opt.maxStudents} as="span" delay={baseDelay + 80}>
+                          <span>Maksimal {opt.maxStudents} anak</span>
+                        </SlotReel>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Extrusion Bottom Slab */}
+              <div className="pricing-card__extrusion">
+                <div className="pricing-card__extrusion-left">
+                  {isPopular ? (
+                    <strong className="pricing-card__extrusion-text pricing-card__extrusion-text--bold">
+                      Program Favorit
+                    </strong>
+                  ) : (
+                    <SlotReel
+                      valueKey={opt.cocokUntuk || opt.type}
+                      as="span"
+                      className="pricing-card__extrusion-text"
+                      delay={baseDelay + 95}
+                    >
+                      {opt.cocokUntuk || ""}
+                    </SlotReel>
                   )}
                 </div>
 
-                {opt.cocokUntuk && (
-                  <SlotReel valueKey={opt.cocokUntuk} as="p" className="pricing-card__cocok" delay={baseDelay + 95}>
-                    {opt.cocokUntuk}
-                  </SlotReel>
-                )}
+                <a
+                  href={waUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`pricing-card__extrusion-btn ${isPopular ? "pricing-card__extrusion-btn--popular" : ""}`}
+                  aria-label={`Daftar les ${opt.type} via WhatsApp`}
+                >
+                  <FaWhatsapp className="pricing-card__extrusion-btn-icon" />
+                  <span>Daftar</span>
+                </a>
               </div>
             </FloatUp>
           );
