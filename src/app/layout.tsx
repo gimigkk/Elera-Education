@@ -31,11 +31,36 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://eleraeducation.com"),
   title: "Elera Education | Bimbel Panggilan Privat Yogyakarta",
   description:
     "Bimbel Panggilan Privat Terbaik di Yogyakarta. Tentor datang ke rumah, jadwal fleksibel, dan pendampingan kurikulum terpersonalisasi untuk TK hingga SMP.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
+  openGraph: {
+    title: "Elera Education | Bimbel Panggilan Privat Yogyakarta",
+    description:
+      "Bimbel Panggilan Privat Terbaik di Yogyakarta. Tentor datang ke rumah, jadwal fleksibel, dan pendampingan kurikulum terpersonalisasi untuk TK hingga SMP.",
+    url: "https://eleraeducation.com",
+    siteName: "Elera Education",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Elera Education - Bimbel Privat Jogja, Datang ke Rumah, Hasil Nyata",
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Elera Education | Bimbel Panggilan Privat Yogyakarta",
+    description:
+      "Bimbel Panggilan Privat Terbaik di Yogyakarta. Tentor datang ke rumah, jadwal fleksibel, dan pendampingan kurikulum terpersonalisasi untuk TK hingga SMP.",
+    images: ["/og-image.jpg"],
   },
 };
 

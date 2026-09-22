@@ -63,26 +63,28 @@ export function FloatUp({
     staggerIndex !== undefined ? delay + staggerIndex * staggerStep : delay;
 
   useEffect(() => {
-    if (disabled) {
-      setIsRevealed(true);
-      return;
-    }
+    let mounted = true;
 
-    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
-      setIsRevealed(true);
-      return;
-    }
+    if (disabled) return;
 
     const element = ref.current;
     if (!element) return;
 
-    // Check if element is already within the visible viewport during page refresh or initial mount
+    if (!("IntersectionObserver" in window)) {
+      requestAnimationFrame(() => {
+        if (mounted) setIsRevealed(true);
+      });
+      return;
+    }
+
+    // Check if element is already within visible viewport
     const rect = element.getBoundingClientRect();
     const windowHeight = window.innerHeight || document.documentElement.clientHeight;
 
-    // If element is inside or above current scroll position on refresh, reveal immediately without layout shift
     if (rect.top < windowHeight && rect.bottom > 0) {
-      setIsRevealed(true);
+      requestAnimationFrame(() => {
+        if (mounted) setIsRevealed(true);
+      });
       return;
     }
 
@@ -107,6 +109,7 @@ export function FloatUp({
     observer.observe(element);
 
     return () => {
+      mounted = false;
       if (element) {
         observer.unobserve(element);
       }
@@ -134,64 +137,3 @@ export function FloatUp({
     </Component>
   );
 }
-
-/**
- * FloatUpGroup helper component to automatically stagger direct child elements
- */
-export interface FloatUpGroupProps {
-  children: React.ReactNode;
-  staggerStep?: number;
-  baseDelay?: number;
-  duration?: number;
-  distance?: number;
-  blur?: number;
-  direction?: FloatDirection;
-  threshold?: number;
-  rootMargin?: string;
-  className?: string;
-  as?: React.ElementType;
-}
-
-export function FloatUpGroup({
-  children,
-  staggerStep = 70,
-  baseDelay = 0,
-  duration,
-  distance,
-  blur,
-  direction,
-  threshold,
-  rootMargin,
-  className = "",
-  as: Component = "div",
-}: FloatUpGroupProps) {
-  const childrenArray = React.Children.toArray(children);
-
-  return (
-    <Component className={className}>
-      {childrenArray.map((child, index) => {
-        if (!React.isValidElement(child)) return child;
-
-        return (
-          <FloatUp
-            key={child.key ?? index}
-            staggerIndex={index}
-            staggerStep={staggerStep}
-            delay={baseDelay}
-            duration={duration}
-            distance={distance}
-            blur={blur}
-            direction={direction}
-            threshold={threshold}
-            rootMargin={rootMargin}
-          >
-            {child}
-          </FloatUp>
-        );
-      })}
-    </Component>
-  );
-}
-
-// Convenience alias exports for component consumer flexibility
-export { FloatUp as FloatUpBlur, FloatUp as FadeInBlur, FloatUp as FloatUpContainer };

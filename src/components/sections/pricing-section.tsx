@@ -8,7 +8,6 @@ import {
   schoolTiers,
   pricingWhatsApp,
   type SchoolTierKey,
-  type ClassOption,
 } from "@/data/pricing";
 
 function formatRupiah(n: number): string {
