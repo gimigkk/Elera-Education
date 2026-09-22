@@ -139,6 +139,19 @@ export function HeroSection() {
             </div>
           </div>
 
+          {/* Desktop Progressive Edge Blur (Figma-style - inside canvas to not bleed into navbar) */}
+          <div className="hero-edge-blur hero-edge-blur--left" aria-hidden="true">
+            <span className="hero-edge-blur__stage hero-edge-blur__stage--1" />
+            <span className="hero-edge-blur__stage hero-edge-blur__stage--2" />
+            <span className="hero-edge-blur__stage hero-edge-blur__stage--3" />
+          </div>
+
+          <div className="hero-edge-blur hero-edge-blur--right" aria-hidden="true">
+            <span className="hero-edge-blur__stage hero-edge-blur__stage--1" />
+            <span className="hero-edge-blur__stage hero-edge-blur__stage--2" />
+            <span className="hero-edge-blur__stage hero-edge-blur__stage--3" />
+          </div>
+
           <div className="hero-mat__inner">
             {/* Coordinate Numbers Aligned to Big Squares (100px) */}
             <div className="hero-mat__numbers" aria-hidden="true">

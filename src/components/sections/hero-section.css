@@ -16,26 +16,18 @@
 }
 
 /* ==========================================================================
-   GOBO SHADOW OVERLAY (Window Blind / Slatted Shadows across Canvas & Marquee)
+   GOBO SHADOW OVERLAY (Leaf / Tree Shadow from image)
    ========================================================================== */
 .hero-mat__gobo {
   position: absolute;
-  inset: -30px;
+  inset: 0;
   pointer-events: none;
   z-index: 10;
-  mix-blend-mode: multiply;
-  background:
-    linear-gradient(118deg,
-      rgba(4, 15, 45, 0.25) 0%,
-      rgba(4, 15, 45, 0.25) 18%,
-      rgba(4, 15, 45, 0.14) 25%,
-      transparent 32%,
-      transparent 58%,
-      rgba(4, 15, 45, 0.14) 66%,
-      rgba(4, 15, 45, 0.27) 74%,
-      rgba(4, 15, 45, 0.27) 88%,
-      transparent 98%);
-  filter: blur(16px);
+  background-image: url("/images/hero/leaf-gobo.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.24;
 }
 
 /* ==========================================================================
@@ -489,6 +481,62 @@
 }
 
 /* ==========================================================================
+   PROGRESSIVE EDGE BLUR (Lightweight 3-Stage Backdrop Filter - 60fps)
+   ========================================================================== */
+.hero-edge-blur {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: max(260px, calc(50% - 360px));
+  pointer-events: none;
+  z-index: 40;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.hero-edge-blur--left {
+  left: 0;
+  --blur-dir: to right;
+}
+
+.hero-edge-blur--right {
+  right: 0;
+  --blur-dir: to left;
+}
+
+.hero-edge-blur__stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.001);
+  transform: translateZ(0);
+}
+
+/* Stage 1: Outermost edge */
+.hero-edge-blur__stage--1 {
+  -webkit-backdrop-filter: blur(2.5px);
+  backdrop-filter: blur(2.5px);
+  -webkit-mask-image: linear-gradient(var(--blur-dir), #000 0%, #000 25%, transparent 55%);
+  mask-image: linear-gradient(var(--blur-dir), #000 0%, #000 25%, transparent 55%);
+}
+
+/* Stage 2: Middle transition */
+.hero-edge-blur__stage--2 {
+  -webkit-backdrop-filter: blur(1.2px);
+  backdrop-filter: blur(1.2px);
+  -webkit-mask-image: linear-gradient(var(--blur-dir), transparent 15%, #000 40%, transparent 80%);
+  mask-image: linear-gradient(var(--blur-dir), transparent 15%, #000 40%, transparent 80%);
+}
+
+/* Stage 3: Soft feather out */
+.hero-edge-blur__stage--3 {
+  -webkit-backdrop-filter: blur(0.5px);
+  backdrop-filter: blur(0.5px);
+  -webkit-mask-image: linear-gradient(var(--blur-dir), transparent 45%, #000 70%, transparent 100%);
+  mask-image: linear-gradient(var(--blur-dir), transparent 45%, #000 70%, transparent 100%);
+}
+
+/* ==========================================================================
    CENTER HERO CTA BLOCK
    ========================================================================== */
 .hero-mat__center {
@@ -669,17 +717,7 @@
 
 @media (max-width: 960px) {
   .hero-mat__gobo {
-    background:
-      linear-gradient(132deg,
-        rgba(4, 15, 45, 0.25) 0%,
-        rgba(4, 15, 45, 0.25) 14%,
-        rgba(4, 15, 45, 0.13) 20%,
-        transparent 28%,
-        transparent 66%,
-        rgba(4, 15, 45, 0.14) 74%,
-        rgba(4, 15, 45, 0.27) 82%,
-        rgba(4, 15, 45, 0.27) 92%,
-        transparent 100%);
+    opacity: 0.32;
   }
 
   .hero-mat__canvas {
@@ -737,8 +775,9 @@
 
   .hero-mat__numbers,
   .hero-mat__string,
-  .hero-mat__elements {
-    display: none;
+  .hero-mat__elements,
+  .hero-edge-blur {
+    display: none !important;
   }
 }
 
