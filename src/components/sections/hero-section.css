@@ -134,6 +134,7 @@
   position: absolute;
   pointer-events: auto;
   user-select: none;
+  contain: layout style;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -320,8 +321,10 @@
   position: absolute;
   pointer-events: none;
   user-select: none;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.22));
+  contain: layout style paint;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
   z-index: 4;
+  transform: translateZ(0);
 }
 
 .hero-sticker img {
@@ -717,35 +720,48 @@
 
 @media (max-width: 960px) {
   .hero-mat__gobo {
-    opacity: 0.32;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/hero/leaf-gobo-portrait.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: none;
+    opacity: 0.3;
   }
 
   .hero-mat__canvas {
-    height: 580px;
+    height: 600px;
     padding: 0 1rem;
     overflow: hidden;
   }
 
+  /* Merged cell sized closely around headline + sub + CTA button */
   .hero-mat__merged-cell {
-    left: -2px;
-    right: -2px;
+    left: 8px;
+    right: 8px;
     width: auto;
-    top: 90px;
-    height: 380px;
-    border-left: none;
-    border-right: none;
+    top: 130px;
+    height: 330px;
+    border-radius: 4px;
+    border-left: 1.5px solid rgba(255, 255, 255, 0.22);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.22);
   }
 
   .hero-mat__inner {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 10;
   }
 
   .hero-mat__center {
     width: 100%;
     max-width: 480px;
     margin: 0 auto;
+    z-index: 12;
   }
 
   .hero-mat__headline-main {
@@ -773,10 +789,129 @@
     font-size: 0.95rem;
   }
 
+  /* Keep clutter visible on mobile, hide coordinates and desktop blur */
   .hero-mat__numbers,
   .hero-mat__string,
-  .hero-mat__elements,
   .hero-edge-blur {
+    display: none !important;
+  }
+
+  .hero-mat__elements {
+    display: block;
+    z-index: 2;
+  }
+
+  /* Mobile clutter positioning: sticky notes & stickers frame the merged cell without covering text */
+  .desk-item--yellow {
+    top: 32px;
+    left: 10px;
+    transform: scale(0.68) rotate(-5deg);
+    transform-origin: top left;
+  }
+
+  .desk-item--pink {
+    top: 50px;
+    right: 8px;
+    left: auto;
+    transform: scale(0.68) rotate(4deg);
+    transform-origin: top right;
+  }
+
+  /* Cyan moved inwards toward center */
+  .desk-item--cyan {
+    top: auto;
+    bottom: 22px;
+    left: calc(50% - 165px);
+    transform: scale(0.7) rotate(2deg);
+    transform-origin: bottom left;
+  }
+
+  /* Top center cluster */
+  .hero-sticker--gear-1 {
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%) rotate(12deg) scale(0.65);
+  }
+
+  .hero-sticker--paperclip-1 {
+    top: 14px;
+    left: calc(50% + 40px);
+    transform: rotate(30deg) scale(0.7);
+  }
+
+  /* Flanking the headline (tight to merged cell top/sides) */
+  .hero-sticker--pencil-1 {
+    top: 105px;
+    left: 6px;
+    transform: rotate(-35deg) scale(0.65);
+  }
+
+  .hero-sticker--briefcase {
+    top: 110px;
+    right: 6px;
+    left: auto;
+    transform: rotate(18deg) scale(0.65);
+  }
+
+  .hero-sticker--coin-1 {
+    display: block !important;
+    top: 165px;
+    left: -4px;
+    transform: rotate(-14deg) scale(0.58);
+  }
+
+  .hero-sticker--magnifier-1 {
+    display: block !important;
+    top: 170px;
+    right: -2px;
+    left: auto;
+    transform: rotate(16deg) scale(0.65);
+  }
+
+  /* Flanking CTA button & Subtitle */
+  .hero-sticker--paperclip-2 {
+    display: block !important;
+    top: 375px;
+    left: calc(50% - 170px);
+    transform: rotate(-22deg) scale(0.65);
+  }
+
+  .hero-sticker--folder-1 {
+    display: block !important;
+    top: 360px;
+    right: 4px;
+    left: auto;
+    transform: rotate(14deg) scale(0.6);
+  }
+
+  /* Bottom row flanking marquee */
+  .hero-sticker--robot {
+    top: auto;
+    bottom: 22px;
+    right: 8px;
+    left: auto;
+    transform: rotate(10deg) scale(0.62);
+  }
+
+  .hero-sticker--mouse-1 {
+    top: auto;
+    bottom: 16px;
+    left: calc(50% + 20px);
+    transform: rotate(-12deg) scale(0.62);
+  }
+
+  /* Hidden heavy background stickers on mobile */
+  .hero-sticker--folder-2,
+  .hero-sticker--cabinet-1,
+  .hero-sticker--cabinet-2,
+  .hero-sticker--magnifier-2,
+  .hero-sticker--microphone,
+  .hero-sticker--pencil-2,
+  .hero-sticker--gear-2,
+  .hero-sticker--printer,
+  .hero-sticker--house,
+  .hero-sticker--mouse-2,
+  .hero-sticker--coin-2 {
     display: none !important;
   }
 }
@@ -791,12 +926,14 @@
 @media (max-width: 640px) {
   .hero-mat__canvas {
     height: 560px;
-    padding: 0 1rem;
+    padding: 0 0.75rem;
   }
 
   .hero-mat__merged-cell {
-    top: 80px;
-    height: 370px;
+    left: 4px;
+    right: 4px;
+    top: 140px;
+    height: 290px;
   }
 
   .hero-mat__headline-main {
@@ -815,7 +952,7 @@
   .hero-mat__sub {
     font-size: 0.86rem;
     line-height: 1.5;
-    max-width: 320px;
+    max-width: 300px;
     margin: 0 auto 1.25rem;
     text-align: center;
   }
@@ -823,5 +960,77 @@
   .btn-3d__front {
     padding: 0.82rem 1.9rem;
     font-size: 0.95rem;
+  }
+
+  /* Compact sticker & note scaling on small mobile */
+  .desk-item--yellow {
+    top: 28px;
+    left: 4px;
+    transform: scale(0.6) rotate(-5deg);
+  }
+
+  .desk-item--pink {
+    top: 46px;
+    right: 4px;
+    transform: scale(0.6) rotate(4deg);
+  }
+
+  .desk-item--cyan {
+    bottom: 14px;
+    left: calc(50% - 150px);
+    transform: scale(0.62) rotate(2deg);
+  }
+
+  .hero-sticker--gear-1 {
+    top: 18px;
+    transform: translateX(-50%) rotate(12deg) scale(0.55);
+  }
+
+  .hero-sticker--pencil-1 {
+    top: 100px;
+    left: 2px;
+    transform: rotate(-35deg) scale(0.55);
+  }
+
+  .hero-sticker--briefcase {
+    top: 104px;
+    right: 2px;
+    transform: rotate(18deg) scale(0.55);
+  }
+
+  .hero-sticker--coin-1 {
+    top: 158px;
+    left: -8px;
+    transform: rotate(-14deg) scale(0.5);
+  }
+
+  .hero-sticker--magnifier-1 {
+    top: 162px;
+    right: -4px;
+    transform: rotate(16deg) scale(0.55);
+  }
+
+  .hero-sticker--paperclip-2 {
+    top: 380px;
+    left: calc(50% - 155px);
+    transform: rotate(-22deg) scale(0.55);
+  }
+
+  .hero-sticker--folder-1 {
+    top: 365px;
+    right: 2px;
+    transform: rotate(14deg) scale(0.52);
+  }
+
+  .hero-sticker--robot {
+    bottom: 14px;
+    right: 2px;
+    transform: rotate(10deg) scale(0.55);
+  }
+
+  .hero-sticker--mouse-1 {
+    bottom: 12px;
+    left: calc(50% + 15px);
+    transform: rotate(-12deg) scale(0.55);
   }
 }

@@ -9,7 +9,7 @@ export interface FloatUpProps extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
   /** Delay before animation starts in milliseconds (default: 0) */
   delay?: number;
-  /** Duration of transition in milliseconds (default: 450) */
+  /** Duration of transition in milliseconds (default: 650) */
   duration?: number;
   /** Distance in pixels for translation (default: 16) */
   distance?: number;
@@ -40,7 +40,7 @@ export interface FloatUpProps extends React.HTMLAttributes<HTMLElement> {
 export function FloatUp({
   children,
   delay = 0,
-  duration = 450,
+  duration = 650,
   distance = 16,
   blur = 6,
   direction = "up",

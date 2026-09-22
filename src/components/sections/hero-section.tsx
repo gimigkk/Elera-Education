@@ -6,6 +6,7 @@ import { FaStar } from "react-icons/fa6";
 import { heroCTA } from "@/data/hero";
 import { UniversityMarquee } from "@/components/sections/university-marquee";
 import { Navbar } from "@/components/ui/navbar";
+import { FloatUp } from "@/components/ui/float-up";
 
 export function HeroSection() {
   const whatsappUrl = `https://wa.me/${heroCTA.ctaWhatsAppNumber}?text=${encodeURIComponent(
@@ -71,71 +72,71 @@ export function HeroSection() {
             {/* 4. SCATTERED DIE-CUT STICKERS (Bleeding into Gutters & Offscreen) */}
             {/* Left Wing */}
             <div className="hero-sticker hero-sticker--folder-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-folder.webp" alt="" width={194} height={175} />
+              <Image src="/images/stickers/sticker-folder.webp" alt="" width={194} height={175} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--coin-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-coin.webp" alt="" width={187} height={135} />
+              <Image src="/images/stickers/sticker-coin.webp" alt="" width={187} height={135} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--pencil-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-pencil.webp" alt="" width={163} height={225} priority />
+              <Image src="/images/stickers/sticker-pencil.webp" alt="" width={163} height={225} sizes="90px" priority />
             </div>
             <div className="hero-sticker hero-sticker--microphone" aria-hidden="true">
-              <Image src="/images/stickers/sticker-microphone.webp" alt="" width={109} height={222} />
+              <Image src="/images/stickers/sticker-microphone.webp" alt="" width={109} height={222} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--cabinet-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-cabinet.webp" alt="" width={144} height={210} />
+              <Image src="/images/stickers/sticker-cabinet.webp" alt="" width={144} height={210} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--magnifier-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-magnifier.webp" alt="" width={89} height={147} />
+              <Image src="/images/stickers/sticker-magnifier.webp" alt="" width={89} height={147} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--paperclip-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-paperclip.webp" alt="" width={140} height={85} />
+              <Image src="/images/stickers/sticker-paperclip.webp" alt="" width={140} height={85} sizes="90px" />
             </div>
 
             {/* Center Area (Top & Bottom of CTA) */}
             <div className="hero-sticker hero-sticker--paperclip-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-paperclip.webp" alt="" width={140} height={85} />
+              <Image src="/images/stickers/sticker-paperclip.webp" alt="" width={140} height={85} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--gear-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-gear.webp" alt="" width={148} height={149} priority />
+              <Image src="/images/stickers/sticker-gear.webp" alt="" width={148} height={149} sizes="90px" priority />
             </div>
             <div className="hero-sticker hero-sticker--coin-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-coin.webp" alt="" width={187} height={135} />
+              <Image src="/images/stickers/sticker-coin.webp" alt="" width={187} height={135} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--mouse-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-mouse.webp" alt="" width={138} height={111} />
+              <Image src="/images/stickers/sticker-mouse.webp" alt="" width={138} height={111} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--pencil-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-pencil.webp" alt="" width={163} height={225} />
+              <Image src="/images/stickers/sticker-pencil.webp" alt="" width={163} height={225} sizes="90px" />
             </div>
 
             {/* Right Wing */}
             <div className="hero-sticker hero-sticker--briefcase" aria-hidden="true">
-              <Image src="/images/stickers/sticker-briefcase.webp" alt="" width={188} height={177} />
+              <Image src="/images/stickers/sticker-briefcase.webp" alt="" width={188} height={177} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--gear-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-gear.webp" alt="" width={148} height={149} />
+              <Image src="/images/stickers/sticker-gear.webp" alt="" width={148} height={149} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--magnifier-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-magnifier.webp" alt="" width={89} height={147} />
+              <Image src="/images/stickers/sticker-magnifier.webp" alt="" width={89} height={147} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--robot" aria-hidden="true">
-              <Image src="/images/stickers/sticker-robot.webp" alt="" width={264} height={172} />
+              <Image src="/images/stickers/sticker-robot.webp" alt="" width={264} height={172} sizes="100px" />
             </div>
             <div className="hero-sticker hero-sticker--printer" aria-hidden="true">
-              <Image src="/images/stickers/sticker-printer.webp" alt="" width={194} height={188} />
+              <Image src="/images/stickers/sticker-printer.webp" alt="" width={194} height={188} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--house" aria-hidden="true">
-              <Image src="/images/stickers/sticker-house.webp" alt="" width={252} height={213} />
+              <Image src="/images/stickers/sticker-house.webp" alt="" width={252} height={213} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--folder-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-folder.webp" alt="" width={194} height={175} />
+              <Image src="/images/stickers/sticker-folder.webp" alt="" width={194} height={175} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--cabinet-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-cabinet.webp" alt="" width={144} height={210} />
+              <Image src="/images/stickers/sticker-cabinet.webp" alt="" width={144} height={210} sizes="90px" />
             </div>
             <div className="hero-sticker hero-sticker--mouse-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-mouse.webp" alt="" width={138} height={111} />
+              <Image src="/images/stickers/sticker-mouse.webp" alt="" width={138} height={111} sizes="90px" />
             </div>
           </div>
 
@@ -182,26 +183,34 @@ export function HeroSection() {
             {/* Center CTA */}
             <div className="hero-mat__center">
               <h1 className="hero-mat__headline">
-                <span className="hero-mat__headline-main">Bimbel Privat Jogja,</span>
-                <span className="hero-mat__headline-serif">Datang ke Rumah, Hasil Nyata</span>
+                <FloatUp delay={60}>
+                  <span className="hero-mat__headline-main">Bimbel Privat Jogja,</span>
+                </FloatUp>
+                <FloatUp delay={160}>
+                  <span className="hero-mat__headline-serif">Datang ke Rumah, Hasil Nyata</span>
+                </FloatUp>
               </h1>
 
-              <p className="hero-mat__sub">
-                Guru privat 1-on-1 datang ke rumah untuk TK, SD, &amp; SMP di Jogja. Jadwal fleksibel &amp; kurikulum terpersonalisasi.
-              </p>
+              <FloatUp delay={260}>
+                <p className="hero-mat__sub">
+                  Guru privat 1-on-1 datang ke rumah untuk TK, SD, &amp; SMP di Jogja. Jadwal fleksibel &amp; kurikulum terpersonalisasi.
+                </p>
+              </FloatUp>
 
-              <div className="hero-mat__cta-btn-wrap">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-3d"
-                  aria-label="Konsultasi Sekarang"
-                >
-                  <span className="btn-3d__edge" aria-hidden="true" />
-                  <span className="btn-3d__front">Konsultasi Sekarang</span>
-                </a>
-              </div>
+              <FloatUp delay={360}>
+                <div className="hero-mat__cta-btn-wrap">
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-3d"
+                    aria-label="Konsultasi Sekarang"
+                  >
+                    <span className="btn-3d__edge" aria-hidden="true" />
+                    <span className="btn-3d__front">Konsultasi Sekarang</span>
+                  </a>
+                </div>
+              </FloatUp>
             </div>
           </div>
         </div>
