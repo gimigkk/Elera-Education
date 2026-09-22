@@ -35,7 +35,7 @@ export function HeroSection() {
                 <div className="pushpin pushpin--red" aria-hidden="true" />
                 <div className="sticky-note__body">
                   <span className="sticky-note__tag">Catatan</span>
-                  <p className="sticky-note__title">Tentor Ramah &amp; Sabar ✨</p>
+                  <p className="sticky-note__title">Ramah &amp; Sabar</p>
                   <p className="sticky-note__sub">Belajar asik, bikin anak pede!</p>
                 </div>
                 <div className="mini-badge mini-badge--green">
@@ -50,7 +50,7 @@ export function HeroSection() {
               <div className="sticky-note sticky-note--cyan">
                 <div className="pushpin pushpin--purple" aria-hidden="true" />
                 <div className="sticky-note__body">
-                  <p className="sticky-note__title">PR &amp; Ujian Tuntas! 📝</p>
+                  <p className="sticky-note__title">PR &amp; Ujian Tuntas!</p>
                   <p className="sticky-note__sub">Jadwal fleksibel di rumah</p>
                 </div>
                 <span className="cyan-stamp">Yogyakarta</span>
