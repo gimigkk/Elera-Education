@@ -21,7 +21,18 @@ export function HeroSection() {
       {/* Hero Section Container */}
       <section id="hero" className="hero-mat" aria-label="Elera Education Hero">
         {/* Gobo Window Blind Shadow Overlay (Affects Canvas & Marquee) */}
-        <div className="hero-mat__gobo" aria-hidden="true" />
+        <div className="hero-mat__gobo" aria-hidden="true">
+          <picture>
+            <source media="(max-width: 960px)" srcSet="/images/hero/leaf-gobo-portrait.webp" />
+            <img
+              src="/images/hero/leaf-gobo.webp"
+              alt=""
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+            />
+          </picture>
+        </div>
 
         {/* ================= 1. THE GRID CANVAS (COMPLETE SQUARES) ================= */}
         <div className="hero-mat__canvas">
@@ -72,71 +83,71 @@ export function HeroSection() {
             {/* 4. SCATTERED DIE-CUT STICKERS (Bleeding into Gutters & Offscreen) */}
             {/* Left Wing */}
             <div className="hero-sticker hero-sticker--folder-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-folder.webp" alt="" width={194} height={175} sizes="90px" />
+              <Image src="/images/stickers/sticker-folder.webp" alt="" width={194} height={175} sizes="90px" priority />
             </div>
             <div className="hero-sticker hero-sticker--coin-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-coin.webp" alt="" width={187} height={135} sizes="90px" />
+              <Image src="/images/stickers/sticker-coin.webp" alt="" width={187} height={135} sizes="90px" loading="eager" decoding="async" />
             </div>
             <div className="hero-sticker hero-sticker--pencil-1" aria-hidden="true">
               <Image src="/images/stickers/sticker-pencil.webp" alt="" width={163} height={225} sizes="90px" priority />
             </div>
-            <div className="hero-sticker hero-sticker--microphone" aria-hidden="true">
-              <Image src="/images/stickers/sticker-microphone.webp" alt="" width={109} height={222} sizes="90px" />
+            <div className="hero-sticker hero-sticker--desktop-only hero-sticker--microphone" aria-hidden="true">
+              <Image src="/images/stickers/sticker-microphone.webp" alt="" width={109} height={222} sizes="90px" loading="eager" decoding="async" />
             </div>
-            <div className="hero-sticker hero-sticker--cabinet-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-cabinet.webp" alt="" width={144} height={210} sizes="90px" />
+            <div className="hero-sticker hero-sticker--desktop-only hero-sticker--cabinet-1" aria-hidden="true">
+              <Image src="/images/stickers/sticker-cabinet.webp" alt="" width={144} height={210} sizes="90px" loading="eager" decoding="async" />
             </div>
             <div className="hero-sticker hero-sticker--magnifier-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-magnifier.webp" alt="" width={89} height={147} sizes="90px" />
+              <Image src="/images/stickers/sticker-magnifier.webp" alt="" width={89} height={147} sizes="90px" loading="eager" decoding="async" />
             </div>
             <div className="hero-sticker hero-sticker--paperclip-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-paperclip.webp" alt="" width={140} height={85} sizes="90px" />
+              <Image src="/images/stickers/sticker-paperclip.webp" alt="" width={140} height={85} sizes="90px" loading="eager" decoding="async" />
             </div>
 
             {/* Center Area (Top & Bottom of CTA) */}
             <div className="hero-sticker hero-sticker--paperclip-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-paperclip.webp" alt="" width={140} height={85} sizes="90px" />
+              <Image src="/images/stickers/sticker-paperclip.webp" alt="" width={140} height={85} sizes="90px" loading="eager" decoding="async" />
             </div>
             <div className="hero-sticker hero-sticker--gear-1" aria-hidden="true">
               <Image src="/images/stickers/sticker-gear.webp" alt="" width={148} height={149} sizes="90px" priority />
             </div>
-            <div className="hero-sticker hero-sticker--coin-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-coin.webp" alt="" width={187} height={135} sizes="90px" />
+            <div className="hero-sticker hero-sticker--desktop-only hero-sticker--coin-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-coin.webp" alt="" width={187} height={135} sizes="90px" loading="eager" decoding="async" />
             </div>
             <div className="hero-sticker hero-sticker--mouse-1" aria-hidden="true">
-              <Image src="/images/stickers/sticker-mouse.webp" alt="" width={138} height={111} sizes="90px" />
+              <Image src="/images/stickers/sticker-mouse.webp" alt="" width={138} height={111} sizes="90px" loading="eager" decoding="async" />
             </div>
-            <div className="hero-sticker hero-sticker--pencil-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-pencil.webp" alt="" width={163} height={225} sizes="90px" />
+            <div className="hero-sticker hero-sticker--desktop-only hero-sticker--pencil-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-pencil.webp" alt="" width={163} height={225} sizes="90px" loading="eager" decoding="async" />
             </div>
 
             {/* Right Wing */}
             <div className="hero-sticker hero-sticker--briefcase" aria-hidden="true">
-              <Image src="/images/stickers/sticker-briefcase.webp" alt="" width={188} height={177} sizes="90px" />
+              <Image src="/images/stickers/sticker-briefcase.webp" alt="" width={188} height={177} sizes="90px" loading="eager" decoding="async" />
             </div>
-            <div className="hero-sticker hero-sticker--gear-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-gear.webp" alt="" width={148} height={149} sizes="90px" />
+            <div className="hero-sticker hero-sticker--desktop-only hero-sticker--gear-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-gear.webp" alt="" width={148} height={149} sizes="90px" loading="eager" decoding="async" />
             </div>
-            <div className="hero-sticker hero-sticker--magnifier-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-magnifier.webp" alt="" width={89} height={147} sizes="90px" />
+            <div className="hero-sticker hero-sticker--desktop-only hero-sticker--magnifier-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-magnifier.webp" alt="" width={89} height={147} sizes="90px" loading="eager" decoding="async" />
             </div>
             <div className="hero-sticker hero-sticker--robot" aria-hidden="true">
-              <Image src="/images/stickers/sticker-robot.webp" alt="" width={264} height={172} sizes="100px" />
+              <Image src="/images/stickers/sticker-robot.webp" alt="" width={264} height={172} sizes="100px" priority />
             </div>
-            <div className="hero-sticker hero-sticker--printer" aria-hidden="true">
-              <Image src="/images/stickers/sticker-printer.webp" alt="" width={194} height={188} sizes="90px" />
+            <div className="hero-sticker hero-sticker--desktop-only hero-sticker--printer" aria-hidden="true">
+              <Image src="/images/stickers/sticker-printer.webp" alt="" width={194} height={188} sizes="90px" loading="eager" decoding="async" />
             </div>
-            <div className="hero-sticker hero-sticker--house" aria-hidden="true">
-              <Image src="/images/stickers/sticker-house.webp" alt="" width={252} height={213} sizes="90px" />
+            <div className="hero-sticker hero-sticker--desktop-only hero-sticker--house" aria-hidden="true">
+              <Image src="/images/stickers/sticker-house.webp" alt="" width={252} height={213} sizes="90px" loading="eager" decoding="async" />
             </div>
-            <div className="hero-sticker hero-sticker--folder-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-folder.webp" alt="" width={194} height={175} sizes="90px" />
+            <div className="hero-sticker hero-sticker--desktop-only hero-sticker--folder-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-folder.webp" alt="" width={194} height={175} sizes="90px" loading="eager" decoding="async" />
             </div>
-            <div className="hero-sticker hero-sticker--cabinet-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-cabinet.webp" alt="" width={144} height={210} sizes="90px" />
+            <div className="hero-sticker hero-sticker--desktop-only hero-sticker--cabinet-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-cabinet.webp" alt="" width={144} height={210} sizes="90px" loading="eager" decoding="async" />
             </div>
-            <div className="hero-sticker hero-sticker--mouse-2" aria-hidden="true">
-              <Image src="/images/stickers/sticker-mouse.webp" alt="" width={138} height={111} sizes="90px" />
+            <div className="hero-sticker hero-sticker--desktop-only hero-sticker--mouse-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-mouse.webp" alt="" width={138} height={111} sizes="90px" loading="eager" decoding="async" />
             </div>
           </div>
 

@@ -23,11 +23,17 @@
   inset: 0;
   pointer-events: none;
   z-index: 10;
-  background-image: url("/images/hero/leaf-gobo.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   opacity: 0.24;
+  overflow: hidden;
+}
+
+.hero-mat__gobo picture,
+.hero-mat__gobo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* ==========================================================================
@@ -321,7 +327,7 @@
   position: absolute;
   pointer-events: none;
   user-select: none;
-  contain: layout style paint;
+  contain: layout style;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
   z-index: 4;
   transform: translateZ(0);
@@ -720,15 +726,6 @@
 
 @media (max-width: 960px) {
   .hero-mat__gobo {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("/images/hero/leaf-gobo-portrait.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transform: none;
     opacity: 0.3;
   }
 
@@ -901,6 +898,7 @@
   }
 
   /* Hidden heavy background stickers on mobile */
+  .hero-sticker--desktop-only,
   .hero-sticker--folder-2,
   .hero-sticker--cabinet-1,
   .hero-sticker--cabinet-2,
