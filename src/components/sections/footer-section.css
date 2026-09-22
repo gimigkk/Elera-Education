@@ -14,7 +14,7 @@
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
-  padding: 3.5rem 2rem 3rem;
+  padding: 3.5rem var(--site-gutter, 2rem) 3rem;
   background: var(--white);
 }
 
@@ -162,7 +162,7 @@
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
-  padding: 1.25rem 2rem;
+  padding: 1.25rem var(--site-gutter, 2rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -200,7 +200,7 @@
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2rem 1.5rem;
-    padding: 2.5rem 1.5rem 2rem;
+    padding: 2.5rem var(--site-gutter-mobile, 1.25rem) 2rem;
   }
 
   .footer-col--brand {
@@ -237,7 +237,7 @@
   }
 
   .footer-bottom__inner {
-    padding: 1rem 1.5rem;
+    padding: 1rem var(--site-gutter-mobile, 1.25rem);
     flex-direction: column;
     text-align: center;
     gap: 0.35rem;
@@ -254,10 +254,10 @@
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 1.75rem 1rem;
-    padding: 2.5rem 1rem 2rem;
+    padding: 2.5rem var(--site-gutter-mobile, 1.25rem) 2rem;
   }
 
   .footer-bottom__inner {
-    padding: 1rem 1rem;
+    padding: 1rem var(--site-gutter-mobile, 1.25rem);
   }
 }

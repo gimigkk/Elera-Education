@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 2.75rem 2rem;
+  padding: 2.75rem 2rem 2.75rem 0;
 }
 
 .cta-header__tag {
@@ -188,7 +188,7 @@
   }
 
   .cta-left-cell {
-    padding: 1.5rem 1.25rem;
+    padding: 1.5rem 0;
     align-items: center;
     text-align: center;
     gap: 0.25rem;

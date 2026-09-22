@@ -26,6 +26,8 @@
   --green-400: #4ADE80;
 
   --max-width: 1280px;
+  --site-gutter: 2rem;
+  --site-gutter-mobile: 1.25rem;
 
   /* Text Opacity Hierarchy Tokens — Light Containers */
   --text-primary: #0B1727;
@@ -63,23 +65,23 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
 }
 
-/* ===== Site Frame (Consistent Content Gutter, No Side Borders) ===== */
+/* ===== Site Frame (Consistent Content Gutter) ===== */
 .site-frame {
   width: 100%;
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
+  padding: 3.5rem var(--site-gutter);
   background-color: var(--white);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
-  padding: 3.5rem 0;
   /* Use clip instead of hidden so position: sticky on navbar is not broken */
   overflow-x: clip;
 }
 
-/* Common Section Wrapper (No section divider borders) */
+/* Common Section Wrapper */
 .site-section {
   width: 100%;
   border-bottom: none;
@@ -89,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 960px) {
   .site-frame {
     gap: 2rem;
-    padding: 2rem 0;
+    padding: 2rem var(--site-gutter-mobile);
   }
 
   p {

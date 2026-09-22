@@ -7,7 +7,7 @@
 
 .vprop-header {
   position: relative;
-  padding: 2.75rem 2rem;
+  padding: 2.75rem 0 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,6 @@
 .vprop-grid-2x3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--border-color);
   background: var(--white);
 }
 
@@ -152,7 +151,7 @@
 
 @media (max-width: 960px) {
   .vprop-header {
-    padding: 1.75rem 1.25rem;
+    padding: 1.75rem 0 1.25rem;
   }
 
   .vprop-header__tag {

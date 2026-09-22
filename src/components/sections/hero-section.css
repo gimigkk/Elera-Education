@@ -25,8 +25,7 @@
   z-index: 10;
   mix-blend-mode: multiply;
   background:
-    linear-gradient(
-      118deg,
+    linear-gradient(118deg,
       rgba(4, 15, 45, 0.25) 0%,
       rgba(4, 15, 45, 0.25) 18%,
       rgba(4, 15, 45, 0.14) 25%,
@@ -35,8 +34,7 @@
       rgba(4, 15, 45, 0.14) 66%,
       rgba(4, 15, 45, 0.27) 74%,
       rgba(4, 15, 45, 0.27) 88%,
-      transparent 98%
-    );
+      transparent 98%);
   filter: blur(16px);
 }
 
@@ -46,7 +44,8 @@
 .hero-mat__canvas {
   position: relative;
   width: 100%;
-  height: 600px; /* Exactly 6 rows of 100px complete big squares */
+  height: 600px;
+  /* Exactly 6 rows of 100px complete big squares */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,7 +64,8 @@
     20px 20px,
     20px 20px;
   background-position: center top;
-  border-bottom: 1.5px solid rgba(255, 255, 255, 0.22); /* Closes the bottom square row */
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.22);
+  /* Closes the bottom square row */
   overflow: hidden;
 }
 
@@ -76,9 +76,11 @@
 .hero-mat__merged-cell {
   position: absolute;
   top: 100px;
-  height: 400px; /* Exactly 4 major rows: 100px to 500px */
+  height: 400px;
+  /* Exactly 4 major rows: 100px to 500px */
   left: calc(50% - 350px);
-  width: 700px; /* Reverted 1 cell each side: 7 major grid squares */
+  width: 700px;
+  /* Reverted 1 cell each side: 7 major grid squares */
   background-color: var(--docker-blue, #2A60FF);
   border: 1.5px solid rgba(255, 255, 255, 0.22);
   pointer-events: none;
@@ -184,8 +186,8 @@
 
 /* ---------- 1. TOP-LEFT: YELLOW STICKY NOTE ---------- */
 .desk-item--yellow {
-  top: 40px;
-  left: 24px;
+  top: 100px;
+  left: max(20px, calc(50% - 580px));
 }
 
 .sticky-note--yellow {
@@ -246,63 +248,10 @@
   font-size: 0.65rem;
 }
 
-/* ---------- 2. CENTER-LEFT: ORANGE HEXAGON STICKER ---------- */
-.desk-item--orange-hex {
-  top: 228px;
-  left: 80px;
-}
-
-.sticker-hex {
-  position: relative;
-  width: 68px;
-  height: 68px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
-  border-radius: 18px;
-  outline: 3px solid #ffffff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  transform: rotate(-10deg);
-  color: #ffffff;
-  transition: transform 0.2s ease;
-}
-
-.sticker-hex:hover {
-  transform: rotate(-5deg) scale(1.08);
-}
-
-.sticker-hex__pin {
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #fde047 0%, #ca8a04 70%, #713f12 100%);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  z-index: 5;
-}
-
-.sticker-hex__icon {
-  font-size: 1.3rem;
-  line-height: 1;
-}
-
-.sticker-hex__text {
-  font-family: var(--font-body), sans-serif;
-  font-size: 0.62rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-top: 0.15rem;
-}
-
-/* ---------- 3. BOTTOM-LEFT: CYAN STICKY NOTE ---------- */
+/* ---------- 2. BOTTOM-LEFT: CYAN STICKY NOTE ---------- */
 .desk-item--cyan {
-  top: 360px;
-  left: 40px;
+  top: 420px;
+  left: calc(50% - 395px);
 }
 
 .sticky-note--cyan {
@@ -329,53 +278,13 @@
   font-family: var(--font-body), sans-serif;
   font-size: 0.65rem;
   font-weight: 700;
-  border-radius: 4px;
+  border-radius: 1px;
 }
 
-/* ---------- 4. TOP-RIGHT: DOUBLE BUBBLE STICKER ---------- */
-.desk-item--bubble {
-  top: 45px;
-  right: 55px;
-}
-
-.sticker-bubble {
-  display: flex;
-  flex-direction: column;
-  outline: 3px solid #ffffff;
-  border-radius: 26px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
-  transform: rotate(14deg);
-  transition: transform 0.2s ease;
-}
-
-.sticker-bubble:hover {
-  transform: rotate(8deg) scale(1.06);
-}
-
-.bubble-top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.35rem 0.75rem;
-  background: linear-gradient(135deg, #fef08a 0%, #facc15 100%);
-  font-size: 1.15rem;
-}
-
-.bubble-bottom {
-  padding: 0.25rem 0.75rem;
-  background: #0284c7;
-  color: #ffffff;
-  font-family: var(--font-body), sans-serif;
-  font-size: 0.68rem;
-  font-weight: 800;
-  text-align: center;
-}
-
-/* ---------- 5. RIGHT: PINK STICKY NOTE ---------- */
+/* ---------- 3. RIGHT: PINK STICKY NOTE ---------- */
 .desk-item--pink {
   top: 240px;
-  right: 25px;
+  right: max(20px, calc(50% - 615px));
 }
 
 .sticky-note--pink {
@@ -409,6 +318,173 @@
   outline: 2px solid #ffffff;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
   transform: rotate(8deg);
+}
+
+/* ==========================================================================
+   SCATTERED DIE-CUT GRAPHIC STICKERS (Balanced Full-Bleed Scatter)
+   ========================================================================== */
+.hero-sticker {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.22));
+  z-index: 4;
+}
+
+.hero-sticker img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* --- Left Wing --- */
+.hero-sticker--folder-1 {
+  top: 140px;
+  left: -38px;
+  width: 86px;
+  transform: rotate(-18deg);
+}
+
+.hero-sticker--paperclip-1 {
+  top: 25px;
+  left: max(25px, calc(50% - 710px));
+  width: 44px;
+  transform: rotate(44deg);
+}
+
+.hero-sticker--pencil-1 {
+  top: 80px;
+  left: calc(50% - 415px);
+  width: 48px;
+  transform: rotate(-32deg);
+}
+
+.hero-sticker--microphone {
+  top: 240px;
+  left: max(45px, calc(50% - 630px));
+  width: 46px;
+  transform: rotate(14deg);
+}
+
+.hero-sticker--coin-1 {
+  top: 370px;
+  left: max(25px, calc(50% - 750px));
+  width: 58px;
+  transform: rotate(-14deg);
+}
+
+.hero-sticker--cabinet-1 {
+  top: 480px;
+  left: -25px;
+  width: 68px;
+  transform: rotate(16deg);
+}
+
+.hero-sticker--magnifier-1 {
+  top: 485px;
+  left: max(65px, calc(50% - 580px));
+  width: 46px;
+  transform: rotate(34deg);
+}
+
+/* --- Center Area (Top & Bottom of CTA) --- */
+.hero-sticker--paperclip-2 {
+  top: 24px;
+  left: calc(50% - 150px);
+  width: 46px;
+  transform: rotate(36deg);
+}
+
+.hero-sticker--gear-1 {
+  top: 18px;
+  left: calc(50% + 115px);
+  width: 52px;
+  transform: rotate(18deg);
+}
+
+.hero-sticker--coin-2 {
+  top: 75px;
+  left: calc(50% + 225px);
+  width: 46px;
+  transform: rotate(-12deg);
+}
+
+.hero-sticker--mouse-1 {
+  top: 512px;
+  left: calc(50% - 100px);
+  width: 48px;
+  transform: rotate(-18deg);
+}
+
+.hero-sticker--pencil-2 {
+  top: 510px;
+  left: calc(50% + 75px);
+  width: 46px;
+  transform: rotate(38deg);
+}
+
+/* --- Right Wing --- */
+.hero-sticker--briefcase {
+  top: 45px;
+  right: max(75px, calc(50% - 580px));
+  width: 66px;
+  transform: rotate(12deg);
+}
+
+.hero-sticker--gear-2 {
+  top: 25px;
+  right: max(20px, calc(50% - 710px));
+  width: 46px;
+  transform: rotate(-16deg);
+}
+
+.hero-sticker--magnifier-2 {
+  top: 155px;
+  left: calc(50% + 295px);
+  width: 46px;
+  transform: rotate(-24deg);
+}
+
+.hero-sticker--robot {
+  top: 135px;
+  right: -42px;
+  width: 94px;
+  transform: rotate(14deg);
+}
+
+.hero-sticker--printer {
+  top: 295px;
+  left: calc(50% + 315px);
+  width: 68px;
+  transform: rotate(-10deg);
+}
+
+.hero-sticker--house {
+  top: 360px;
+  right: max(45px, calc(50% - 735px));
+  width: 72px;
+  transform: rotate(8deg);
+}
+
+.hero-sticker--folder-2 {
+  top: 485px;
+  left: calc(50% + 265px);
+  width: 66px;
+  transform: rotate(-12deg);
+}
+
+.hero-sticker--cabinet-2 {
+  top: 450px;
+  right: -25px;
+  width: 68px;
+  transform: rotate(-16deg);
+}
+
+.hero-sticker--mouse-2 {
+  top: 508px;
+  right: max(80px, calc(50% - 590px));
+  width: 46px;
+  transform: rotate(22deg);
 }
 
 /* ==========================================================================
@@ -493,11 +569,9 @@
   width: 100%;
   height: 100%;
   border-radius: 9999px;
-  background: linear-gradient(
-    to bottom,
-    #e2e8f0 0%,
-    #cbd5e1 100%
-  );
+  background: linear-gradient(to bottom,
+      #e2e8f0 0%,
+      #cbd5e1 100%);
   box-shadow:
     inset 0 1px 1px rgba(255, 255, 255, 0.8),
     inset 0 -1px 2px rgba(0, 0, 0, 0.12);
@@ -561,6 +635,7 @@
   .hero-mat .uni-marquee-track-wrapper::before {
     background: linear-gradient(to right, var(--docker-blue, #2A60FF), transparent);
   }
+
   .hero-mat .uni-marquee-track-wrapper::after {
     background: linear-gradient(to left, var(--docker-blue, #2A60FF), transparent);
   }
@@ -573,15 +648,19 @@
   .desk-item--yellow {
     left: 10px;
   }
+
   .desk-item--orange-hex {
     left: 45px;
   }
+
   .desk-item--cyan {
     left: 30px;
   }
+
   .desk-item--bubble {
     right: 35px;
   }
+
   .desk-item--pink {
     right: 10px;
   }
@@ -590,8 +669,7 @@
 @media (max-width: 960px) {
   .hero-mat__gobo {
     background:
-      linear-gradient(
-        132deg,
+      linear-gradient(132deg,
         rgba(4, 15, 45, 0.25) 0%,
         rgba(4, 15, 45, 0.25) 14%,
         rgba(4, 15, 45, 0.13) 20%,
@@ -600,8 +678,7 @@
         rgba(4, 15, 45, 0.14) 74%,
         rgba(4, 15, 45, 0.27) 82%,
         rgba(4, 15, 45, 0.27) 92%,
-        transparent 100%
-      );
+        transparent 100%);
   }
 
   .hero-mat__canvas {

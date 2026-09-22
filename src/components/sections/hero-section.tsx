@@ -1,6 +1,7 @@
 "use client";
 
 import "./hero-section.css";
+import Image from "next/image";
 import { FaStar } from "react-icons/fa6";
 import { heroCTA } from "@/data/hero";
 import { UniversityMarquee } from "@/components/sections/university-marquee";
@@ -25,6 +26,118 @@ export function HeroSection() {
         <div className="hero-mat__canvas">
           {/* Merged Big Grid Cell behind CTA (Excel / Google Sheets style merged cell) */}
           <div className="hero-mat__merged-cell" aria-hidden="true" />
+
+          {/* Desk Elements: Sticky Notes + Full-Bleed Scattered Stickers */}
+          <div className="hero-mat__elements">
+            {/* 1. TOP-LEFT: Canary Yellow Sticky Note */}
+            <div className="desk-item desk-item--yellow">
+              <div className="sticky-note sticky-note--yellow">
+                <div className="pushpin pushpin--red" aria-hidden="true" />
+                <div className="sticky-note__body">
+                  <span className="sticky-note__tag">Catatan</span>
+                  <p className="sticky-note__title">Tentor Ramah &amp; Sabar ✨</p>
+                  <p className="sticky-note__sub">Belajar asik, bikin anak pede!</p>
+                </div>
+                <div className="mini-badge mini-badge--green">
+                  <FaStar className="mini-badge__icon" />
+                  <span>5.0</span>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. BOTTOM-LEFT: Pastel Cyan Sticky Note */}
+            <div className="desk-item desk-item--cyan">
+              <div className="sticky-note sticky-note--cyan">
+                <div className="pushpin pushpin--purple" aria-hidden="true" />
+                <div className="sticky-note__body">
+                  <p className="sticky-note__title">PR &amp; Ujian Tuntas! 📝</p>
+                  <p className="sticky-note__sub">Jadwal fleksibel di rumah</p>
+                </div>
+                <span className="cyan-stamp">Yogyakarta</span>
+              </div>
+            </div>
+
+            {/* 3. RIGHT: Pastel Pink Sticky Note */}
+            <div className="desk-item desk-item--pink">
+              <div className="sticky-note sticky-note--pink">
+                <div className="rosette-sticker" aria-hidden="true">★</div>
+                <div className="sticky-note__body">
+                  <p className="sticky-note__title">TK • SD • SMP</p>
+                  <p className="sticky-note__sub">Kurikulum Merdeka &amp; Nasional</p>
+                </div>
+              </div>
+            </div>
+
+            {/* 4. SCATTERED DIE-CUT STICKERS (Bleeding into Gutters & Offscreen) */}
+            {/* Left Wing */}
+            <div className="hero-sticker hero-sticker--folder-1" aria-hidden="true">
+              <Image src="/images/stickers/sticker-folder.webp" alt="" width={194} height={175} />
+            </div>
+            <div className="hero-sticker hero-sticker--coin-1" aria-hidden="true">
+              <Image src="/images/stickers/sticker-coin.webp" alt="" width={187} height={135} />
+            </div>
+            <div className="hero-sticker hero-sticker--pencil-1" aria-hidden="true">
+              <Image src="/images/stickers/sticker-pencil.webp" alt="" width={163} height={225} priority />
+            </div>
+            <div className="hero-sticker hero-sticker--microphone" aria-hidden="true">
+              <Image src="/images/stickers/sticker-microphone.webp" alt="" width={109} height={222} />
+            </div>
+            <div className="hero-sticker hero-sticker--cabinet-1" aria-hidden="true">
+              <Image src="/images/stickers/sticker-cabinet.webp" alt="" width={144} height={210} />
+            </div>
+            <div className="hero-sticker hero-sticker--magnifier-1" aria-hidden="true">
+              <Image src="/images/stickers/sticker-magnifier.webp" alt="" width={89} height={147} />
+            </div>
+            <div className="hero-sticker hero-sticker--paperclip-1" aria-hidden="true">
+              <Image src="/images/stickers/sticker-paperclip.webp" alt="" width={140} height={85} />
+            </div>
+
+            {/* Center Area (Top & Bottom of CTA) */}
+            <div className="hero-sticker hero-sticker--paperclip-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-paperclip.webp" alt="" width={140} height={85} />
+            </div>
+            <div className="hero-sticker hero-sticker--gear-1" aria-hidden="true">
+              <Image src="/images/stickers/sticker-gear.webp" alt="" width={148} height={149} priority />
+            </div>
+            <div className="hero-sticker hero-sticker--coin-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-coin.webp" alt="" width={187} height={135} />
+            </div>
+            <div className="hero-sticker hero-sticker--mouse-1" aria-hidden="true">
+              <Image src="/images/stickers/sticker-mouse.webp" alt="" width={138} height={111} />
+            </div>
+            <div className="hero-sticker hero-sticker--pencil-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-pencil.webp" alt="" width={163} height={225} />
+            </div>
+
+            {/* Right Wing */}
+            <div className="hero-sticker hero-sticker--briefcase" aria-hidden="true">
+              <Image src="/images/stickers/sticker-briefcase.webp" alt="" width={188} height={177} />
+            </div>
+            <div className="hero-sticker hero-sticker--gear-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-gear.webp" alt="" width={148} height={149} />
+            </div>
+            <div className="hero-sticker hero-sticker--magnifier-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-magnifier.webp" alt="" width={89} height={147} />
+            </div>
+            <div className="hero-sticker hero-sticker--robot" aria-hidden="true">
+              <Image src="/images/stickers/sticker-robot.webp" alt="" width={264} height={172} />
+            </div>
+            <div className="hero-sticker hero-sticker--printer" aria-hidden="true">
+              <Image src="/images/stickers/sticker-printer.webp" alt="" width={194} height={188} />
+            </div>
+            <div className="hero-sticker hero-sticker--house" aria-hidden="true">
+              <Image src="/images/stickers/sticker-house.webp" alt="" width={252} height={213} />
+            </div>
+            <div className="hero-sticker hero-sticker--folder-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-folder.webp" alt="" width={194} height={175} />
+            </div>
+            <div className="hero-sticker hero-sticker--cabinet-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-cabinet.webp" alt="" width={144} height={210} />
+            </div>
+            <div className="hero-sticker hero-sticker--mouse-2" aria-hidden="true">
+              <Image src="/images/stickers/sticker-mouse.webp" alt="" width={138} height={111} />
+            </div>
+          </div>
 
           <div className="hero-mat__inner">
             {/* Coordinate Numbers Aligned to Big Squares (100px) */}
@@ -51,80 +164,6 @@ export function HeroSection() {
               <span className="mat-coord" style={{ top: "512px", left: "calc(50% + 250px + 12px)" }}>46</span>
               <span className="mat-coord" style={{ top: "512px", left: "calc(50% + 350px + 12px)" }}>47</span>
               <span className="mat-coord" style={{ top: "512px", left: "calc(50% + 450px + 12px)" }}>48</span>
-            </div>
-
-            {/* Craft String: Connecting Orange Hexagon pin to Cyan Sticky Note pin */}
-            <svg className="hero-mat__string" viewBox="0 0 1280 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path
-                d="M 114 234 C 104 275, 108 315, 128 359"
-                stroke="#E8CBA3"
-                strokeWidth="2"
-                strokeLinecap="round"
-                filter="drop-shadow(0 2px 4px rgba(0,0,0,0.35))"
-              />
-            </svg>
-
-            {/* Desk Elements: 3 Sticky Notes + 2 Stickers */}
-            <div className="hero-mat__elements">
-              {/* 1. TOP-LEFT: Canary Yellow Sticky Note */}
-              <div className="desk-item desk-item--yellow">
-                <div className="sticky-note sticky-note--yellow">
-                  <div className="pushpin pushpin--red" aria-hidden="true" />
-                  <div className="sticky-note__body">
-                    <span className="sticky-note__tag">Catatan</span>
-                    <p className="sticky-note__title">Tentor Ramah &amp; Sabar ✨</p>
-                    <p className="sticky-note__sub">Belajar asik, bikin anak pede!</p>
-                  </div>
-                  <div className="mini-badge mini-badge--green">
-                    <FaStar className="mini-badge__icon" />
-                    <span>5.0</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* 2. CENTER-LEFT: Orange Hexagon Sticker */}
-              <div className="desk-item desk-item--orange-hex">
-                <div className="sticker-hex">
-                  <span className="sticker-hex__pin" aria-hidden="true" />
-                  <span className="sticker-hex__icon">💡</span>
-                  <span className="sticker-hex__text">1-on-1</span>
-                </div>
-              </div>
-
-              {/* 3. BOTTOM-LEFT: Pastel Cyan Sticky Note */}
-              <div className="desk-item desk-item--cyan">
-                <div className="sticky-note sticky-note--cyan">
-                  <div className="pushpin pushpin--purple" aria-hidden="true" />
-                  <div className="sticky-note__body">
-                    <p className="sticky-note__title">PR &amp; Ujian Tuntas! 📝</p>
-                    <p className="sticky-note__sub">Jadwal fleksibel di rumah</p>
-                  </div>
-                  <span className="cyan-stamp">Yogyakarta</span>
-                </div>
-              </div>
-
-              {/* 4. TOP-RIGHT: Double-Bubble Die-Cut Sticker */}
-              <div className="desk-item desk-item--bubble">
-                <div className="sticker-bubble">
-                  <div className="bubble-top">
-                    <span>🎓</span>
-                  </div>
-                  <div className="bubble-bottom">
-                    <span>UGM • UNY</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* 5. RIGHT: Pastel Pink Sticky Note */}
-              <div className="desk-item desk-item--pink">
-                <div className="sticky-note sticky-note--pink">
-                  <div className="rosette-sticker" aria-hidden="true">★</div>
-                  <div className="sticky-note__body">
-                    <p className="sticky-note__title">TK • SD • SMP</p>
-                    <p className="sticky-note__sub">Kurikulum Merdeka &amp; Nasional</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Center CTA */}
