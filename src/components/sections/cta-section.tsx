@@ -65,29 +65,6 @@ export function CtaSection() {
           />
         </div>
       </div>
-
-      {/* ── Docker Registration-style Info Bar: Static Background, Inner Text Floats Up ── */}
-      <div className="cta-bottom-bar">
-        <FloatUp className="cta-bottom-bar__inner" delay={100} distance={18}>
-          <span className="cta-bottom-bar__label">Jangkauan & Layanan</span>
-          <div className="cta-bottom-bar__info">
-            <span className="cta-bottom-bar__item">
-              Area: <strong>D.I. Yogyakarta</strong>
-            </span>
-            <span className="cta-bottom-bar__divider">·</span>
-            <span className="cta-bottom-bar__item">
-              Respon: <strong>1x24 Jam Kerja</strong>
-            </span>
-            <span className="cta-bottom-bar__divider">·</span>
-            <span className="cta-bottom-bar__item">
-              Sistem: <strong>Tentor Datang Ke Rumah</strong>
-            </span>
-          </div>
-          <p className="cta-bottom-bar__note text-balance">
-            Hubungi tim konsultan kami via WhatsApp untuk penyesuaian jadwal dan pemilihan mata pelajaran.
-          </p>
-        </FloatUp>
-      </div>
     </section>
   );
 }
