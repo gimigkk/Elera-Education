@@ -19,6 +19,7 @@ export interface ClassOption {
   maxStudents?: number;
   available: boolean;
   cocokUntuk: string;
+  cocokUntukShort?: string;
 }
 
 export interface GradeGroup {
@@ -34,6 +35,7 @@ export interface SchoolTier {
   registrationFee: {
     semester: number;
     annual: number;
+    originalAnnual?: number;
   };
 }
 
@@ -54,6 +56,7 @@ export const schoolTiers: SchoolTier[] = [
             pricePerChild: 40_000,
             available: true,
             cocokUntuk: "Fokus penuh untuk anak Anda",
+            cocokUntukShort: "Fokus penuh anak",
           },
           {
             type: "Semi-Privat",
@@ -66,6 +69,7 @@ export const schoolTiers: SchoolTier[] = [
             maxStudents: 3,
             available: true,
             cocokUntuk: "Belajar bersama teman, biaya lebih hemat",
+            cocokUntukShort: "Belajar bareng teman",
           },
           {
             type: "Kelompok",
@@ -79,7 +83,7 @@ export const schoolTiers: SchoolTier[] = [
         ],
       },
     ],
-    registrationFee: { semester: 125_000, annual: 200_000 },
+    registrationFee: { semester: 125_000, annual: 200_000, originalAnnual: 300_000 },
   },
   {
     key: "SD",
@@ -97,6 +101,7 @@ export const schoolTiers: SchoolTier[] = [
             pricePerChild: 45_000,
             available: true,
             cocokUntuk: "Perhatian penuh untuk fondasi belajar",
+            cocokUntukShort: "Fondasi belajar",
           },
           {
             type: "Semi-Privat",
@@ -108,6 +113,7 @@ export const schoolTiers: SchoolTier[] = [
             maxStudents: 2,
             available: true,
             cocokUntuk: "Ajak teman atau saudara, lebih seru",
+            cocokUntukShort: "Belajar bareng teman",
           },
           {
             type: "Kelompok",
@@ -120,6 +126,7 @@ export const schoolTiers: SchoolTier[] = [
             maxStudents: 5,
             available: true,
             cocokUntuk: "Harga paling hemat untuk belajar ramai",
+            cocokUntukShort: "Biaya paling hemat",
           },
         ],
       },
@@ -135,6 +142,7 @@ export const schoolTiers: SchoolTier[] = [
             pricePerChild: 50_000,
             available: true,
             cocokUntuk: "Perhatian penuh menjelang kelas atas",
+            cocokUntukShort: "Persiapan kelas atas",
           },
           {
             type: "Semi-Privat",
@@ -146,6 +154,7 @@ export const schoolTiers: SchoolTier[] = [
             maxStudents: 2,
             available: true,
             cocokUntuk: "Belajar bareng, biaya terbagi dua",
+            cocokUntukShort: "Biaya terbagi dua",
           },
           {
             type: "Kelompok",
@@ -158,6 +167,7 @@ export const schoolTiers: SchoolTier[] = [
             maxStudents: 5,
             available: true,
             cocokUntuk: "Hemat dan tetap efektif",
+            cocokUntukShort: "Hemat & efektif",
           },
         ],
       },
@@ -173,6 +183,7 @@ export const schoolTiers: SchoolTier[] = [
             pricePerChild: 55_000,
             available: true,
             cocokUntuk: "Persiapan intensif ujian kenaikan kelas",
+            cocokUntukShort: "Intensif ujian akhir",
           },
           {
             type: "Semi-Privat",
@@ -184,6 +195,7 @@ export const schoolTiers: SchoolTier[] = [
             maxStudents: 2,
             available: true,
             cocokUntuk: "Berdua lebih semangat menghadapi ujian",
+            cocokUntukShort: "Semangat bareng teman",
           },
           {
             type: "Kelompok",
@@ -196,11 +208,12 @@ export const schoolTiers: SchoolTier[] = [
             maxStudents: 5,
             available: true,
             cocokUntuk: "Persiapan ujian bareng teman sekelas",
+            cocokUntukShort: "Ujian bareng teman",
           },
         ],
       },
     ],
-    registrationFee: { semester: 125_000, annual: 200_000 },
+    registrationFee: { semester: 125_000, annual: 200_000, originalAnnual: 300_000 },
   },
   {
     key: "SMP",
@@ -218,6 +231,7 @@ export const schoolTiers: SchoolTier[] = [
             pricePerChild: 60_000,
             available: true,
             cocokUntuk: "Fokus materi SMP yang lebih kompleks",
+            cocokUntukShort: "Fokus materi SMP",
           },
           {
             type: "Semi-Privat",
@@ -229,6 +243,7 @@ export const schoolTiers: SchoolTier[] = [
             maxStudents: 2,
             available: true,
             cocokUntuk: "Diskusi berdua, saling bantu memahami",
+            cocokUntukShort: "Diskusi & kolaborasi",
           },
           {
             type: "Kelompok",
@@ -241,6 +256,7 @@ export const schoolTiers: SchoolTier[] = [
             maxStudents: 5,
             available: true,
             cocokUntuk: "Belajar kelompok dengan biaya minimal",
+            cocokUntukShort: "Biaya paling minimal",
           },
         ],
       },
@@ -256,6 +272,7 @@ export const schoolTiers: SchoolTier[] = [
             pricePerChild: 65_000,
             available: true,
             cocokUntuk: "Persiapan ujian akhir secara intensif",
+            cocokUntukShort: "Intensif ujian akhir",
           },
           {
             type: "Semi-Privat",
@@ -267,6 +284,7 @@ export const schoolTiers: SchoolTier[] = [
             maxStudents: 2,
             available: true,
             cocokUntuk: "Fokus ujian bersama teman dekat",
+            cocokUntukShort: "Fokus ujian berdua",
           },
           {
             type: "Kelompok",
@@ -279,11 +297,12 @@ export const schoolTiers: SchoolTier[] = [
             maxStudents: 5,
             available: true,
             cocokUntuk: "Hemat maksimal untuk persiapan ujian",
+            cocokUntukShort: "Hemat persiapan ujian",
           },
         ],
       },
     ],
-    registrationFee: { semester: 150_000, annual: 250_000 },
+    registrationFee: { semester: 150_000, annual: 250_000, originalAnnual: 300_000 },
   },
 ];
 

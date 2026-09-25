@@ -141,7 +141,7 @@
 /* ── Pricing Grid (Standalone Cards Aesthetic) ── */
 .pricing-grid-3 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.85rem;
   padding: 0 0 2.25rem;
   background: transparent;
@@ -245,6 +245,7 @@
   align-items: center;
   flex: 1;
   min-width: 0;
+  overflow: hidden;
 }
 
 .pricing-card__extrusion-text {
@@ -253,6 +254,28 @@
   color: var(--text-secondary);
   line-height: 1.3;
   text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
+}
+
+.pricing-card__extrusion-short {
+  display: inline;
+}
+
+.pricing-card__extrusion-full {
+  display: none;
+}
+
+@media (min-width: 1240px) {
+  .pricing-card__extrusion-short {
+    display: none;
+  }
+  .pricing-card__extrusion-full {
+    display: inline;
+  }
 }
 
 .pricing-card--popular .pricing-card__extrusion-text {
@@ -261,11 +284,12 @@
 
 .pricing-card__extrusion-text--bold {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #FFFFFF;
+  white-space: nowrap;
 }
 
 /* CTA Button inside Extrusion */
@@ -390,7 +414,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.2rem;
-  min-height: 3.5rem;
+  min-height: 4.6rem;
   justify-content: flex-end;
 }
 
@@ -411,9 +435,18 @@
 
 .pricing-card__price-amount {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  width: 100%;
+}
+
+.pricing-card__price-figures {
+  display: flex;
   align-items: baseline;
-  flex-wrap: wrap;
   gap: 0.25rem;
+  white-space: nowrap;
+  min-height: 2.1rem;
 }
 
 .pricing-card__price {
@@ -421,7 +454,7 @@
   font-size: 2rem;
   font-weight: 800;
   color: var(--text-primary);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
   line-height: 1;
 }
 
@@ -431,13 +464,23 @@
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.pricing-card--kelompok .pricing-card__price,
+.pricing-card--kelompok .pricing-card__price-range {
+  font-size: clamp(1.45rem, 1.8vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1;
 }
 
 .pricing-card__per {
   font-size: 0.82rem;
   font-weight: 500;
   color: var(--text-tertiary);
-  margin-left: 0.1rem;
+  margin-left: 0;
+  line-height: 1.2;
 }
 
 /* Meta Check List */
@@ -483,71 +526,111 @@
 }
 
 
-/* ── Registration Fee Bar ── */
-.pricing-registration {
-  border-top: 1px solid var(--border-color);
-  background-color: #F8FAFC;
-  background-image:
-    radial-gradient(ellipse at 50% 50%, rgba(248, 250, 252, 0.95) 0%, rgba(248, 250, 252, 0.15) 85%),
-    linear-gradient(to right, rgba(203, 213, 225, 0.6) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(203, 213, 225, 0.6) 1px, transparent 1px);
-  background-size: 100% 100%, 24px 24px, 24px 24px;
-}
-
-.pricing-registration__inner {
-  padding: 1.5rem 2rem;
+/* ── Registration Fee Callout Card ── */
+.pricing-callout {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.35rem;
-  text-align: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 5px rgba(11, 23, 39, 0.04);
 }
 
-.pricing-registration__left {
+.pricing-callout__left {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.75rem;
+  flex-wrap: nowrap;
 }
 
-.pricing-registration__label {
-  font-size: 0.82rem;
+.pricing-callout__icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--docker-blue-50);
+  color: var(--docker-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pricing-callout__icon {
+  font-size: 1rem;
+}
+
+.pricing-callout__info {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.pricing-callout__label {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-tertiary);
+  color: var(--text-primary);
+  white-space: nowrap;
 }
 
-.pricing-registration__fees {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
+.pricing-callout__fees {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
 }
 
-.pricing-registration__fee {
-  font-size: 0.95rem;
+.pricing-callout__fee {
+  display: inline;
+  font-size: 0.92rem;
   font-weight: 500;
   color: var(--text-secondary);
   white-space: nowrap;
 }
 
-.pricing-registration__fee strong {
+.pricing-callout__fee strong {
   font-weight: 800;
   color: var(--text-primary);
 }
 
-.pricing-registration__divider {
+.pricing-callout__orig-fee {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray-400);
+  text-decoration: line-through;
+  margin-right: 0.25rem;
+}
+
+.pricing-callout__dot {
   color: var(--border-color);
   font-weight: 700;
 }
 
-.pricing-registration__note {
-  font-size: 0.8rem;
+.pricing-callout .slot-viewport {
+  display: inline-grid;
+  overflow: visible;
+  vertical-align: baseline;
+}
+
+.pricing-callout .slot-viewport--animating {
+  overflow: hidden;
+}
+
+.pricing-callout .slot-item {
+  display: inline;
+}
+
+.pricing-callout__note {
+  font-size: 0.82rem;
   font-weight: 500;
   color: var(--text-tertiary);
-  margin: 0.2rem 0 0;
-  max-width: 500px;
-  line-height: 1.5;
+  margin: 0;
+  line-height: 1.45;
+  text-align: right;
+  flex-shrink: 1;
 }
 
 /* ── Mobile & Responsive ── */
@@ -707,49 +790,53 @@
     margin-top: 0.25rem;
   }
 
-  .pricing-registration__inner {
-    padding: 1rem 1rem;
+  .pricing-callout {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.25rem;
-    text-align: center;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
   }
 
-  .pricing-registration__left {
-    align-items: center;
-    text-align: center;
-    gap: 0.15rem;
+  .pricing-callout__left {
+    align-items: flex-start;
+    gap: 0.65rem;
+    width: 100%;
+    flex-wrap: nowrap;
   }
 
-  .pricing-registration__label {
-    font-size: 11px;
-    letter-spacing: 0.07em;
+  .pricing-callout__info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 
-  .pricing-registration__fees {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.3rem 0.5rem;
+  .pricing-callout__label {
+    font-size: 0.85rem;
   }
 
-  .pricing-registration__fee {
-    font-size: 11px;
-    white-space: nowrap;
+  .pricing-callout__fees {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
   }
 
-  .pricing-registration__divider {
-    display: inline;
+  .pricing-callout__dot {
+    display: none;
   }
 
-  .pricing-registration__note {
-    text-align: center;
-    max-width: 320px;
-    margin: 0.1rem 0 0;
-    font-size: 11px;
-    line-height: 1.6;
+  .pricing-callout__fee {
+    font-size: 0.82rem;
+  }
+
+  .pricing-callout__orig-fee {
+    font-size: 0.76rem;
+    margin-right: 0.2rem;
+  }
+
+  .pricing-callout__note {
+    text-align: left;
+    font-size: 0.76rem;
+    line-height: 1.5;
   }
 }
 

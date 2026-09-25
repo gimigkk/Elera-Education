@@ -3,7 +3,7 @@
 import "./pricing-section.css";
 import { useState, useMemo, useEffect } from "react";
 import { FloatUp } from "@/components/ui/float-up";
-import { FaWhatsapp } from "react-icons/fa6";
+import { FaWhatsapp, FaCircleInfo } from "react-icons/fa6";
 import {
   schoolTiers,
   pricingWhatsApp,
@@ -296,14 +296,16 @@ export function PricingSection() {
 
                     <SlotReel valueKey={priceAmountKey} as="div" className="pricing-card__price-amount-wrap" delay={baseDelay + 35}>
                       <div className="pricing-card__price-amount">
-                        <span className="pricing-card__price">
-                          {formatRupiah(opt.pricePerChild)}
-                        </span>
-                        {opt.pricePerChildMax && (
-                          <span className="pricing-card__price-range">
-                            – {formatRupiah(opt.pricePerChildMax)}
+                        <div className="pricing-card__price-figures">
+                          <span className="pricing-card__price">
+                            {formatRupiah(opt.pricePerChild)}
                           </span>
-                        )}
+                          {opt.pricePerChildMax && (
+                            <span className="pricing-card__price-range">
+                              – {formatRupiah(opt.pricePerChildMax)}
+                            </span>
+                          )}
+                        </div>
                         <span className="pricing-card__per">/anak/sesi</span>
                       </div>
                     </SlotReel>
@@ -346,12 +348,17 @@ export function PricingSection() {
                     </strong>
                   ) : (
                     <SlotReel
-                      valueKey={opt.cocokUntuk || opt.type}
+                      valueKey={opt.cocokUntukShort || opt.cocokUntuk || opt.type}
                       as="span"
                       className="pricing-card__extrusion-text"
                       delay={baseDelay + 95}
                     >
-                      {opt.cocokUntuk || ""}
+                      <span className="pricing-card__extrusion-full">
+                        {opt.cocokUntuk || ""}
+                      </span>
+                      <span className="pricing-card__extrusion-short">
+                        {opt.cocokUntukShort || opt.cocokUntuk || ""}
+                      </span>
                     </SlotReel>
                   )}
                 </div>
@@ -372,32 +379,40 @@ export function PricingSection() {
         })}
       </div>
 
-      {/* ── Registration Fee Bar: Static Background, Inner Text Floats Up ── */}
-      <div className="pricing-registration">
-        <FloatUp className="pricing-registration__inner" delay={100} distance={18}>
-          <div className="pricing-registration__left">
-            <span className="pricing-registration__label">Biaya Pendaftaran</span>
-            <div className="pricing-registration__fees">
-              <span className="pricing-registration__fee">
+      {/* ── Registration Fee Callout Card ── */}
+      <FloatUp delay={100} distance={14} className="pricing-callout">
+        <div className="pricing-callout__left">
+          <div className="pricing-callout__icon-box" aria-hidden="true">
+            <FaCircleInfo className="pricing-callout__icon" />
+          </div>
+          <div className="pricing-callout__info">
+            <span className="pricing-callout__label">Biaya Pendaftaran:</span>
+            <div className="pricing-callout__fees">
+              <span className="pricing-callout__fee">
                 1 Semester:{" "}
                 <SlotReel valueKey={tier.registrationFee.semester} as="strong" delay={135}>
                   {formatRupiah(tier.registrationFee.semester)}
                 </SlotReel>
               </span>
-              <span className="pricing-registration__divider">·</span>
-              <span className="pricing-registration__fee">
+              <span className="pricing-callout__dot">·</span>
+              <span className="pricing-callout__fee">
                 1 Tahun:{" "}
+                {tier.registrationFee.originalAnnual && (
+                  <s className="pricing-callout__orig-fee">
+                    {formatRupiah(tier.registrationFee.originalAnnual)}
+                  </s>
+                )}
                 <SlotReel valueKey={tier.registrationFee.annual} as="strong" delay={165}>
                   {formatRupiah(tier.registrationFee.annual)}
                 </SlotReel>
               </span>
             </div>
           </div>
-          <p className="pricing-registration__note">
-            Bisa dicicil 2–3 bulan. Pembayaran les di awal per 1 minggu, 2 minggu, atau 1 bulan.
-          </p>
-        </FloatUp>
-      </div>
+        </div>
+        <p className="pricing-callout__note">
+          Bisa dicicil 2–3 bulan. Pembayaran les di awal per 1 minggu, 2 minggu, atau 1 bulan.
+        </p>
+      </FloatUp>
     </section>
   );
 }
