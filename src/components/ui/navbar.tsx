@@ -16,6 +16,7 @@ export function Navbar() {
     { label: "Keunggulan", href: "#keunggulan" },
     { label: "Biaya Les", href: "#biaya" },
     { label: "Layanan & Jangkauan", href: "#cta" },
+    { label: "Testimoni", href: "#testimoni" },
   ];
 
   return (

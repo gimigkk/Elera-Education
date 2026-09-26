@@ -45,20 +45,68 @@
 
 /* Firefox & Non-Chromium Browser Performance Override: Disable filter blur */
 @supports (-moz-appearance: none) {
-  .float-up-element {
+  .float-up-element,
+  .float-up-scale-element {
     filter: none !important;
   }
 }
 
 @supports not (-webkit-app-region: drag) {
-  .float-up-element {
+  .float-up-element,
+  .float-up-scale-element {
     filter: none !important;
   }
 }
 
+/* ===== Float Up Scale Variant (Float Up + Scale from Small + Blur) ===== */
+.float-up-scale-element {
+  opacity: 0;
+  transform: translate3d(0, var(--float-distance, 16px), 0) scale(var(--float-initial-scale, 0.92));
+  transform-origin: var(--float-origin, center);
+  filter: blur(var(--float-blur, 6px));
+  overflow-anchor: none;
+
+  transition-property: opacity, transform, filter !important;
+  transition-duration: var(--float-duration, 650ms) !important;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition-delay: var(--float-delay, 0ms) !important;
+}
+
+.float-up-scale-element.is-revealed,
+.float-up-scale-element[data-revealed="true"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: none !important;
+}
+
+/* Direction Variants for Scale */
+.float-up-scale-element[data-direction="down"] {
+  transform: translate3d(0, calc(var(--float-distance, 16px) * -1), 0) scale(var(--float-initial-scale, 0.92));
+}
+
+.float-up-scale-element[data-direction="left"] {
+  transform: translate3d(var(--float-distance, 16px), 0, 0) scale(var(--float-initial-scale, 0.92));
+}
+
+.float-up-scale-element[data-direction="right"] {
+  transform: translate3d(calc(var(--float-distance, 16px) * -1), 0, 0) scale(var(--float-initial-scale, 0.92));
+}
+
+.float-up-scale-element[data-direction="none"] {
+  transform: translate3d(0, 0, 0) scale(var(--float-initial-scale, 0.92));
+}
+
+.float-up-scale-element[data-direction="down"].is-revealed,
+.float-up-scale-element[data-direction="left"].is-revealed,
+.float-up-scale-element[data-direction="right"].is-revealed,
+.float-up-scale-element[data-direction="none"].is-revealed {
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
 /* Accessibility: Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
-  .float-up-element {
+  .float-up-element,
+  .float-up-scale-element {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;

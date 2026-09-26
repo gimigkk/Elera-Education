@@ -35,7 +35,15 @@ export interface FloatUpProps extends React.HTMLAttributes<HTMLElement> {
   staggerStep?: number;
   /** Disable animation completely */
   disabled?: boolean;
+  /** Enable scaling from small to 1x size (default: false) */
+  scale?: boolean;
+  /** Initial scale ratio when unrevealed (default: 0.92) */
+  initialScale?: number;
+  /** Transform origin for scaling (default: "center") */
+  transformOrigin?: string;
 }
+
+export interface FloatUpScaleProps extends FloatUpProps {}
 
 export function FloatUp({
   children,
@@ -53,6 +61,9 @@ export function FloatUp({
   staggerIndex,
   staggerStep = 60,
   disabled = false,
+  scale = false,
+  initialScale = 0.92,
+  transformOrigin = "center",
   ...props
 }: FloatUpProps) {
   const ref = useRef<HTMLElement | null>(null);
@@ -122,18 +133,36 @@ export function FloatUp({
     "--float-duration": `${duration}ms`,
     "--float-distance": `${distance}px`,
     "--float-blur": `${blur}px`,
+    ...(scale || initialScale !== undefined
+      ? {
+          "--float-initial-scale": `${initialScale}`,
+          "--float-origin": transformOrigin,
+        }
+      : {}),
   } as React.CSSProperties;
+
+  const baseClass = scale ? "float-up-scale-element" : "float-up-element";
 
   return (
     <Component
       ref={ref}
       data-direction={direction}
       data-revealed={isRevealed ? "true" : "false"}
-      className={`float-up-element ${isRevealed ? "is-revealed" : ""} ${className}`.trim()}
+      className={`${baseClass} ${isRevealed ? "is-revealed" : ""} ${className}`.trim()}
       style={customStyles}
       {...props}
     >
       {children}
     </Component>
   );
+}
+
+/**
+ * FloatUpScale: Variant of FloatUp that scales from small to 1x size as it rises into view.
+ */
+export function FloatUpScale({
+  initialScale = 0.92,
+  ...props
+}: FloatUpScaleProps) {
+  return <FloatUp scale initialScale={initialScale} {...props} />;
 }

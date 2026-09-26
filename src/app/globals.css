@@ -3,7 +3,7 @@
 
 /* ===== Design Tokens — Docker Style ===== */
 :root {
-  --docker-blue: #2A60FF;
+  --docker-blue: #3261FF;
   --docker-blue-dark: #1D4ED8;
   --docker-blue-light: #60A5FA;
   --docker-blue-50: #EFF6FF;
@@ -44,7 +44,7 @@
 
 /* ===== Global Reset ===== */
 html {
-  scroll-behavior: smooth;
+  /* instant scrolling */
 }
 
 * {
