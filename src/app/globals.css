@@ -44,7 +44,7 @@
 
 /* ===== Global Reset ===== */
 html {
-  /* instant scrolling */
+  scroll-behavior: smooth;
 }
 
 * {
