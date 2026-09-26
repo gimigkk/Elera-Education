@@ -45,7 +45,7 @@ export function FooterSection() {
             </Link>
 
             <div className="footer__socials">
-              <Tooltip content="+62 812-9387-076" position="top" align="left">
+              <Tooltip content="+62 831-7626-8728" position="top" align="left">
                 <a
                   href={whatsappUrl}
                   target="_blank"

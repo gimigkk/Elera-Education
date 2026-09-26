@@ -119,7 +119,7 @@ const jsonLd = {
       image: "https://eleraeducation.com/og-image.jpg",
       description:
         "Bimbingan belajar panggilan privat terbaik di Yogyakarta untuk jenjang TK, SD, dan SMP. Guru les privat datang langsung ke rumah dengan kurikulum personal dan jadwal fleksibel.",
-      telephone: "+628129387076",
+      telephone: "+6283176268728",
       priceRange: "Rp 35.000 - Rp 95.000",
       currenciesAccepted: "IDR",
       paymentAccepted: "Cash, Transfer Bank",

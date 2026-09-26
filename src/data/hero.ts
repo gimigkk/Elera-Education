@@ -11,7 +11,7 @@ export const heroCTA: HeroCTA = {
     "Free konsultasi PR & tugas",
   ],
   ctaText: "Daftar Sekarang",
-  ctaWhatsAppNumber: "628129387076",
+  ctaWhatsAppNumber: "6283176268728",
   ctaWhatsAppMessage:
     "Halo, saya ingin tanya tentang bimbel untuk anak saya kelas ___",
 };

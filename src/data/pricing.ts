@@ -308,7 +308,7 @@ export const schoolTiers: SchoolTier[] = [
 
 /** WhatsApp CTA config — shared with hero */
 export const pricingWhatsApp = {
-  number: "628129387076",
+  number: "6283176268728",
   buildMessage: (tierLabel: string, gradeLabel: string, classType: string) =>
     `Halo, saya ingin mendaftar les ${classType} untuk anak saya ${tierLabel} ${gradeLabel}`,
 };
