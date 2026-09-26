@@ -95,7 +95,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
+  z-index: 12;
 }
 
 /* Coordinate Numbers (Aligned to Big Square Corners) */
@@ -599,6 +599,8 @@
    Bottom layer acts as extruded height, top layer moves up and down.
    ========================================================================== */
 .hero-mat__cta-btn-wrap {
+  position: relative;
+  z-index: 20;
   display: flex;
   justify-content: center;
   padding-top: 0.25rem;

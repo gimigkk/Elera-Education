@@ -215,10 +215,10 @@ export function HeroSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-3d"
-                    aria-label="Konsultasi Sekarang"
+                    aria-label="Booking Sekarang"
                   >
                     <span className="btn-3d__edge" aria-hidden="true" />
-                    <span className="btn-3d__front">Konsultasi Sekarang</span>
+                    <span className="btn-3d__front">Booking Sekarang</span>
                   </a>
                 </div>
               </FloatUp>

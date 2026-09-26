@@ -697,8 +697,8 @@
 
   .pricing-grid-3 {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
-    padding: 0 0 1.5rem;
+    gap: 0.65rem;
+    padding: 0 0 1.25rem;
   }
 
   .pricing-card--tk-unavailable {
