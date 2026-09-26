@@ -43,7 +43,7 @@ export interface FloatUpProps extends React.HTMLAttributes<HTMLElement> {
   transformOrigin?: string;
 }
 
-export interface FloatUpScaleProps extends FloatUpProps {}
+export type FloatUpScaleProps = FloatUpProps;
 
 export function FloatUp({
   children,

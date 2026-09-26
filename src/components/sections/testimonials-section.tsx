@@ -57,9 +57,9 @@ export function TestimonialsSection() {
                 />
               </span>
             </div>
-            <div className="testimonials-extrusion-header__title">
+            <h2 className="testimonials-extrusion-header__title m-0 p-0 font-inherit leading-normal">
               Testimoni
-            </div>
+            </h2>
           </div>
 
           <div className="chat-mat">
