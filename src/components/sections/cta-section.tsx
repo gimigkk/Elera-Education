@@ -29,7 +29,12 @@ export function CtaSection() {
 
             <FloatUp delay={140} distance={14}>
               <p className="cta-header__subtitle">
-                Tentor Elera Education siap datang langsung ke rumah di seluruh area Daerah Istimewa Yogyakarta (D.I. Yogyakarta). Konsultasikan kebutuhan belajar putra-putri Anda secara gratis.
+                <span className="cta-desc-desktop">
+                  Tentor Elera Education siap datang langsung ke rumah di seluruh area Daerah Istimewa Yogyakarta (D.I. Yogyakarta). Konsultasikan kebutuhan belajar putra-putri Anda secara gratis.
+                </span>
+                <span className="cta-desc-mobile">
+                  Tentor siap datang langsung ke rumah di area D.I. Yogyakarta. Konsultasikan kebutuhan belajar anak secara gratis.
+                </span>
               </p>
             </FloatUp>
 

@@ -59,6 +59,10 @@
   text-wrap: balance;
 }
 
+.cta-desc-mobile {
+  display: none;
+}
+
 .cta-actions {
   display: flex;
   align-items: center;
@@ -156,11 +160,25 @@
   .cta-header__title {
     font-size: 1.3rem;
     line-height: 1.25;
-    margin: 0;
+    margin: 0 0 0.5rem;
   }
 
   .cta-header__subtitle {
-    display: none !important;
+    display: block !important;
+    font-size: 11px;
+    line-height: 1.6;
+    font-weight: 600;
+    margin: 0 0 1.25rem;
+    text-wrap: normal;
+    max-width: 100%;
+  }
+
+  .cta-desc-desktop {
+    display: none;
+  }
+
+  .cta-desc-mobile {
+    display: inline;
   }
 
   .cta-actions {

@@ -5,8 +5,15 @@ import { topUniversities } from "@/data/universities";
 import { FloatUp } from "@/components/ui/float-up";
 
 export function UniversityMarquee() {
-  // Duplicate array 3 times for seamless 360-degree infinite marquee loop
-  const marqueeItems = [...topUniversities, ...topUniversities, ...topUniversities];
+  // Duplicate array 6 times for seamless 360-degree infinite marquee loop
+  const marqueeItems = [
+    ...topUniversities,
+    ...topUniversities,
+    ...topUniversities,
+    ...topUniversities,
+    ...topUniversities,
+    ...topUniversities,
+  ];
 
   return (
     <section className="site-section uni-marquee-section" aria-label="Universitas Tentor">

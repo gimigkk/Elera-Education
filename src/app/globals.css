@@ -25,6 +25,8 @@
   --green-500: #22C55E;
   --green-400: #4ADE80;
 
+  --font-sans: var(--font-body);
+
   --max-width: 1280px;
   --site-gutter: 2rem;
   --site-gutter-mobile: 1.25rem;

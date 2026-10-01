@@ -59,7 +59,7 @@
 .uni-marquee-track {
   display: flex;
   width: max-content;
-  animation: uniMarquee 120s linear infinite;
+  animation: uniMarquee 72s linear infinite;
   transform: translateZ(0);
 }
 
@@ -124,7 +124,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-260px * 5));
+    transform: translateX(calc(-260px * 3));
   }
 }
 
@@ -154,7 +154,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-190px * 5));
+      transform: translateX(calc(-190px * 3));
     }
   }
 }

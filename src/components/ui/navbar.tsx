@@ -17,6 +17,7 @@ export function Navbar() {
     { label: "Biaya Les", href: "#biaya" },
     { label: "Layanan & Jangkauan", href: "#cta" },
     { label: "Testimoni", href: "#testimoni" },
+    { label: "FAQ", href: "#faq" },
   ];
 
   return (

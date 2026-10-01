@@ -1,8 +1,9 @@
 import { HeroSection } from "@/components/sections/hero-section";
 import { ValuePropsSection } from "@/components/sections/value-props-section";
 import { PricingSection } from "@/components/sections/pricing-section";
-import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { FaqSection } from "@/components/sections/faq-section";
 import { CtaSection } from "@/components/sections/cta-section";
+import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { FooterSection } from "@/components/sections/footer-section";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <PricingSection />
         <CtaSection />
         <TestimonialsSection />
+        <FaqSection />
       </div>
       <FooterSection />
     </main>

@@ -146,9 +146,18 @@ export function FooterSection() {
           <ul className="footer__list">
             <li><a href="#keunggulan" className="footer__link">Tentor Datang Ke Rumah</a></li>
             <li><a href="#keunggulan" className="footer__link">Jadwal Fleksibel</a></li>
-            <li><a href="#keunggulan" className="footer__link">Free Konsultasi PR</a></li>
+            <li><a href="#faq" className="footer__link">FAQ / Tanya Jawab</a></li>
             <li><a href="#cta" className="footer__link">Area D.I. Yogyakarta</a></li>
-            <li><a href="#cta" className="footer__link">Konsultasi via WhatsApp</a></li>
+            <li>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer__link"
+              >
+                Konsultasi via WhatsApp
+              </a>
+            </li>
           </ul>
         </div>
       </div>

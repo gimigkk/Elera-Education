@@ -2,36 +2,12 @@ import type { University } from "@/types";
 
 export const topUniversities: University[] = [
   {
-    id: "ipb",
-    name: "IPB University",
-    line1: "IPB",
-    line2: "University",
-    shortName: "IPB",
-    logoUrl: "/images/universities/ipb.webp",
-  },
-  {
-    id: "ui",
-    name: "Universitas Indonesia",
-    line1: "Universitas",
-    line2: "Indonesia",
-    shortName: "UI",
-    logoUrl: "/images/universities/ui.webp",
-  },
-  {
     id: "ugm",
     name: "Universitas Gadjah Mada",
     line1: "Universitas",
     line2: "Gadjah Mada",
     shortName: "UGM",
     logoUrl: "/images/universities/ugm.webp",
-  },
-  {
-    id: "unpad",
-    name: "Universitas Padjadjaran",
-    line1: "Universitas",
-    line2: "Padjadjaran",
-    shortName: "UNPAD",
-    logoUrl: "/images/universities/unpad.webp",
   },
   {
     id: "upn",
@@ -42,19 +18,11 @@ export const topUniversities: University[] = [
     logoUrl: "/images/universities/upn.webp",
   },
   {
-    id: "uny",
-    name: "Universitas Negeri Yogyakarta",
-    line1: "Universitas Negeri",
-    line2: "Yogyakarta",
-    shortName: "UNY",
-    logoUrl: "/images/universities/uny.webp",
-  },
-  {
-    id: "isi",
-    name: "Institut Seni Indonesia Yogyakarta",
-    line1: "ISI",
-    line2: "Yogyakarta",
-    shortName: "ISI",
-    logoUrl: "/images/universities/isi.webp",
+    id: "ipb",
+    name: "IPB University",
+    line1: "IPB",
+    line2: "University",
+    shortName: "IPB",
+    logoUrl: "/images/universities/ipb.webp",
   },
 ];

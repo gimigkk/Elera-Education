@@ -182,34 +182,26 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Apakah guru atau tentor Elera Education datang langsung ke rumah?",
+          name: "Bagaimana penentuan jadwal les?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Ya, bimbingan belajar Elera Education berbasis privat panggilan, di mana tentor berpengalaman datang langsung ke rumah siswa di area Yogyakarta, Sleman, dan Bantul.",
+            text: "Jadwal fleksibel dan bisa didiskusikan serta disepakati langsung dengan tentor sesuai kenyamanan waktu anak.",
           },
         },
         {
           "@type": "Question",
-          name: "Jenjang pendidikan apa saja yang dilayani oleh Elera Education?",
+          name: "Apa perbedaan biaya pendaftaran dan biaya per sesi?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Elera Education melayani jenjang TK (Calistung), SD Kelas 1-6 (pendampingan PR, ulangan harian, dan ujian sekolah/TKA/ASAT), serta SMP Kelas 7-9 untuk semua mata pelajaran pokok.",
+            text: "Biaya pendaftaran dibayarkan untuk 1 tahun atau 1 semester sesuai kebutuhan, sedangkan biaya per sesi dibayarkan setiap pertemuan (90 menit).",
           },
         },
         {
           "@type": "Question",
-          name: "Berapa biaya bimbingan belajar privat di Elera Education Jogja?",
+          name: "Bagaimana sistem pembayaran biaya pendaftaran dan biaya per sesi?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Biaya les privat mulai dari Rp 35.000 per anak per sesi untuk kelas kelompok hingga Rp 95.000 per sesi untuk les privat 1-on-1 dengan durasi 90 menit.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Apakah jadwal les privat bisa disesuaikan?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Jadwal les privat di Elera Education sangat fleksibel dan dapat diatur sesuai kenyamanan waktu siswa dan kesepakatan orang tua bersama tentor.",
+            text: "Biaya pendaftaran bisa dicicil maksimal 3 bulan, dengan cicilan pertama dibayarkan saat les perdana. Untuk biaya per sesi, pembayaran bisa dilakukan mingguan, dua mingguan, atau bulanan di awal.",
           },
         },
       ],
