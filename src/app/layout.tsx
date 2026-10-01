@@ -30,8 +30,16 @@ const caveat = Caveat({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? process.env.NEXT_PUBLIC_SITE_URL
+  : process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "https://elera-edu.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://eleraeducation.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Elera Education | Bimbel Privat Jogja - Tentor Datang ke Rumah",
     template: "%s | Elera Education",
@@ -50,7 +58,7 @@ export const metadata: Metadata = {
     "bimbel ujian sekolah jogja",
     "elera education jogja",
   ],
-  authors: [{ name: "Elera Education", url: "https://eleraeducation.com" }],
+  authors: [{ name: "Elera Education", url: siteUrl }],
   creator: "Elera Education",
   publisher: "Elera Education",
   formatDetection: {
@@ -69,7 +77,7 @@ export const metadata: Metadata = {
     title: "Elera Education | Bimbel Privat Jogja - Tentor Datang ke Rumah",
     description:
       "Bimbel privat datang ke rumah untuk TK, SD, & SMP di Yogyakarta. Pendampingan personal 1-on-1, jadwal fleksibel, dan tentor PTN ternama.",
-    url: "https://eleraeducation.com",
+    url: siteUrl,
     siteName: "Elera Education",
     locale: "id_ID",
     type: "website",
@@ -78,6 +86,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Elera Education - Bimbel Privat Jogja Datang ke Rumah",
       },
     ],
@@ -108,15 +117,15 @@ const jsonLd = {
   "@graph": [
     {
       "@type": ["EducationalOrganization", "LocalBusiness"],
-      "@id": "https://eleraeducation.com/#organization",
+      "@id": `${siteUrl}/#organization`,
       name: "Elera Education",
       alternateName: "Bimbel Privat Elera Education Jogja",
-      url: "https://eleraeducation.com",
+      url: siteUrl,
       logo: {
         "@type": "ImageObject",
-        url: "https://eleraeducation.com/icon.svg",
+        url: `${siteUrl}/icon.svg`,
       },
-      image: "https://eleraeducation.com/og-image.jpg",
+      image: `${siteUrl}/og-image.jpg`,
       description:
         "Bimbingan belajar panggilan privat terbaik di Yogyakarta untuk jenjang TK, SD, dan SMP. Guru les privat datang langsung ke rumah dengan kurikulum personal dan jadwal fleksibel.",
       telephone: "+6283176268728",
@@ -159,17 +168,17 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://eleraeducation.com/#website",
-      url: "https://eleraeducation.com",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
       name: "Elera Education",
       publisher: {
-        "@id": "https://eleraeducation.com/#organization",
+        "@id": `${siteUrl}/#organization`,
       },
       inLanguage: "id-ID",
     },
     {
       "@type": "FAQPage",
-      "@id": "https://eleraeducation.com/#faq",
+      "@id": `${siteUrl}/#faq`,
       mainEntity: [
         {
           "@type": "Question",
