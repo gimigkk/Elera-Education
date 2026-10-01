@@ -34,17 +34,17 @@ export interface TestimonialContact {
 export const testimonialsData: TestimonialContact[] = [
   {
     id: "wali-ahmad",
-    name: "Ibu Ahmad",
+    name: "Ibu A***",
     role: "Wali Murid SD Muhammadiyah",
     program: "Pendampingan ASAT & Ulangan Harian",
     avatarIcon: "cat",
     dateStr: "05/06/26",
-    previewSnippet: "Alhamdulillah Ahmad bagus2 nilainya... Dulu rata2 5, 6",
+    previewSnippet: "Alhamdulillah A*** bagus2 nilainya... Dulu rata2 5, 6",
     messages: [
       {
         id: "a-1",
         sender: "client",
-        text: "Assalamu'alaikum mbak Rahma... Mbakk.. Aku mau ngucapin terimakasih banyak utk bimbingan les selama ini.. Alhamdulillah Ahmad bagus2 nilainya...",
+        text: "Assalamu'alaikum mbak Rahma... Mbakk.. Aku mau ngucapin terimakasih banyak utk bimbingan les selama ini.. Alhamdulillah A*** bagus2 nilainya...",
         time: "05:51",
       },
       {
@@ -64,7 +64,7 @@ export const testimonialsData: TestimonialContact[] = [
       {
         id: "a-4",
         sender: "admin",
-        text: "Waalaikumsalam, alhamdulillah bu, semoga ini bisa dipertahankan nggih, dan saya juga minta maaf jika ada kekurangan selama mendampingi. Tetap semangat belajarnya Ahmad! 🙌💙",
+        text: "Waalaikumsalam, alhamdulillah bu, semoga ini bisa dipertahankan nggih, dan saya juga minta maaf jika ada kekurangan selama mendampingi. Tetap semangat belajarnya A***! 🙌💙",
         time: "06:05",
         status: "read",
       },

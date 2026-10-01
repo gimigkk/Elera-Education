@@ -133,9 +133,9 @@ export function FooterSection() {
           <h3 className="footer__col-title">Mata Pelajaran</h3>
           <ul className="footer__list">
             <li><span className="footer__item-text">Matematika</span></li>
-            <li><span className="footer__item-text">IPA / IPAS</span></li>
-            <li><span className="footer__item-text">Bahasa Inggris</span></li>
+            <li><span className="footer__item-text">IPAS</span></li>
             <li><span className="footer__item-text">Bahasa Indonesia</span></li>
+            <li><span className="footer__item-text">Bahasa Inggris</span></li>
             <li><span className="footer__item-text">Pendidikan Pancasila</span></li>
           </ul>
         </div>

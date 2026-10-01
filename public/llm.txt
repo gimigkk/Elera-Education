@@ -36,10 +36,10 @@
 ## Mata Pelajaran yang Didampingi
 
 - Matematika
-- IPA / IPAS
-- Bahasa Inggris
+- IPAS
 - Bahasa Indonesia
-- Pendidikan Pancasila & PKn
+- Bahasa Inggris
+- Pendidikan Pancasila
 - Calistung (Membaca, Menulis, Berhitung)
 
 ## Keunggulan Utama

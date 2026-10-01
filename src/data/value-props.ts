@@ -51,7 +51,7 @@ export const valuePropGridCells: ValuePropGridCell[] = [
         number: "03",
         badge: "Bebas Pilih Mapel",
         title: "Bebas Pilih Mata Pelajaran",
-        description: "Anak bebas memilih mata pelajaran yang ingin dibahas dalam setiap pertemuan (MTK, IPA, B.Inggris, dll).",
+        description: "Fokus Mata Pelajaran Utama: Matematika, IPAS, Bahasa Indonesia, Bahasa Inggris, dan Pendidikan Pancasila.",
       },
       {
         number: "04",
