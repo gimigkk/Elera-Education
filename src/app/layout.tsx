@@ -110,6 +110,9 @@ export const metadata: Metadata = {
     },
   },
   category: "Education",
+  verification: {
+    google: "hgIC2XmT3XQbkI6Rf0V0I8VHzGPfxRVSG_9_QqsI12A",
+  },
 };
 
 const jsonLd = {
